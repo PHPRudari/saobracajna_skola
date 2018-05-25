@@ -1,0 +1,86 @@
+.stil {
+    padding-top: 100px;
+}
+
+.container {
+    
+ 
+    border-radius: 5px;
+    margin:0 auto;
+    box-shadow: 5px 5px 15px gray;
+    height: auto;
+    padding-bottom: 50px;
+    padding-left: 30px;
+    
+}
+
+#header {
+    margin:20px;
+    padding-top: 10px;
+}
+
+
+
+.mojaforma {
+   
+    margin: 0 auto;
+    height:300px;
+    background-color: lightgrey;
+    width:100%;
+     box-shadow: 5px 5px 15px gray;
+     border-radius: 5px;
+     max-width: 400px;
+}
+
+.footer {
+    position: relative;
+    margin-top: 50px;
+    bottom:0;
+}
+
+/*input[type=text] {
+    width: 200px;
+    padding: 0px;
+    margin: 3px 0;
+    box-sizing: border-box;
+}*/
+
+#autoSuggestionsList > li {
+    background: none repeat scroll 0 0 #f2f2f2;
+    border-bottom: 1px solid #E3E3E3;
+    list-style: none outside none;
+    padding: 3px 15px 3px 15px;
+    text-align: left;
+}
+
+#autoSuggestionsList > li a { color: #008015; }
+
+#autoSuggestionsList {
+    z-index: 1000;
+}
+.auto_list {
+    border: 1px solid #E3E3E3;
+    border-radius: 5px 5px 5px 5px;
+    position: absolute;
+}
+
+.login_logo {
+   /* position: absolute;*/
+    width: 254px;
+    max-width: 100%;
+    height: auto;
+    padding: 0;
+    left: 20px;
+    margin-bottom: 10px;
+}
+
+
+.pretraga {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 30px auto;
+}
+
+.predmeti {
+    border: 1px solid black;
+}
