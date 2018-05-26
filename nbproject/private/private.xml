@@ -4,11 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/wamp64/www/saobracajna_skola/css/stylesheet.css</file>
-            <file>file:/C:/wamp64/www/saobracajna_skola/application/views/profesor.php</file>
+            <file>file:/C:/wamp64/www/saobracajna_skola/application/views/dokumentacija.php</file>
+            <file>file:/C:/wamp64/www/saobracajna_skola/application/views/sabloni/header.php</file>
             <file>file:/C:/wamp64/www/saobracajna_skola/application/controllers/admin.php</file>
-            <file>file:/C:/wamp64/www/saobracajna_skola/application/models/model_admin.php</file>
-            <file>file:/C:/wamp64/www/saobracajna_skola/application/views/direktor/administracija.php</file>
-            <file>file:/C:/wamp64/www/saobracajna_skola/application/controllers/direktor.php</file>
+            <file>file:/C:/wamp64/www/saobracajna_skola/application/views/upload_success.php</file>
         </group>
     </open-files>
 </project-private>

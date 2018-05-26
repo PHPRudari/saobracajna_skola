@@ -12,6 +12,7 @@
     padding-bottom: 50px;
     padding-left: 30px;
     
+    
 }
 
 #header {
@@ -87,7 +88,6 @@
 
 
 .slika {
-   width: 254px;
-    
-    height: auto;
+   width: 240px;
+  height: auto;
 }

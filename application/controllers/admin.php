@@ -82,9 +82,7 @@ class admin extends CI_Controller {
     public function unesi_ucenika() {
         $this->load->helper('form');
         $this->load->library('form_validation');
-         $_POST = $_SESSION['ucenik'];
-        var_dump($_POST);
-        exit();
+        // $_POST = $_SESSION['ucenik'];
         $this->form_validation->set_rules('jedinstveni_broj', 'Jedinstveni_broj', 'required', array('required' => 'Ово поље је обавезно.'));
         $this->form_validation->set_rules('delovodni', 'Delovodni_broj', 'required', array('required' => 'Ово поље је обавезно.'));
         $this->form_validation->set_rules('ugovor', 'Broj_ugovora', 'required', array('required' => 'Ово поље је обавезно.'));
@@ -378,6 +376,43 @@ class admin extends CI_Controller {
       $result = $query->result_array();
       echo json_encode($result);
       } */
+
+    function do_upload() {
+        
+        $id=$_SESSION['ucenik']['iducenik'];
+        var_dump($id);
+       
+        if (!is_dir("./uploads/$id")) {
+        mkdir("./uploads/$id", 0700);}
+        
+        
+        $config['upload_path'] = "./uploads/$id";
+
+        $config['allowed_types'] = 'gif|jpg|png|pdf|doc|docx|txt';
+
+        $config['max_size'] = '0';
+
+        $config['max_width'] = '10240';
+
+        $config['max_height'] = '7680';
+
+        $this->load->library('upload', $config);
+
+        $this->upload->initialize($config);
+
+        if (!$this->upload->do_upload()) {
+
+            $error = array('error' => $this->upload->display_errors());
+
+            $this->loadView('dokumentacija', $error);
+        } else {
+
+            $data = array('upload_data' => $this->upload->data());
+
+            $this->load->view('upload_success', $data);
+        }
+    }
+
 }
 
 ?>
