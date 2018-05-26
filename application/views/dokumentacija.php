@@ -15,6 +15,12 @@ Izaberite fajl:<br>
 </form>
 
 
+
+
+
+
+
+
 <div>
     <?php
     $id = $_SESSION['ucenik']['iducenik'];
@@ -28,20 +34,34 @@ Izaberite fajl:<br>
 
                 $path = "$dir/$file";
                 $ext = pathinfo($file, PATHINFO_EXTENSION);
+                //var_dump($ext);
 
-
-                if ($file != ".." && $file != ".")
-                    if ($ext <> "jpg") {
+                if ($file != ".." && $file != ".") {
+                   
+                                                         
+                    
+                    
+                    if ($ext == "txt" ) {
                         echo "<br>filename:" . $file . "<br>";
-                        echo "nije slika!<br>";
-                    } else {
-
-                        echo "filename:" . $file . "<br>";
-                        //echo $ext."<br>";
+                        echo "<i class='far fa-file-alt fa-10x'></i><br>";
+                    } 
+                    
+                    else if ($ext == "jpg" || $ext=="png" ) {
+                            echo "<br>filename:" . $file . "<br>";
+                            echo "<i class='far fa-image fa-10x'></i><br>";
+                        }
+                        else if ($ext == "pdf") {
+                                echo "<br>filename:" . $file . "<br>";
+                                echo "<i class='far fa-file-pdf fa-10x'></i><br>";
+                            }
+                        
+                    
+                }
                         ?>
-    <img class="slika img img-fluid" src=<?php echo base_url("uploads/$id/$file"); ?>   <br> 
-                    <?php
-                    }
+
+                        <?php
+                    
+                
             }
 
             closedir($dh);

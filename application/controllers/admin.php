@@ -164,7 +164,7 @@ class admin extends CI_Controller {
     }
 
     public function dokumentacija() {
-        $this->loadView("dokumentacija.php");
+       $this->loadView("dokumentacija.php");
     }
 
     public function priznati_ispiti() {
@@ -413,6 +413,9 @@ class admin extends CI_Controller {
         }
     }
 
-}
+    
+    
+    
+    }
 
 ?>
