@@ -1,4 +1,9 @@
+<?php if (!isset($_SESSION['ucenik']['iducenik'])) {
+    echo 'Niste odabrali učenika';
+    exit;
+}
 
+?>
 
 <body>
     <!--dodao-->   
