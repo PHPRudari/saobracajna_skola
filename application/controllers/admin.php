@@ -48,6 +48,10 @@ class admin extends CI_Controller {
         unset($_SESSION['prof']);
         $this->profesor();
     }
+    public function ubij_sesiju_ucenik() {
+        unset($_SESSION['ucenik']);
+        $this->ucenik();
+    }
 
     public function select_box() {
         $idpodrucje = $this->input->post('idpodrucje_rada');

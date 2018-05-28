@@ -144,15 +144,15 @@ echo validation_errors(); ?>
             }
             ?>
 
-        </select><br>
+        </select><br><br>
         
         <!--<input type="radio" name="tip_ucenika" value="p"> Преквалификација<br>
         <input type="radio" name="tip_ucenika" value="d"> Доквалификација<br>
         <input type="radio" name="tip_ucenika" value="up"> Упис у први разред школе<br>
         <input type="radio" name="tip_ucenika" value="un"> Упис у неки разред школе<br>
         <input type="radio" name="tip_ucenika" value="s"> Специјализација<br><br><br>-->
-        <input type="submit" name="Sacuvaj" value="Сачувај"><br><br><br>
-
+        <input type="submit" name="Sacuvaj" value="Сачувај"><br>
+<a href="<?php echo site_url($controller . "/ubij_sesiju_ucenik/"); ?>">Osveži stranu</a><br><br>
 
 
 
