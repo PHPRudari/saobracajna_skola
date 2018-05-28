@@ -1,18 +1,7 @@
 
 
 <body>
-    <!--dodao-->   
-    <div class="form-group row pretraga">
 
-    <label for="search_data" class="col-2 col-form-label"> Pretraga: </label>
-    <div class="col-10">  
-        <input class="form-control col-10" name="search_data" id="search_data" type="text" onkeyup="ajaxSearchUcenik();">
-        <div id="suggestions">
-            <div id="autoSuggestionsList"></div>
-        </div>
-    </div>
-
-</div>
     
     <div>
             <form name="ispiti">
