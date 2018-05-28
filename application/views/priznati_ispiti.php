@@ -92,7 +92,7 @@ else
     </div>
     <div class="row">
        
-        <div class="col-md-6"><br>
+        <div class="col-md-6 "><br>
         
             <p>III godina:</p>
             
@@ -101,6 +101,7 @@ else
             foreach ($predmet as $row) {
                 if ($row['godina_obrazovanja_idgodina_obrazovanja']=="3") 
                 echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'] . "<br>";
+                 echo "<div class='row'>";
             }
             ?>
         </div>
