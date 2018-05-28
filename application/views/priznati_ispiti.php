@@ -56,6 +56,7 @@ else
         </form>   
             
        </div>
+    <?php echo form_open($controller . '/priznaj_ispite'); ?>
     
     <div class="row">
        
@@ -67,7 +68,16 @@ else
             <?php
             foreach ($predmet as $row) {
                 if ($row['godina_obrazovanja_idgodina_obrazovanja']=="1") 
-                echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'] . "<br>";
+                {
+                echo "<div class='row'>";
+                    echo "<div class='col-md-10'>";
+                    echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'];
+                echo "</div>";
+                    echo "<div class='col-md-2'>";
+                    echo '<input type="text" name="ocena[]" style="width:60px" placeholder="Ocena">'. "<br>";
+                    echo "</div>";
+                      echo "</div>";
+            }
             }
             ?>
         </div>
@@ -84,7 +94,16 @@ else
             <?php
             foreach ($predmet as $row) {
                 if ($row['godina_obrazovanja_idgodina_obrazovanja']=="2") 
-                echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'] . "<br>";
+                {
+                echo "<div class='row'>";
+                    echo "<div class='col-md-10'>";
+                    echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'];
+                echo "</div>";
+                    echo "<div class='col-md-2'>";
+                    echo '<input type="text" name="ocena[]" style="width:60px" placeholder="Ocena">'. "<br>";
+                    echo "</div>";
+                      echo "</div>";
+            }
             }
             ?>
         </div>
@@ -100,8 +119,16 @@ else
             <?php
             foreach ($predmet as $row) {
                 if ($row['godina_obrazovanja_idgodina_obrazovanja']=="3") 
-                echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'] . "<br>";
-                 echo "<div class='row'>";
+                {
+                echo "<div class='row'>";
+                    echo "<div class='col-md-10'>";
+                    echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'];
+                echo "</div>";
+                    echo "<div class='col-md-2'>";
+                    echo '<input type="text" name="ocena[]" style="width:60px" placeholder="Ocena">'. "<br>";
+                    echo "</div>";
+                      echo "</div>";
+            }
             }
             ?>
         </div>
@@ -143,7 +170,16 @@ else
             <?php
             foreach ($predmet as $row) {
                 if ($row['godina_obrazovanja_idgodina_obrazovanja']=="5") 
-                echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet']."<br>" ;
+                {
+                echo "<div class='row'>";
+                    echo "<div class='col-md-10'>";
+                    echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'];
+                echo "</div>";
+                    echo "<div class='col-md-2'>";
+                    echo '<input type="text" name="ocena[]" style="width:60px" placeholder="Ocena">'. "<br>";
+                    echo "</div>";
+                      echo "</div>";
+            }
               
             }
             ?>
@@ -166,6 +202,7 @@ else
             <a href="<?php echo site_url($controller . "/ucenik") ?>">Ученик</a><br>
         </div>
     </div>
+</form>
 </body>
 <script>
     function ajaxSearchUcenik()
