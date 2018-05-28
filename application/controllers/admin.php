@@ -180,6 +180,8 @@ class admin extends CI_Controller {
         $result = $this->model_admin->dohvati_skolska_godina();
         $data['godina_obrazovanja'] = $result;
         $_POST=$_SESSION['ucenik'];
+        $result = $this->model_admin->dohvati_predmet();
+        $data['predmet'] = $result;
         $this->loadView("priznati_ispiti.php", $data);
     }
 
@@ -309,6 +311,8 @@ class admin extends CI_Controller {
     }
 
     public function prijava_ispita() {
+        
+        
         $this->loadView("prijava_ispita.php");
     }
 
