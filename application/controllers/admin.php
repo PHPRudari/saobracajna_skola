@@ -179,7 +179,8 @@ class admin extends CI_Controller {
         $data['profil'] = $result1;
         $result = $this->model_admin->dohvati_skolska_godina();
         $data['godina_obrazovanja'] = $result;
-        $_POST=$_SESSION['ucenik'];
+        if(isset($_SESSION['ucenik'])){
+        $_POST=$_SESSION['ucenik'];}
         $this->loadView("priznati_ispiti.php", $data);
     }
 
