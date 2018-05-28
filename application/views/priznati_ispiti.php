@@ -63,7 +63,7 @@ else
         
             <p>I godina:</p>
             
-                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 500px;">
+                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;">
             <?php
             foreach ($predmet as $row) {
                 if ($row['godina_obrazovanja_idgodina_obrazovanja']=="1") 
@@ -80,7 +80,7 @@ else
         <div class="col-md-6"><br>
              <p>II godina:</p>
             
-                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 500px;">
+                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
             <?php
             foreach ($predmet as $row) {
                 if ($row['godina_obrazovanja_idgodina_obrazovanja']=="2") 
@@ -96,7 +96,7 @@ else
         
             <p>III godina:</p>
             
-                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 500px;">
+                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
             <?php
             foreach ($predmet as $row) {
                 if ($row['godina_obrazovanja_idgodina_obrazovanja']=="3") 
@@ -113,11 +113,20 @@ else
         <div class="col-md-6"><br>
              <p>IV godina:</p>
             
-                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 500px;">
+                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
             <?php
             foreach ($predmet as $row) {
                 if ($row['godina_obrazovanja_idgodina_obrazovanja']=="4") 
-                echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'] . "<br>";
+                {
+                echo "<div class='row'>";
+                    echo "<div class='col-md-10'>";
+                    echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'];
+                echo "</div>";
+                    echo "<div class='col-md-2'>";
+                    echo '<input type="text" name="ocena[]" style="width:60px" placeholder="Ocena">'. "<br>";
+                    echo "</div>";
+                      echo "</div>";
+            }
             }
             ?>
         </div>
@@ -129,11 +138,12 @@ else
          <div class="col-md-6"><br>
              <p>V godina:</p>
             
-                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 500px;">
+                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
             <?php
             foreach ($predmet as $row) {
                 if ($row['godina_obrazovanja_idgodina_obrazovanja']=="5") 
-                echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'] . "<br>";
+                echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet']."<br>" ;
+              
             }
             ?>
         </div>

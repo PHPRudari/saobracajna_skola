@@ -429,6 +429,12 @@ class admin extends CI_Controller {
             $this->load->view('upload_success', $data);
         }
     }
+    
+    public function priznaj_ispite() {
+        
+    $this->model_admin->priznaj_ispite();
+    
+    }
 
     
     
