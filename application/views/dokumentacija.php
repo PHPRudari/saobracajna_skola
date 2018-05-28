@@ -1,6 +1,11 @@
 <?php
 if (isset($error))
     echo $error;
+
+if (!isset($_SESSION['ucenik']['iducenik'])) {
+    echo 'Niste odabrali učenika';
+    exit;
+}
 ?>
 
 
@@ -11,7 +16,7 @@ Izaberite fajl:<br>
 
 <br /><br />
 
-<input type="submit" value="Пошаљи" />
+<input type="submit" value="Пошаљи">
 </form>
 
 
@@ -21,7 +26,8 @@ Izaberite fajl:<br>
 
 
 
-<div>
+<div class="row">
+
     <?php
     $id = $_SESSION['ucenik']['iducenik'];
     $dir = "./uploads/$id";
@@ -34,38 +40,25 @@ Izaberite fajl:<br>
 
                 $path = "$dir/$file";
                 $ext = pathinfo($file, PATHINFO_EXTENSION);
-                //var_dump($ext);
+
+
+
 
                 if ($file != ".." && $file != ".") {
-                   
-                                                         
-                    
-                    
-                    if ($ext == "txt" ) {
-                        echo "<br>filename:" . $file . "<br>";
-                        echo "<i class='far fa-file-alt fa-10x'></i><br>";
-                    } 
-                    
-                    else if ($ext == "jpg" || $ext=="png" ) {
-                            echo "<br>filename:" . $file . "<br>";
-                            echo "<i class='far fa-image fa-10x'></i><br>";
-                        }
-                        else if ($ext == "pdf") {
-                                echo "<br>filename:" . $file . "<br>";
-                                echo "<i class='far fa-file-pdf fa-10x'></i><br>";
-                            }
-                        
-                    
+
+
+                    echo "<div class='col-md-4'>";
+                    echo "<br><br>";
+                    echo "<br><i class='far fa-file-alt fa-4x'></i><br>";
+                    echo "<a href=" . base_url("uploads/$id/$file") . ">$file</a>";
+                    echo "</div>";
                 }
-                        ?>
+                ?>
 
-                        <?php
-                    
-                
+                <?php
             }
-
-            closedir($dh);
         }
+        closedir($dh);
     }
     ?>
 

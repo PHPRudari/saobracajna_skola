@@ -380,15 +380,14 @@ class admin extends CI_Controller {
     function do_upload() {
         
         $id=$_SESSION['ucenik']['iducenik'];
-        var_dump($id);
-       
+               
         if (!is_dir("./uploads/$id")) {
         mkdir("./uploads/$id", 0700);}
         
         
         $config['upload_path'] = "./uploads/$id";
 
-        $config['allowed_types'] = 'gif|jpg|png|pdf|doc|docx|txt';
+        $config['allowed_types'] = 'txt|gif|jpg|png|pdf|doc|docx';
 
         $config['max_size'] = '0';
 
