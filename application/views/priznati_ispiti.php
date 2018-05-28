@@ -125,7 +125,7 @@ else
                     echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'];
                 echo "</div>";
                     echo "<div class='col-md-2'>";
-                    echo '<input type="text" name="ocena[]" style="width:60px" placeholder="Ocena">'. "<br>";
+                    echo '<input type="text" value="" name="ocena[]" style="width:60px" placeholder="Ocena">'. "<br>";
                     echo "</div>";
                       echo "</div>";
             }
