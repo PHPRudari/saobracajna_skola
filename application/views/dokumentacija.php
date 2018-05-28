@@ -65,5 +65,11 @@ Izaberite fajl(maksimalna veličina 2 Mb):<br>
 
 
 
-
+</div>
+<div class="row">
+    <div class="col-md-12">
+    <br><br>
+    <a href="<?php echo site_url($controller . "/priznati_ispiti") ?>">Признати испити</a><br>
+    <a href="<?php echo site_url($controller . "/ucenik") ?>">Ученик</a><br>
+    </div>
 </div>

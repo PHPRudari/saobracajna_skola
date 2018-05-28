@@ -318,9 +318,10 @@ class model_admin extends CI_Model {
         return $result;
     }
 
-    public function dohvati_predmet() {
+    public function dohvati_predmet($god="%") {
         //$this->db->distinct("");
         $this->db->from("predmet");
+     //   $this->db->like("godina_obrazovanja_idgodina_obrazovanja", $god);
         $this->db->select("idpredmet, naziv_predmet");
         $this->db->group_by('naziv_predmet');
         $query = $this->db->get();

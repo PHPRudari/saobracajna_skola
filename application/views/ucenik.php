@@ -152,7 +152,7 @@ echo validation_errors(); ?>
         <input type="radio" name="tip_ucenika" value="un"> Упис у неки разред школе<br>
         <input type="radio" name="tip_ucenika" value="s"> Специјализација<br><br><br>-->
         <input type="submit" name="Sacuvaj" value="Сачувај"><br>
-<a href="<?php echo site_url($controller . "/ubij_sesiju_ucenik/"); ?>">Osveži stranu</a><br><br>
+        <a href="<?php echo site_url($controller . "/ubij_sesiju_ucenik/"); ?>">Osveži stranu</a><br><br>
 
 
 

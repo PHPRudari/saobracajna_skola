@@ -172,8 +172,15 @@ class admin extends CI_Controller {
     }
 
     public function priznati_ispiti() {
-
-        $this->loadView("priznati_ispiti.php");
+//dodao
+        //$result = $this->model_admin->dohvati_podrucje();
+        $result1 = $this->model_admin->dohvati_profil();
+        //$data['podrucje'] = $result;
+        $data['profil'] = $result1;
+        $result = $this->model_admin->dohvati_skolska_godina();
+        $data['godina_obrazovanja'] = $result;
+        $_POST=$_SESSION['ucenik'];
+        $this->loadView("priznati_ispiti.php", $data);
     }
 
 //FUNKCIJE ZA RAD SA profesorom
