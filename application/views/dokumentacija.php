@@ -11,7 +11,7 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
 <?php echo form_open_multipart('admin/do_upload'); ?>
 
-Izaberite fajl:<br>
+Izaberite fajl(maksimalna veličina 2 Mb):<br>
 <input type="file" name="userfile" value="Izaberite fajl" size="20" />
 
 <br /><br />
