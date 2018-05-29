@@ -35,7 +35,7 @@ class admin extends CI_Controller {
         $korisnici['controller'] = $this->controller;
         $this->load->view('admin/admin_menu');
         $this->load->view('sabloni/header');
-       
+
         $this->load->view($glavniDeo, $korisnici);
         $this->load->view('sabloni/footer');
     }
@@ -49,6 +49,7 @@ class admin extends CI_Controller {
         unset($_SESSION['prof']);
         $this->profesor();
     }
+
     public function ubij_sesiju_ucenik() {
         unset($_SESSION['ucenik']);
         $this->ucenik();
@@ -169,7 +170,7 @@ class admin extends CI_Controller {
     }
 
     public function dokumentacija() {
-       $this->loadView("dokumentacija.php");
+        $this->loadView("dokumentacija.php");
     }
 
     public function priznati_ispiti() {
@@ -180,11 +181,12 @@ class admin extends CI_Controller {
         $data['profil'] = $result1;
         $result = $this->model_admin->dohvati_skolska_godina();
         $data['godina_obrazovanja'] = $result;
-;
+        ;
         $result = $this->model_admin->dohvati_predmet();
         $data['predmet'] = $result;
-        if(isset($_SESSION['ucenik'])){
-        $_POST=$_SESSION['ucenik'];}
+        if (isset($_SESSION['ucenik'])) {
+            $_POST = $_SESSION['ucenik'];
+        }
 
         $this->loadView("priznati_ispiti.php", $data);
     }
@@ -315,8 +317,8 @@ class admin extends CI_Controller {
     }
 
     public function prijava_ispita() {
-        
-        
+
+
         $this->loadView("prijava_ispita.php");
     }
 
@@ -397,13 +399,14 @@ class admin extends CI_Controller {
       } */
 
     function do_upload() {
-        
-        $id=$_SESSION['ucenik']['iducenik'];
-               
+
+        $id = $_SESSION['ucenik']['iducenik'];
+
         if (!is_dir("./uploads/$id")) {
-        mkdir("./uploads/$id", 0700);}
-        
-        
+            mkdir("./uploads/$id", 0700);
+        }
+
+
         $config['upload_path'] = "./uploads/$id";
 
         $config['allowed_types'] = 'txt|gif|jpg|png|pdf|doc|docx|bmp';
@@ -430,17 +433,37 @@ class admin extends CI_Controller {
             $this->load->view('upload_success', $data);
         }
     }
-    
+
     public function priznaj_ispite() {
-        
-    //$this->model_admin->priznaj_ispite();
-   var_dump($_POST['predmet']);
-   var_dump($_POST['ocena']);
+
+        $this->model_admin->priznaj_ispite();
+        //var_dump($_POST['predmet']);
+        //var_dump($_POST['ocena']);
     }
 
-    
-    
-    
+    public function stampa() {
+        $this->load->library('pdf');
+       
+        // instantiate and use the dompdf class
+        $dompdf = new Dompdf\Dompdf();
+
+        $html = $this->load->view('dokumentacija', [], true);
+
+        $dompdf->loadHtml($html);
+
+        // (Optional) Setup the paper size and orientation
+        $dompdf->setPaper('A4', 'landscape');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Get the generated PDF file contents
+        $pdf = $dompdf->output();
+
+        // Output the generated PDF to Browser
+        $dompdf->stream();
     }
 
+}
+//https://arjunphp.com/generating-a-pdf-in-codeigniter-using-mpdf/
 ?>

@@ -362,6 +362,35 @@ class model_admin extends CI_Model {
         return $result;
     }
 
+    public function priznaj_ispite() {
+        
+    //    var_dump($_POST['predmet']);
+     //   var_dump($_POST['ocena']);
+       // var_dump($_SESSION['ucenik']['iducenik']);
+    $predmet=$_POST['predmet'];
+    $ocena=$_POST['ocena'];
+    //$ocena=5;
+    $id=$_SESSION['ucenik']['iducenik'];
+    
+       foreach ($predmet as $row)  {
+           foreach ($ocena as $oc) {
+               
+           if ($row==$oc) {
+          $this->db->query ("insert into priznati_predmet values ('$row','$id','$oc')");
+           echo $this->query;
+           }
+           }
+    }
+         
+           
+       
+    
+    
+    
+   
+
+    }
+    
     /* public function get_autocomplete($search_data) 
       {
       $this->db-> select('ime, idkorisnik');
