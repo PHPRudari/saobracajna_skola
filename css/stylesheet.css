@@ -3,11 +3,14 @@
 }
 
 
-html,
+
 body {
    margin:0;
    padding:0;
    height:100%;
+    background: url("../slike/login_pozadina1.jpg") no-repeat center center fixed;
+   
+    z-index: -1;
 }
 #container {
    min-height:100%;
@@ -16,12 +19,12 @@ body {
 
 
 .container {
-    
+    background-color: lightgrey;
 
     border-radius: 5px;
     margin:0 auto;
     box-shadow: 5px 5px 15px gray;
-    height: auto;
+    height: 80%;
     padding-bottom: 50px;
     padding-left: 30px;
     
@@ -49,16 +52,22 @@ body {
 .navbar {
      background-color: #a9afba;
       height: 70px;
+      /* background: url("../slike/login_pozadina1.jpg") no-repeat center center fixed;*/
+       color:white;
+       font-weight: bolder;
+       z-index: 100;
 /*  font-size: 15px; */
       
 }
 .footer {
+    /* background: url("../slike/login_pozadina1.jpg") no-repeat center center fixed;*/
     margin-top:20px;
     position: fixed;
     margin-top: 50px;
     height: 40px;
     bottom:0;
     width: 100%;
+    z-index: 100;
     background-color: #a9afba;
 }
 
