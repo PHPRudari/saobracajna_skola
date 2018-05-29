@@ -1,13 +1,14 @@
 
-       <nav class="navbar navbar-default navbar-fixed-bottom footer" role="navigation">
-          
-            
-           <small>Copyright &copy; PHP Rudari 2018 by Voja Macola</small>
-           
-        </nav>
 
- </div>
 
+</div>
+
+<div id="footer">
+    <nav class="navbar navbar-default navbar-fixed-bottom footer" role="navigation">
+        <small>Copyright &copy; PHP Rudari 2018 by Voja Macola</small>
+    </nav>
+
+</div>
 </body>
 
 <!-- Latest compiled and minified JavaScript -->

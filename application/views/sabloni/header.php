@@ -17,7 +17,7 @@ and open the template in the editor.
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">   
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
         
-        <?php echo link_tag('css/stylesheet.css'); ?>
+        <?php echo link_tag('/css/stylesheet.css'); ?>
   <!--   <script src="<?php echo base_url('javascript/funkcije.js'); ?>"></script>-->
 
     </head>
@@ -26,7 +26,7 @@ and open the template in the editor.
         <div class="container">
             <div class="row" id="header">
 		<div class="col-md-6">
-                    <img class="login_logo img-fluid " src="<?php echo base_url('slike/logo.png'); ?>" />
+                   <!--<img class="login_logo img-fluid " src="<?php echo base_url('slike/logo.png'); ?>" />-->
 		</div>
 		<div class="col-md-6" id="right">
                      <?php

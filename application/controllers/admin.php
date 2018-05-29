@@ -33,8 +33,9 @@ class admin extends CI_Controller {
 
     public function loadView($glavniDeo, $korisnici = NULL) {
         $korisnici['controller'] = $this->controller;
-        $this->load->view('sabloni/header');
         $this->load->view('admin/admin_menu');
+        $this->load->view('sabloni/header');
+       
         $this->load->view($glavniDeo, $korisnici);
         $this->load->view('sabloni/footer');
     }

@@ -28,8 +28,9 @@ class direktor extends admin {
 
     public function loadView($glavniDeo, $korisnici = NULL) {
         $korisnici['controller'] = $this->controller;
+         $this->load->view('direktor/direktor_menu');
         $this->load->view('sabloni/header');
-        $this->load->view('direktor/direktor_menu');
+      
         $this->load->view($glavniDeo, $korisnici);
         $this->load->view('sabloni/footer');
     }

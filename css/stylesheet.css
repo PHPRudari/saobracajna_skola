@@ -2,6 +2,19 @@
     padding-top: 100px;
 }
 
+
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+#container {
+   min-height:100%;
+   position:relative;
+}
+
+
 .container {
     
 
@@ -26,17 +39,27 @@
    
     margin: 0 auto;
     height:300px;
-    background-color: lightgrey;
+    background-color: #a9afba;
     width:100%;
      box-shadow: 5px 5px 15px gray;
      border-radius: 5px;
      max-width: 400px;
 }
 
+.navbar {
+     background-color: #a9afba;
+      height: 70px;
+/*  font-size: 15px; */
+      
+}
 .footer {
-    position: relative;
+    margin-top:20px;
+    position: fixed;
     margin-top: 50px;
+    height: 40px;
     bottom:0;
+    width: 100%;
+    background-color: #a9afba;
 }
 
 /*input[type=text] {
