@@ -2,13 +2,13 @@
 
 <head>
 
-<title>File Upload Success </title>
+<title>Додавање докумената </title>
 
 </head>
 
 <body>
 
-<h3>Your file was uploaded successfully </h3>
+<h3>Документ је успешно додат! </h3>
 
 <ul>
 
@@ -22,7 +22,7 @@
 
 <p>
 
-<?php echo anchor("admin/dokumentacija", 'Other files uploaded!'); ?>
+<?php echo anchor("admin/dokumentacija", 'Додај нови документ!'); ?>
 
 </p>
 
