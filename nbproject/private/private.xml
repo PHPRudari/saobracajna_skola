@@ -3,9 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/saobracajna_skola/application/views/dokumentacija.php</file>
-            <file>file:/C:/wamp64/www/saobracajna_skola/application/views/sabloni/header.php</file>
-            <file>file:/C:/wamp64/www/saobracajna_skola/application/controllers/admin.php</file>
+            <file>file:/C:/xampp/htdocs/saobracajna_skola/application/views/sabloni/header.php</file>
+            <file>file:/C:/xampp/htdocs/saobracajna_skola/application/controllers/admin.php</file>
+            <file>file:/C:/xampp/htdocs/saobracajna_skola/css/stylesheet.css</file>
+            <file>file:/C:/xampp/htdocs/saobracajna_skola/application/views/sabloni/footer.php</file>
+            <file>file:/C:/xampp/htdocs/saobracajna_skola/application/views/priznati_ispiti.php</file>
         </group>
     </open-files>
 </project-private>

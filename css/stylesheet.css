@@ -9,7 +9,8 @@ body {
    padding:0;
    height:100%;
    background: url("../slike/login_pozadina1.jpg") no-repeat center center fixed;
-    z-index: -1;
+   z-index: -1;
+    
 }
 #container {
    min-height:100%;
@@ -28,6 +29,7 @@ body {
     padding-bottom: 50px;
     padding-left: 30px;
     height: 100vh;
+ 
     
 }
 
@@ -131,3 +133,9 @@ body {
     margin:0 auto;
    
 }
+
+/*.navbar-toggler-icon {
+    z-index: 100;
+    color:white;
+    background-color: white;
+}*/
