@@ -56,7 +56,8 @@ else
         </form>   
             
        </div>
-    <?php echo form_open($controller . '/priznaj_ispite'); ?>
+    <div> 
+ <?php echo form_open($controller . '/priznaj_ispite'); ?>
     
     <div class="row">
        
@@ -188,21 +189,22 @@ else
         <div class="col-md-6"><br><br><br><br>
             <div class="dugme">
                 <input  type="submit" value="Unesi" name="priznaj" style="height: 100px; width: 200px">
+                <a href="<?php echo site_url($controller . "/dokumentacija") ?>">Документација</a><br>
+            <a href="<?php echo site_url($controller . "/ucenik") ?>">Ученик</a><br>
             </div>
         </div>
         
-    </div>
+    
     
     
 
-    <div class="row">
-        <div class="col-md-12">
-            <br><br>
-            <a href="<?php echo site_url($controller . "/dokumentacija") ?>">Документација</a><br>
-            <a href="<?php echo site_url($controller . "/ucenik") ?>">Ученик</a><br>
-        </div>
-    </div>
+   
+        
+ </div>       
+    
 </form>
+</div>
+
 </body>
 <script>
     function ajaxSearchUcenik()

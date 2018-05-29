@@ -8,26 +8,26 @@ body {
    margin:0;
    padding:0;
    height:100%;
-    background: url("../slike/login_pozadina1.jpg") no-repeat center center fixed;
-   
+   background: url("../slike/login_pozadina1.jpg") no-repeat center center fixed;
     z-index: -1;
 }
 #container {
    min-height:100%;
    position:relative;
+  
 }
 
 
 .container {
-    background-color: lightgrey;
-
+  /*  background-color: lightgrey;*/
+    color:white;
     border-radius: 5px;
     margin:0 auto;
-    box-shadow: 5px 5px 15px gray;
-    height: 80%;
+    /*box-shadow: 5px 5px 15px gray;*/
+    background-color: rgba(0, 0, 0, 0.4);
     padding-bottom: 50px;
     padding-left: 30px;
-    
+    height: 100vh;
     
 }
 
@@ -50,7 +50,7 @@ body {
 }
 
 .navbar {
-     background-color: #a9afba;
+     background-color: rgba(0,0,0,0.1);
       height: 70px;
       /* background: url("../slike/login_pozadina1.jpg") no-repeat center center fixed;*/
        color:white;
@@ -60,15 +60,16 @@ body {
       
 }
 .footer {
-    /* background: url("../slike/login_pozadina1.jpg") no-repeat center center fixed;*/
+    /*background: url("../slike/login_pozadina1.jpg") no-repeat center center fixed;*/
+    background-color: rgba(0,0,0,0.1);
     margin-top:20px;
-    position: fixed;
+    position: relative;
     margin-top: 50px;
     height: 40px;
     bottom:0;
     width: 100%;
     z-index: 100;
-    background-color: #a9afba;
+    
 }
 
 /*input[type=text] {

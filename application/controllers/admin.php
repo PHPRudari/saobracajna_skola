@@ -435,7 +435,7 @@ class admin extends CI_Controller {
         
     //$this->model_admin->priznaj_ispite();
    var_dump($_POST['predmet']);
- //  var_dump($_POST['ocena']);
+   var_dump($_POST['ocena']);
     }
 
     
