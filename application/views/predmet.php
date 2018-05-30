@@ -31,7 +31,7 @@
                         <option value="godina">Година образовања</option>
                         <option value="<?php ?>">Година образовања<</option>      
                     </select><br>
-                    <p>Списак испита</p>
+                    <p>Додај предмет</p>
                     <input type="text" name="ime_predmeta" placeholder="Име предмета"><br>
                     <input type="text" name="godina_obrazovanja" placeholder="Година образовања"><br>
                     <input type="text" name="podrucje_rada" placeholder="Подручје рада"><br>

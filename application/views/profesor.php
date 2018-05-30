@@ -119,7 +119,7 @@
         <!-- <a href="<//?php echo site_url("admin/index")?>">Врати се назад</a>-->
         <br>
         <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ubij_sesiju/"); ?>">Освежи страну</a><br>
-        <input class="dugme2 btn btn-primary btn-lg btn-block" type="submit" name="dodaj" value="Додај"><br>
+        <input class="dugme2 btn btn-primary btn-lg btn-block" type="submit" name="dodaj" value="Сачувај"><br>
 
         </form>
 
