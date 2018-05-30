@@ -135,7 +135,7 @@ body {
    
 }
 .dugme1 {
-   width: 500px;
+   max-width: 500px;
    color: red;
    font-size: large;
    background-color: yellow;
@@ -143,15 +143,15 @@ body {
    border: 1px solid black;
 }
 .dugme2{
-   width: 500px;
+   max-width: 500px;
    color: red;
-   font-size: x-large;
+   font-size: large;
    background-color: yellow;
    padding:10px;
    border: 1px solid black;
 }
 .dugme3{
-   width: 500px;
+   max-width: 500px;
    color: red;
    background-color: lightskyblue;
    font-size: large;
@@ -170,4 +170,7 @@ body {
 .form-check{
     padding: 10px;
     padding-left: 10px;
+}
+.col-form-label{
+    vertical-align: middle ;
 }

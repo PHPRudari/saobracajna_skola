@@ -11,7 +11,7 @@ echo validation_errors();
         <!--<form name="registracija" method="POST" action="<?php echo site_url($controller . "/unesi_ucenika") ?>">-->
 
 
-    <label for="search_data" class="col-2 col-form-label"><br> Претрага: </label>
+    <label for="search_data" class="col-2 col-form-label"> <span class="align-text-bottom"><br>Претрага:</span> </label>
     <div class="col-10">  
         <br><input class="form-control col-10" name="search_data" id="search_data" type="text" onkeyup="ajaxSearchUcenik();">
         <div id="suggestions">
@@ -21,12 +21,12 @@ echo validation_errors();
 
 </div>
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 h-100 d-table">
 
-        <a class="dugme1 btn btn-primary" href="<?php echo site_url($controller . "/dokumentacija") ?>">Документација</a><br><br>
+        <a class="dugme1 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/dokumentacija") ?>">Документација</a><br>
     </div>
-    <div class="col-md-6">
-        <a class="dugme1 btn btn-primary" href="<?php echo site_url($controller . "/priznati_ispiti") ?>">Признати испити</a>
+    <div class="col-md-6 h-100 d-table">
+        <a class="dugme1 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/priznati_ispiti") ?>">Признати испити</a><br>
     </div>
 </div>
 
@@ -91,7 +91,7 @@ echo validation_errors();
 
         <div class="form-group row form-inline">
             <label class="col-form-label col-sm-4 " for="jmbg">ЈМБГ:</label>
-            <input type="text" class="form-control " name="jmbg" placeholder="Унеси број уговора" value="<?php echo set_value("jmbg"); ?>"><?php echo form_error("jmbg", '<span style="color:red">', '</span>'); ?><br>
+            <input type="text" class="form-control " name="jmbg" placeholder="Унеси ЈМБГ" value="<?php echo set_value("jmbg"); ?>"><?php echo form_error("jmbg", '<span style="color:red">', '</span>'); ?><br>
         </div>
 
 <!--ЈМБГ: <input  type="text" name="jmbg" value="</?php echo set_value("jmbg") ?>" placeholder="Унеси ЈМБГ"><br>-->
@@ -183,7 +183,7 @@ echo validation_errors();
 
 
         <div class="form-group row form-inline">
-            <label class="col-form-label col-sm-4 " for="mobilni">Број мобилног телефона:</label>
+            <label class="col-form-label col-sm-4 " for="mobilni">Број моб. телефона:</label>
             <input type="tel" class="form-control " name="mobilni" placeholder="Унеси број мобилног телефона" value="<?php echo set_value("telefon_mobilni"); ?>"><?php echo form_error("mobilni", '<span style="color:red">', '</span>'); ?><br>
         </div>
 
@@ -222,7 +222,7 @@ echo validation_errors();
             <label class="form-check-label" for="oslobodjen">Oслобођен плаћања</label>
 
         </div>
-
+        <br>
 
         <div class="form-group row form-inline">
 
@@ -349,11 +349,11 @@ echo validation_errors();
 
     
         <div class="col-md-6">
-            <a class="dugme3 btn btn-primary" href="<?php echo site_url($controller . "/ubij_sesiju_ucenik/"); ?>">Освежи страну</a><br>
+            <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ubij_sesiju_ucenik/"); ?>">Освежи страну</a><br>
 
         </div>
         <div class="col-md-6">
-            <input type="submit" class="dugme2 btn btn-primary" name="Sacuvaj" value="Сачувај"><br>
+            <input type="submit" class="dugme2 btn btn-primary btn-lg btn-block" name="Sacuvaj" value="Сачувај"><br>
         </div>
         
     
