@@ -27,6 +27,7 @@ body {
     /*box-shadow: 5px 5px 15px gray;*/
     background-color: rgba(0, 0, 0, 0.4);
     padding-bottom: 50px;
+    /*padding-top: 15px;*/
     padding-left: 30px;
     height: 100%;
  
@@ -113,7 +114,8 @@ body {
 
 .pretraga {
     font-size: 25px;
-    font-weight: bold;
+    /*font-weight: bold;*/
+    text-align: center;
     margin: 30px auto;
     
 }
@@ -138,6 +140,7 @@ body {
    max-width: 500px;
    color: red;
    font-size: large;
+   font-weight: bold;
    background-color: yellow;
    padding:10px;
    border: 1px solid black;
@@ -145,6 +148,7 @@ body {
 .dugme2{
    max-width: 500px;
    color: red;
+   font-weight: bold;
    font-size: large;
    background-color: yellow;
    padding:10px;
@@ -154,6 +158,7 @@ body {
    max-width: 500px;
    color: red;
    background-color: lightskyblue;
+   font-weight: bold;
    font-size: large;
    padding:10px;
    border: 1px solid black;
@@ -172,5 +177,8 @@ body {
     padding-left: 10px;
 }
 .col-form-label{
-    vertical-align: middle ;
+    
 }
+/*#span{
+    vertical-align: bottom;
+}*/

@@ -6,26 +6,31 @@ echo validation_errors();
 //var_dump($_SESSION['ucenik']);
 //var_dump($godina_obrazovanja);
 ?>
+
+
 <div class="form-group row pretraga">
 
         <!--<form name="registracija" method="POST" action="<?php echo site_url($controller . "/unesi_ucenika") ?>">-->
 
-
-    <label for="search_data" class="col-2 col-form-label"> <span class="align-text-bottom"><br>Претрага:</span> </label>
-    <div class="col-10">  
-        <br><input class="form-control col-10" name="search_data" id="search_data" type="text" onkeyup="ajaxSearchUcenik();">
+    <div class="row col-md-12">
+        
+    <label for="search_data" class="col-2 col-form-label"> <br>Претрага: </label>
+    <div class="col-10">  <br>
+        <input class="form-control col-10" name="search_data" id="search_data" type="text" onkeyup="ajaxSearchUcenik();">
         <div id="suggestions">
             <div id="autoSuggestionsList"></div>
         </div>
     </div>
-
+    </div>
 </div>
+
+
 <div class="row">
-    <div class="col-md-6 h-100 d-table">
+    <div class="col-md-6 ">
 
         <a class="dugme1 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/dokumentacija") ?>">Документација</a><br>
     </div>
-    <div class="col-md-6 h-100 d-table">
+    <div class="col-md-6 ">
         <a class="dugme1 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/priznati_ispiti") ?>">Признати испити</a><br>
     </div>
 </div>
