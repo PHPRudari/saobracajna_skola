@@ -23,10 +23,10 @@ and open the template in the editor.
     </head>
     <body>
 
-        <div class="container">
+<!--        <div class="container">
             <div class="row" id="header">
                 <div class="col-md-6">
-                   <!--<img class="login_logo img-fluid " src="<?php echo base_url('slike/logo.png'); ?>" />-->
+                   <img class="login_logo img-fluid " src="<?php echo base_url('slike/logo.png'); ?>" />
                 </div>
                 <div class="col-md-6" id="right">
                     <?php
@@ -34,7 +34,7 @@ and open the template in the editor.
                     //  echo "Ulogovan je korisnik: $name";
                     ?>
                 </div>
-            </div>
+            </div>-->
 
 
 
