@@ -104,8 +104,8 @@ echo validation_errors();
 
     
     <div class="form-group row form-inline">
-        <label class="col-form-label col-sm-4 " for="prezime_majke">Девојачко презиме мајке:</label>
-        <input type="text" class="form-control " name="prezime_majke" placeholder="Унеси девојачко презиме мајке" value="<?php echo set_value("prezime_majka"); ?>"><?php echo form_error("prezime_majke", '<span style="color:red">', '</span>'); ?><br>
+        <label class="col-form-label col-sm-4 " for="prezime_majke">Презиме мајке:</label>
+        <input type="text" class="form-control " name="prezime_majke" placeholder="Унеси презиме мајке" value="<?php echo set_value("prezime_majka"); ?>"><?php echo form_error("prezime_majke", '<span style="color:red">', '</span>'); ?><br>
     </div>
     
     <!--Девојачко презиме мајке: <input  type="text" name="prezime_majke" value="</?php echo set_value("prezime_majka") ?>" placeholder="Девојачко презиме мајке"><br>-->
@@ -137,6 +137,18 @@ echo validation_errors();
 <!--Општина рођења: <input type="text" name="opstina_rodj" value="</?php echo set_value("opstina_rodj") ?>" placeholder="Унеси општину рођења"><br>-->
 
     
+
+    
+
+
+</div>
+
+
+<div class="col-md-6">
+    
+<!--</?php echo form_open($controller . '/unesi_ucenika'); ?>-->
+    
+
     <div class="form-group row form-inline">
         <label class="col-form-label col-sm-4 " for="adresa_stan">Адреса становања:</label>
         <input type="text" class="form-control " name="adresa_stan" placeholder="Унеси место рођења" value="<?php echo set_value("adresa_stanovanje"); ?>"><?php echo form_error("adresa_stan", '<span style="color:red">', '</span>'); ?><br>
@@ -151,18 +163,6 @@ echo validation_errors();
     </div>
     
     <!--Место становања: <input type="text" name="mesto_stan" value="</?php echo set_value("mesto_stanovanje") ?>" placeholder="Унеси место становања"><br>-->
-
-    
-
-
-</div>
-
-
-<div class="col-md-6">
-    
-<!--</?php echo form_open($controller . '/unesi_ucenika'); ?>-->
-    
-
 
     <div class="form-group row form-inline">
         <label class="col-form-label col-sm-4 " for="broj_tel">Број телефона:</label>
