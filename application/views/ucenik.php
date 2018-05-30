@@ -3,7 +3,7 @@
 <?php
 echo validation_errors();
 //var_dump($tip_ucenik);
-var_dump($_SESSION['ucenik']['iducenik']);
+//var_dump($_SESSION['ucenik']['iducenik']);
 ?>
 <div class="form-group row pretraga">
 
