@@ -3,7 +3,7 @@
 <?php
 echo validation_errors();
 //var_dump($tip_ucenik);
-//var_dump($_SESSION);
+var_dump($_SESSION['ucenik']['iducenik']);
 ?>
 <div class="form-group row pretraga">
 
@@ -297,7 +297,7 @@ echo validation_errors();
         <select id="tip" name="tip_ucenik" class="form-control ">
 
             <option selected hidden ><?php
-                if (!isset($tip['idtip_ucenik'])) {
+                if (!isset($_SESSION['ucenik']['iducenik'])) {
                     echo 'Тип ученика';
                 } else {
                     foreach ($tip_ucenik as $tip) {
