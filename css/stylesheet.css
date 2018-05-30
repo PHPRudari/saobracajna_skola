@@ -133,7 +133,20 @@ body {
     margin:0 auto;
    
 }
-
+.dugme1 {
+    width: 500px;
+    color: red;
+    background-color: yellow;
+   padding:10px;
+   border: 1px solid black;
+}
+.dugme2{
+    width: 500px;
+    color: red;
+    background-color: yellow;
+   padding:10px;
+   border: 1px solid black;
+}
 /*.navbar-toggler-icon {
     z-index: 100;
     color:white;

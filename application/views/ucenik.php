@@ -19,12 +19,21 @@ echo validation_errors();
     </div>
 
 </div>
-
+<div class="row">
+    <div class="col-md-6">
+        
+   <a class="dugme1 btn btn-primary" href="<?php echo site_url($controller . "/dokumentacija") ?>">Документација</a><br><br>
+    </div>
+    <div class="col-md-6">
+   <a class="dugme1 btn btn-primary" href="<?php echo site_url($controller . "/priznati_ispiti") ?>">Признати испити</a>
+   </div>
+</div>
 
 <div class="row">
 <div class="col-md-6">
     <?php echo form_open($controller . '/unesi_ucenika'); ?>
 
+    
     
     
     <div class="form-group row form-inline">
@@ -328,16 +337,12 @@ echo validation_errors();
     <input type="radio" name="tip_ucenika" value="un"> Упис у неки разред школе<br>
     <input type="radio" name="tip_ucenika" value="s"> Специјализација<br><br><br>-->
     
-    <input type="submit" name="Sacuvaj" value="Сачувај"><br>
+    <input type="submit" class="dugme2 btn btn-primary" name="Sacuvaj" value="Сачувај">
     <a href="<?php echo site_url($controller . "/ubij_sesiju_ucenik/"); ?>">Osveži stranu</a><br><br>
 
 
 
-    <div class="col-md-12">
-        <a href="<?php echo site_url($controller . "/dokumentacija") ?>">Документација</a><br>
-        <a href="<?php echo site_url($controller . "/priznati_ispiti") ?>">Признати испити</a>
-
-    </div>
+    
 </div>
 </form>
 </div>
