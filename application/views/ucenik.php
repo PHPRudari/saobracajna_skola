@@ -1,6 +1,10 @@
 
 
-<?php echo validation_errors(); ?>
+<?php
+echo validation_errors();
+//var_dump($tip_ucenik);
+//var_dump($_SESSION);
+?>
 <?php echo form_open($controller . '/unesi_ucenika'); ?>
 
         <!--<form name="registracija" method="POST" action="<?php echo site_url($controller . "/unesi_ucenika") ?>">-->
@@ -157,9 +161,9 @@
         <!--<input type="checkbox" name="oslobodjen"> Oслобођен плаћања<br>-->
 
         <div class="form-check">
-      <input type="checkbox" name="oslobodjen" id="oslobodjen">
-      <label class="form-check-label" for="oslobodjen">Oслобођен плаћања</label>
-    </div>
+            <input type="checkbox" name="oslobodjen" id="oslobodjen">
+            <label class="form-check-label" for="oslobodjen">Oслобођен плаћања</label>
+        </div>
 
 
         <div class="form-group">
@@ -213,9 +217,9 @@
 
         <div class="form-group">
             <label class="col-sm-6 col-form-label" for="profil">Образовни профил:</label>
-        <select name="profil" id="profil" class="form-control col-sm-6">
-            <option selected hidden>Прво изаберите подручје рада</option>
-        </select>
+            <select name="profil" id="profil" class="form-control col-sm-6">
+                <option selected hidden>Прво изаберите подручје рада</option>
+            </select>
         </div>
 
 
@@ -238,85 +242,94 @@
 
 
         <br>
-        
+
         <div class="form-group">
 
             <label class="col-sm-6 col-form-label" for="tip_ucenik">Тип ученика:</label>
             <select id="tip" name="tip_ucenik" class="form-control col-sm-6">
 
                 <option selected hidden ><?php
-                    if (!isset($_POST['tip_ucenik'])) {
+                    if (!isset($tip_ucenik)) {
                         echo 'Тип ученика';
-                    } else
-                        echo set_value("tip_ucenik");
-                    ?></option>
-                <?php
-                foreach ($tip_ucenik as $row) {
-                    echo '<option value="' . $row['idtip_ucenik'] . '">';
-                    echo $row['naziv_tip_ucenik'];
-                    echo '</option>';
-                }
-                ?>
-
-            </select><br>
-        </div>
+                    } else {
+                        foreach ($tip_ucenik as $tip) {
+                           
+                            if ($tip['idtip_ucenik'] == $_SESSION['ucenik']['tip_ucenik_idtip_ucenik'])
+                                echo ($tip['naziv_tip_ucenik']);
+                               
+                        }
+                    }
+                        ?>
 
 
-<!--<input type="radio" name="tip_ucenika" value="p"> Преквалификација<br>
-<input type="radio" name="tip_ucenika" value="d"> Доквалификација<br>
-<input type="radio" name="tip_ucenika" value="up"> Упис у први разред школе<br>
-<input type="radio" name="tip_ucenika" value="un"> Упис у неки разред школе<br>
-<input type="radio" name="tip_ucenika" value="s"> Специјализација<br><br><br>-->
-        <input type="submit" name="Sacuvaj" value="Сачувај"><br>
-        <a href="<?php echo site_url($controller . "/ubij_sesiju_ucenik/"); ?>">Osveži stranu</a><br><br>
+                    </option>
+                        <?php
+                        foreach ($tip_ucenik as $row) {
+                            echo '<option value="' . $row['idtip_ucenik'] . '">';
+                            echo $row['naziv_tip_ucenik'];
+                            echo '</option>';
+                        }
+                        ?>
+
+                </select><br>
+            </div>
+
+
+    <!--<input type="radio" name="tip_ucenika" value="p"> Преквалификација<br>
+    <input type="radio" name="tip_ucenika" value="d"> Доквалификација<br>
+    <input type="radio" name="tip_ucenika" value="up"> Упис у први разред школе<br>
+    <input type="radio" name="tip_ucenika" value="un"> Упис у неки разред школе<br>
+    <input type="radio" name="tip_ucenika" value="s"> Специјализација<br><br><br>-->
+            <input type="submit" name="Sacuvaj" value="Сачувај"><br>
+            <a href="<?php echo site_url($controller . "/ubij_sesiju_ucenik/"); ?>">Osveži stranu</a><br><br>
 
 
 
-        <div class="col-md-12">
-            <a href="<?php echo site_url($controller . "/dokumentacija") ?>">Документација</a><br>
-            <a href="<?php echo site_url($controller . "/priznati_ispiti") ?>">Признати испити</a>
+            <div class="col-md-12">
+                <a href="<?php echo site_url($controller . "/dokumentacija") ?>">Документација</a><br>
+                <a href="<?php echo site_url($controller . "/priznati_ispiti") ?>">Признати испити</a>
 
+            </div>
         </div>
     </div>
-</div>
-</form>
+    </form>
 
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#podrucje').on('change', function () {
-            var idpodrucje = $(this).val();
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#podrucje').on('change', function () {
+                var idpodrucje = $(this).val();
 
-            if (idpodrucje) {
-                $.ajax({
-                    type: 'POST',
-                    url: "<?php echo base_url(); ?>index.php/admin/select_box/",
-                    data: 'idpodrucje_rada=' + idpodrucje,
-                    success: function (html) {
-                        $('#profil').html(html);
-                    }
-                });
-            }
+                if (idpodrucje) {
+                    $.ajax({
+                        type: 'POST',
+                        url: "<?php echo base_url(); ?>index.php/admin/select_box/",
+                        data: 'idpodrucje_rada=' + idpodrucje,
+                        success: function (html) {
+                            $('#profil').html(html);
+                        }
+                    });
+                }
+            });
         });
-    });
 
-    function ajaxSearchUcenik()
-    {
-        var input_data = $('#search_data').val();
-
-        if (input_data.length === 0)
+        function ajaxSearchUcenik()
         {
-            $('#suggestions').hide();
-        } else
-        {
-            var post_data = {
-                'search_data': input_data,
-                '<?php echo $this->security->get_csrf_token_name(); ?>': '<?php echo $this->security->get_csrf_hash(); ?>'
-            };
+            var input_data = $('#search_data').val();
 
-            $.ajax({
-                type: "POST",
-                url: "<?php echo base_url(); ?>index.php/<?php echo $controller; ?>/trazi_ucenika/",
+            if (input_data.length === 0)
+            {
+                $('#suggestions').hide();
+            } else
+            {
+                var post_data = {
+                    'search_data': input_data,
+                    '<?php echo $this->security->get_csrf_token_name(); ?>': '<?php echo $this->security->get_csrf_hash(); ?>'
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: "<?php echo base_url(); ?>index.php/<?php echo $controller; ?>/trazi_ucenika/",
                 data: post_data,
                 success: function (data) {
                     //return success
