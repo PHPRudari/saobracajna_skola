@@ -297,7 +297,7 @@ echo validation_errors();
         <select id="tip" name="tip_ucenik" class="form-control ">
 
             <option selected hidden ><?php
-                if (!isset($tip_ucenik)) {
+                if (!isset($tip['idtip_ucenik'])) {
                     echo 'Тип ученика';
                 } else {
                     foreach ($tip_ucenik as $tip) {
