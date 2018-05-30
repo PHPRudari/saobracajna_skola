@@ -2,8 +2,9 @@
 
 <?php
 echo validation_errors();
-//var_dump($tip_ucenik);
 //var_dump($_SESSION['ucenik']['iducenik']);
+//var_dump($_SESSION['ucenik']);
+//var_dump($godina_obrazovanja);
 ?>
 <div class="form-group row pretraga">
 
@@ -219,7 +220,7 @@ echo validation_errors();
         <div class="form-check">
             <input class="form-check-input" type="checkbox" name="oslobodjen" id="oslobodjen">
             <label class="form-check-label" for="oslobodjen">Oслобођен плаћања</label>
-                   
+
         </div>
 
 
@@ -228,18 +229,23 @@ echo validation_errors();
             <label class="col-sm-4 col-form-label" for="godina_obrazovanja">Година образовања:</label>
             <select name="godina_obrazovanja" class="form-control ">
                 <option selected hidden ><?php
-                    if (!isset($_POST['godina_obrazovanja'])) {
-                        echo 'Година образовања';
-                    } else
-                        echo set_value("godina_obrazovanja");
-                    ?></option>
-                <?php
-                foreach ($godina_obrazovanja as $row) {
-                    echo '<option value="' . $row['idgodina_obrazovanja'] . '">';
-                    echo $row['naziv'];
-                    echo '</option>';
+                if (!isset($_SESSION['ucenik']['iducenik'])) {
+                    echo 'Година образовања';
+                } else {
+                    foreach ($godina_obrazovanja as $go) {
+                        if ($go['idgodina_obrazovanja'] == $_SESSION['ucenik']['godina_obrazovanja_idgodina_obrazovanja'])
+                            echo ($go['naziv']);
+                    }
                 }
-                ?>    
+                ?>
+            </option>
+            <?php
+            foreach ($godina_obrazovanja as $row) {
+                echo '<option value="' . $row['idgodina_obrazovanja'] . '">';
+                echo $row['naziv'];
+                echo '</option>';
+            }
+            ?> 
             </select><br>
         </div>
 
@@ -338,13 +344,21 @@ echo validation_errors();
     <input type="radio" name="tip_ucenika" value="s"> Специјализација<br><br><br>-->
 
 
-        <a class="dugme3 btn btn-primary" href="<?php echo site_url($controller . "/ubij_sesiju_ucenik/"); ?>">Освежи страну</a><br>
-        <input type="submit" class="dugme2 btn btn-primary" name="Sacuvaj" value="Сачувај"><br>
-
-
-
 
     </div>
+
+    
+        <div class="col-md-6">
+            <a class="dugme3 btn btn-primary" href="<?php echo site_url($controller . "/ubij_sesiju_ucenik/"); ?>">Освежи страну</a><br>
+
+        </div>
+        <div class="col-md-6">
+            <input type="submit" class="dugme2 btn btn-primary" name="Sacuvaj" value="Сачувај"><br>
+        </div>
+        
+    
+
+
 </form>
 </div>
 
