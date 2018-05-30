@@ -367,23 +367,22 @@ class model_admin extends CI_Model {
     //    var_dump($_POST['predmet']);
      //   var_dump($_POST['ocena']);
        // var_dump($_SESSION['ucenik']['iducenik']);
-    $predmet=$_POST['predmet'];
-    $ocena=$_POST['ocena'];
+    //$predmet=$_POST['predmet'];
+    $ocena=array_filter($_POST['ocena']);
     //$ocena=5;
+   // var_dump($ocena);
     $id=$_SESSION['ucenik']['iducenik'];
     
-       foreach ($predmet as $row)  {
-           foreach ($ocena as $oc) {
-               
-           if ($row==$oc) {
-          $this->db->query ("insert into priznati_predmet values ('$row','$id','$oc')");
-           echo $this->query;
-           }
-           }
-    }
-         
-           
-       
+     foreach ($ocena as $key => $value)
+     {
+       //  var_dump($key);
+       //var_dump($value);
+     
+     
+        
+       $this->db->query ("insert into priznati_predmet values ('$key','$id','$value')");
+     
+     } 
     
     
     
