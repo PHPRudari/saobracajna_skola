@@ -9,10 +9,10 @@ echo validation_errors();
 
         <!--<form name="registracija" method="POST" action="<?php echo site_url($controller . "/unesi_ucenika") ?>">-->
 
-
-    <label for="search_data" class="col-2 col-form-label"> Претрага: </label>
+    
+    <label for="search_data" class="col-2 col-form-label"><br> Претрага: </label>
     <div class="col-10">  
-        <input class="form-control col-10" name="search_data" id="search_data" type="text" onkeyup="ajaxSearchUcenik();">
+        <br><input class="form-control col-10" name="search_data" id="search_data" type="text" onkeyup="ajaxSearchUcenik();">
         <div id="suggestions">
             <div id="autoSuggestionsList"></div>
         </div>

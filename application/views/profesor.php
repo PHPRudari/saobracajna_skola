@@ -30,34 +30,34 @@
 
 
 
-        <div class="form-group">
+        <div class="form-group row form-inline">
             <label class="col-form-label col-4 " for="ime">Име:</label>
             <input type="text" class="form-control " name="ime" placeholder="Унеси име" value="<?php echo set_value("ime"); ?>"><?php echo form_error("ime", '<span style="color:red">', '</span>'); ?><br>
         </div>
 
-        <div class="form-group">
+        <div class="form-group row form-inline">
             <label class="col-4 col-form-label" for="prezime"> Презиме:</label>
             <input type="text" class="form-control" name="prezime" placeholder="Унеси презиме" value="<?php echo set_value("prezime"); ?>"><?php echo form_error("prezime", '<span style="color:red">', '</span>'); ?><br>
         </div>   
 
-<div class="form-group">
+<div class="form-group row form-inline">
             <label class="col-4 col-form-label" for="adresa"> Адреса:</label>
             <input type="text" class="form-control" name="adresa"  placeholder="Унеси адресу" value="<?php echo set_value("adresa"); ?>"><?php echo form_error("adresa", '<span style="color:red">', '</span>'); ?><br>
         </div>   
 
-            <div class="form-group">
+            <div class="form-group row form-inline">
             <label class="col-4 col-form-label" for="broj_telefon"> Број телефона:</label>
             <input type="text" class="form-control" name="broj_telefon"  placeholder="Унеси телефон" value="<?php echo set_value("broj_telefon"); ?>"><?php echo form_error("broj_telefon", '<span style="color:red">', '</span>'); ?><br>
         </div>   
 
- <div class="form-group">
+ <div class="form-group row form-inline">
             <label class="col-4 col-form-label" for="e-mail">Е-пошта:</label>
             <input type="text" class="form-control" name="e-mail"  placeholder="Унеси е-маил" value="<?php echo set_value("e-mail"); ?>"><?php echo form_error("e-mail", '<span style="color:red">', '</span>'); ?><br>
         </div>   
         
    
      
-<div class="form-group">
+<div class="form-group row form-inline">
        
      <label class="col-4 col-form-label" for="status">Статус:</label>
     <select name="status"class="form-control">
@@ -144,6 +144,7 @@
 
     </div>
 </div>
+
 
 
 <script type="text/javascript" >
