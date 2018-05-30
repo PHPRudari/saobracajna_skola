@@ -70,7 +70,11 @@ class model_admin extends CI_Model {
     }
     
     public function izmeni_ucenika($iducenik) {
-
+        if (isset($_POST['oslobodjen'])) {
+            $oslobodjen = 1;
+        } else {
+            $oslobodjen = 0;
+        }
         $data = array(
             'jedinstveni_broj_ucenik' => $this->input->post("jedinstveni_broj"),
             'delovodni_broj' => $this->input->post("delovodni"),

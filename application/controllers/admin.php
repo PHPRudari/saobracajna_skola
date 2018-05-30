@@ -125,7 +125,6 @@ class admin extends CI_Controller {
                 $this->session->set_flashdata($data);
 
                 //unset($_SESSION['prof']);
-                ;
                 redirect(site_url("/$this->controller/ucenik"));
 
                 // redirect(site_url("/$this->controller/profesor")); 
@@ -181,7 +180,6 @@ class admin extends CI_Controller {
         $data['profil'] = $result1;
         $result = $this->model_admin->dohvati_skolska_godina();
         $data['godina_obrazovanja'] = $result;
-        ;
         $result = $this->model_admin->dohvati_predmet();
         $data['predmet'] = $result;
         if (isset($_SESSION['ucenik'])) {
@@ -245,7 +243,6 @@ class admin extends CI_Controller {
                 $this->session->set_flashdata($data);
 
                 //unset($_SESSION['prof']);
-                ;
                 redirect(site_url("/$this->controller/profesor"));
 
                 // redirect(site_url("/$this->controller/profesor")); 
