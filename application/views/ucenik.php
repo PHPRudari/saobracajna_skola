@@ -337,8 +337,9 @@ echo validation_errors();
     <input type="radio" name="tip_ucenika" value="un"> Упис у неки разред школе<br>
     <input type="radio" name="tip_ucenika" value="s"> Специјализација<br><br><br>-->
     
-    <input type="submit" class="dugme2 btn btn-primary" name="Sacuvaj" value="Сачувај">
-    <a href="<?php echo site_url($controller . "/ubij_sesiju_ucenik/"); ?>">Osveži stranu</a><br><br>
+    
+    <a class="dugme3 btn btn-primary" href="<?php echo site_url($controller . "/ubij_sesiju_ucenik/"); ?>">Освежи страну</a><br>
+    <input type="submit" class="dugme2 btn btn-primary" name="Sacuvaj" value="Сачувај"><br>
 
 
 
