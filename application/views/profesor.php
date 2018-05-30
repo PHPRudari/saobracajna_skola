@@ -113,8 +113,10 @@
         <input type="radio" name="angazovan" value="1" checked>Редован
         <input type="radio" name="angazovan" value="2" >Ангажован<br>
         <!-- <a href="<//?php echo site_url("admin/index")?>">Врати се назад</a>-->
-        <a href="<?php echo site_url($controller . "/ubij_sesiju/"); ?>">Osveži stranu</a>
-        <input type="submit" name="dodaj" value="Додај"><br>
+        
+        <a class="dugme3 btn btn-primary" href="<?php echo site_url($controller . "/ubij_sesiju/"); ?>">Освежи страну</a><br>
+        <input class="dugme2 btn btn-primary" type="submit" name="dodaj" value="Додај"><br>
+        
         </form>
 
         <?php
