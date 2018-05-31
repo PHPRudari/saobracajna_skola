@@ -2,16 +2,19 @@
     <div class="row">
         <div class="col-md-6">
 
-            <form name="predmet">
-
-                <div id="unos_podrucja_rada" class="form-group row form-inline">
+            
+<?php echo form_open($controller . '/unesi_podrucje'); ?>
+                <div id="podrucje_rada" class="form-group row form-inline">
+                    
                 <!--<input type="text" name="podrucje_rada" placeholder="Подручје рада" disabled>--><br>
                     <label class="col-form-label col-sm-4" for="podrucje_rada"><p>Подручје рада:</p></label>
                     <input type="text" class="form-control col-sm-8" name="podrucje_rada" placeholder="Унеси подручје рада" value="<?php echo set_value("podrucje_rada"); ?>"><?php echo form_error("podrucje_rada", '<span style="color:red">', '</span>'); ?><br>
-                    <input class="dugme3 btn btn-primary btn-lg btn-block" type="submit" name="izmeni" value="Измени">
-                    <input class="dugme3 btn btn-primary btn-lg btn-block" type="submit" name="obrisi" value="Обриши">
-                    <input class="dugme1 btn btn-primary btn-lg btn-block" type="submit" name="snimi" value="Сними">
+                    <!--<input class="dugme3 btn btn-primary btn-lg btn-block" type="submit" name="izmeni" value="Измени">-->
+                    <!--<input class="dugme3 btn btn-primary btn-lg btn-block" type="submit" name="obrisi" value="Обриши">-->
+                    <input class="dugme1 btn btn-primary btn-lg btn-block" type="submit" name="snimi" value="Сачувај">
                 </div>
+            </form>
+            
                 <div id="unos_obrazovnog_profila" class="form-group row form-inline">
                     <!--<input type="text" name="obrazovni_profil" value="Образовни профил" disabled>--><br>
                     <label class="col-form-label col-sm-4" for="obrazovni_profil"><p>Образовни профил:</p></label>

@@ -338,6 +338,16 @@ class model_admin extends CI_Model {
         return $result;
     }
     
+    public function unesi_podrucje() {
+
+        $data = array(
+            'naziv' => $this->input->post("podrucje_rada"),
+
+        );
+
+        $this->db->insert("podrucje_rada", $data);
+    }
+    
     public function obrisi_podrucje($idpodrucje) {
 
         $this->db->query("delete from podrucje_rada where idpodrucje_rada='$idpodrucje'");

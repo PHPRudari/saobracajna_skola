@@ -33,7 +33,7 @@ class admin extends CI_Controller {
 
     public function loadView($glavniDeo, $korisnici = NULL) {
         $korisnici['controller'] = $this->controller;
-       
+
         $this->load->view('sabloni/header');
         $this->load->view('admin/admin_menu');
         $this->load->view($glavniDeo, $korisnici);
@@ -334,74 +334,28 @@ class admin extends CI_Controller {
         $this->session->set_flashdata($data);
         redirect(site_url("/$this->controller/profesor"));
     }
-    
+
+    public function unesi_podrucje() {
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+        // $_POST = $_SESSION['ucenik'];
+        $this->form_validation->set_rules('podrucje_rada', 'Podrucje_rada', 'required', array('required' => 'Ово поље је обавезно.'));
+
+        if ($this->form_validation->run() === FALSE) {
+            $this->predmet();
+        } else {
+            $this->model_admin->unesi_podrucje();
+            $data['poruka'] = "Подручје рада је успешно додато у базу."; //TODO
+            redirect(site_url("/$this->controller/predmet"));
+        }
+    }
+
     public function obrisi_podrucje($idpodrucje) {
         $this->model_admin->obrisi_podrucje($idpodrucje);
-        $data = array(
-            'poruka' => "Предмет је успешно обрисан.");
+        $data['poruka'] = "Подручје рада је успешно обрисано.";
         $this->session->set_flashdata($data);
         redirect(site_url("/$this->controller/predmet"));
     }
-
-    /* public function index_pretraga($trazi = NULL) {
-      if ($trazi == NULL)
-      $profesor = $this->model_admin->dohvati_profesora();
-      else
-      $profesor = $this->model_admin->pretraga_profesora($ime);
-      $data['ime'] = $ime;
-      $data['controller'] = "admin";
-      $data['metoda'] = "pretraga";
-      $this->loadView($data, "profesor.php");
-      } */
-
-    /* public function izmeni_profesora() {
-      $this->load->helper('form');
-      $this->load->library('form_validation');
-
-      //$this->form_validation->set_data($data);
-
-      $this->form_validation->set_rules('ime', 'Ime_profesora', 'required|min_length[3]|max_length[20]',
-      array('required'=>'Ово поље је обавезно.',
-      'min_length' => 'Име мора да садржи најмање 3 алфанумеричка карактера.',
-      'max_length'=>'Име мора да садржи највише 20 алфанумеричких карактера.'));
-      $this->form_validation->set_rules('prezime', 'Prezime_profesora', 'required',
-      array('required'=>'Ово поље је обавезно.'));
-      $this->form_validation->set_rules('adresa', 'Adresa_stanovanja', 'required',
-      array('required'=>'Ово поље је обавезно.'));
-      $this->form_validation->set_rules('broj_telefon', 'Broj_telefona', 'required',
-      array('required'=>'Ово поље је обавезно.'));
-      $this->form_validation->set_rules('e-mail', 'Email', 'required',
-      array('required'=>'Ово поље је обавезно.'));
-
-
-      if($this->form_validation->run()=== FALSE){
-      //$this->form_validation->set_message($data, '{field} nije u ispravnom obliku!');
-      $this->loadView("profesor.php");
-      $this->izmeni_profesora($idprofesor);
-      }else{
-      $this->model_admin->unesi_profesora();
-      /*$data = array(
-      'poruka' => "Profesor je uspešno dodat u bazu!");
-      $this->session->set_userdata($data);
-      redirect(site_url('/admin/profesor'));
-      }
-
-
-      } */
-
-    /* public function ajax() {
-      $trazi = $this->input->get('text');
-
-      $this->db->like("ime", $trazi);
-      $this->db->or_like("prezime", $trazi);
-      $this->db->from("profesor");
-      $this->db->select("*");
-
-      $query = $this->db->get();
-
-      $result = $query->result_array();
-      echo json_encode($result);
-      } */
 
     function do_upload() {
 
@@ -447,20 +401,20 @@ class admin extends CI_Controller {
     }
 
     public function stampa() {
-      
-    $this->load->library('pdfgenerator');
-		$data['users']=array(
-			array('firstname'=>'I am','lastname'=>'Programmer','email'=>'iam@programmer.com'),
-			array('firstname'=>'I am','lastname'=>'Designer','email'=>'iam@designer.com'),
-			array('firstname'=>'I am','lastname'=>'User','email'=>'iam@user.com'),
-			array('firstname'=>'I am','lastname'=>'Quality Assurance','email'=>'iam@qualityassurance.com')
-		);
-    $html = $this->load->view('izvestaj1', $data, true);
-    $filename = 'report_'.time();
-    $this->pdfgenerator->generate($html, $filename, true, 'A4', 'portrait');
 
+        $this->load->library('pdfgenerator');
+        $data['users'] = array(
+            array('firstname' => 'I am', 'lastname' => 'Programmer', 'email' => 'iam@programmer.com'),
+            array('firstname' => 'I am', 'lastname' => 'Designer', 'email' => 'iam@designer.com'),
+            array('firstname' => 'I am', 'lastname' => 'User', 'email' => 'iam@user.com'),
+            array('firstname' => 'I am', 'lastname' => 'Quality Assurance', 'email' => 'iam@qualityassurance.com')
+        );
+        $html = $this->load->view('izvestaj1', $data, true);
+        $filename = 'report_' . time();
+        $this->pdfgenerator->generate($html, $filename, true, 'A4', 'portrait');
     }
 
 }
+
 //https://arjunphp.com/generating-a-pdf-in-codeigniter-using-mpdf/
 ?>

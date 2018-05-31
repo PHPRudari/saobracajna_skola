@@ -1,7 +1,7 @@
 
 
 <?php
-echo validation_errors();
+//echo validation_errors();
 //var_dump($_SESSION['ucenik']['iducenik']);
 //var_dump($_SESSION['ucenik']);
 //var_dump($godina_obrazovanja);
