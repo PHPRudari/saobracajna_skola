@@ -6,8 +6,8 @@
             <div id="podrucje_rada" class="form-group row form-inline">
 
 <!--<input type="text" name="podrucje_rada" placeholder="Подручје рада" disabled>--><br>
-                <label class="col-form-label col-sm-4" for="podrucje_rada"><p>Подручје рада:</p></label><br>
-                <input type="text" class="form-control col-sm-8" name="podrucje_rada" placeholder="Унеси подручје рада" value="<?php echo set_value("podrucje_rada"); ?>"><?php echo form_error("podrucje_rada", '<span style="color:red">', '</span>'); ?><br>
+                <label class="col-form-label col-sm-12" for="podrucje_rada"><p>Подручје рада:</p></label><br>
+                <br><input type="text" class="form-control col-sm-12" name="podrucje_rada" placeholder="Унеси подручје рада" value="<?php echo set_value("podrucje_rada"); ?>"><?php echo form_error("podrucje_rada", '<span style="color:red">', '</span>'); ?><br>
                 <!--<input class="dugme3 btn btn-primary btn-lg btn-block" type="submit" name="izmeni" value="Измени">-->
                 <!--<input class="dugme3 btn btn-primary btn-lg btn-block" type="submit" name="obrisi" value="Обриши">-->
                 <input class="dugme1 btn btn-primary btn-lg btn-block" type="submit" name="snimi" value="Сачувај">
