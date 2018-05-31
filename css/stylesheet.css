@@ -150,7 +150,7 @@ body {
    color: red;
    font-weight: bold;
    font-size: large;
-   background-color: yellow;
+   background-color: black;
    padding:10px;
    border: 1px solid black;
 }
@@ -163,6 +163,16 @@ body {
    padding:10px;
    border: 1px solid black;
 }
+.dugme4{
+   max-width: 500px;
+   color: red;
+   background-color: lightcoral;
+   font-weight: bold;
+   font-size: large;
+   padding:10px;
+   border: 1px solid black;
+}
+
 /*.navbar-toggler-icon {
     z-index: 100;
     color:white;

@@ -334,6 +334,14 @@ class admin extends CI_Controller {
         $this->session->set_flashdata($data);
         redirect(site_url("/$this->controller/profesor"));
     }
+    
+    public function obrisi_podrucje() {
+        $this->model_admin->obrisi_podrucje();
+        $data = array(
+            'poruka' => "Предмет је успешно обрисан.");
+        $this->session->set_flashdata($data);
+        redirect(site_url("/$this->controller/predmet"));
+    }
 
     /* public function index_pretraga($trazi = NULL) {
       if ($trazi == NULL)

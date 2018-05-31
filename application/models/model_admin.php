@@ -337,6 +337,11 @@ class model_admin extends CI_Model {
         //$result="pera";
         return $result;
     }
+    
+    public function obrisi_podrucje($idpodrucje) {
+
+        $this->db->query("delete from podrucje_rada where idpodrucje_rada='$idpodrucje'");
+    }
 
     public function obrisi_predmet($idpredmet) {
 
