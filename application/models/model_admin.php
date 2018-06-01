@@ -337,7 +337,7 @@ class model_admin extends CI_Model {
 
     
     public function unesi_podrucje() {
-
+ 
         $data = array(
             'naziv' => $this->input->post("podrucje_rada"),
         );
