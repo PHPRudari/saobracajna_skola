@@ -21,7 +21,7 @@ class model_admin extends CI_Model {
     //FUNKCIJE ZA RAD SA UČENIKOM 
 
     public function unesi_ucenika() {
-        
+
         if (isset($_POST['oslobodjen'])) {
             $oslobodjen = 1;
         } else {
@@ -55,20 +55,19 @@ class model_admin extends CI_Model {
         );
 
         $this->db->insert("ucenik", $data);
-        
+
         $iducenik = $this->db->insert_id();
 
         // var_dump($id);
-
     }
-    
+
     public function dohvati_ucenika($iducenik) {
         $this->db->where("iducenik", $iducenik);
         $query = $this->db->get('ucenik');
         $result = $query->row_array(); //vraca jednu vest
         return $result;
     }
-    
+
     public function izmeni_ucenika($iducenik) {
         if (isset($_POST['oslobodjen'])) {
             $oslobodjen = 1;
@@ -107,7 +106,6 @@ class model_admin extends CI_Model {
         $this->db->where('iducenik', $iducenik);
 
         $this->db->update('ucenik', $data);
-
     }
 
     public function trazi_ucenika($search_data) {
@@ -129,7 +127,7 @@ class model_admin extends CI_Model {
         $result = $query->result_array();
         return $result;
     }
-    
+
     public function dohvati_rok() {
         $query = $this->db->get('tip_roka');
         $result = $query->result_array();
@@ -328,45 +326,45 @@ class model_admin extends CI_Model {
         return $result;
     }
 
-    public function dohvati_predmet($god="") {
+    public function dohvati_predmet($god = "") {
         //$this->db->distinct("");
         $this->db->from("predmet");
         $this->db->like("godina_obrazovanja_idgodina_obrazovanja", $god);
         $this->db->select("idpredmet, naziv_predmet,godina_obrazovanja_idgodina_obrazovanja");
         $this->db->group_by('naziv_predmet');
         $query = $this->db->get();
+    }
 
-}
-       
     
     public function unesi_podrucje() {
 
         $data = array(
             'naziv' => $this->input->post("podrucje_rada"),
-
         );
 
         $this->db->insert("podrucje_rada", $data);
     }
+
     
     public function obrisi_podrucje($idpodrucje) {
 
         $this->db->query("delete from podrucje_rada where idpodrucje_rada='$idpodrucje'");
     }
+
     
-     public function obrisi_profil($idprofil) {
+    public function obrisi_profil($idprofil) {
 
         $this->db->query("delete from obrazovni_profil where idobrazovni_profil='$idprofil'");
     }
+
     
     public function unesi_obrazovni_profil() {
 
         $data = array(
             'naziv' => $this->input->post("obrazovni_profil"),
             'podrucje_rada_idpodrucje_rada' => $this->input->post("podrucje_rada"),
-
         );
-var_dump ($data);
+        var_dump($data);
         $this->db->insert("obrazovni_profil", $data);
     }
 
@@ -399,33 +397,26 @@ var_dump ($data);
     }
 
     public function priznaj_ispite() {
-        
-    //    var_dump($_POST['predmet']);
-     //   var_dump($_POST['ocena']);
-       // var_dump($_SESSION['ucenik']['iducenik']);
-    //$predmet=$_POST['predmet'];
-    $ocena=array_filter($_POST['ocena']);
-    //$ocena=5;
-   // var_dump($ocena);
-    $id=$_SESSION['ucenik']['iducenik'];
-    
-     foreach ($ocena as $key => $value)
-     {
-       //  var_dump($key);
-       //var_dump($value);
-     
-     
-        
-       $this->db->query ("insert into priznati_predmet values ('$key','$id','$value')");
-     
-     } 
-    
-    
-    
-   
 
+        //    var_dump($_POST['predmet']);
+        //   var_dump($_POST['ocena']);
+        // var_dump($_SESSION['ucenik']['iducenik']);
+        //$predmet=$_POST['predmet'];
+        $ocena = array_filter($_POST['ocena']);
+        //$ocena=5;
+        // var_dump($ocena);
+        $id = $_SESSION['ucenik']['iducenik'];
+
+        foreach ($ocena as $key => $value) {
+            //  var_dump($key);
+            //var_dump($value);
+
+
+
+            $this->db->query("insert into priznati_predmet values ('$key','$id','$value')");
+        }
     }
-    
+
     /* public function get_autocomplete($search_data) 
       {
       $this->db-> select('ime, idkorisnik');
