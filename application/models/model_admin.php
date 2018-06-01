@@ -333,6 +333,11 @@ class model_admin extends CI_Model {
         $this->db->select("idpredmet, naziv_predmet,godina_obrazovanja_idgodina_obrazovanja");
         $this->db->group_by('naziv_predmet');
         $query = $this->db->get();
+        $result = $query->result_array();
+        return $result;
+       
+      
+  
     }
 
     
