@@ -129,6 +129,12 @@ class model_admin extends CI_Model {
         $result = $query->result_array();
         return $result;
     }
+    
+    public function dohvati_rok() {
+        $query = $this->db->get('tip_roka');
+        $result = $query->result_array();
+        return $result;
+    }
 
 //}
     //FUNKCIJE ZA RAD SA profesorom  

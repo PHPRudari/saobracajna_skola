@@ -167,6 +167,11 @@ class admin extends CI_Controller {
         $this->ucenik($result);
 //print_r($result);
     }
+    
+    public function dohvati_rok() {
+        $result = $this->model_admin->dohvati_rok();
+        $_SESSION['rok']=$result;
+    }
 
     public function dokumentacija() {
         $this->loadView("dokumentacija.php");
@@ -293,7 +298,12 @@ class admin extends CI_Controller {
     }
 
     public function predmet() {
-        $this->loadView("predmet.php");
+         $result = $this->model_admin->dohvati_podrucje();
+        $result1 = $this->model_admin->dohvati_profil();
+        $data['podrucje'] = $result;
+        $data['profil'] = $result1;
+        
+        $this->loadView("predmet.php",$data);
     }
 
     public function trazi() {
@@ -314,7 +324,7 @@ class admin extends CI_Controller {
     }
 
     public function prijava_ispita() {
-
+        $this->dohvati_rok();
 
         $this->loadView("prijava_ispita.php");
     }
@@ -409,7 +419,7 @@ class admin extends CI_Controller {
             array('firstname' => 'I am', 'lastname' => 'User', 'email' => 'iam@user.com'),
             array('firstname' => 'I am', 'lastname' => 'Quality Assurance', 'email' => 'iam@qualityassurance.com')
         );
-        $html = $this->load->view('izvestaj1', $data, true);
+        $html = $this->load->view('ucenik', $data, true);
         $filename = 'report_' . time();
         $this->pdfgenerator->generate($html, $filename, true, 'A4', 'portrait');
     }

@@ -1,3 +1,8 @@
+<?php 
+var_dump($podrucje);
+var_dump($profil);
+?>
+
 <body>
     <div class="row">
         <div class="col-md-6">
@@ -27,14 +32,14 @@
                 /*echo "<p>Подручје рада: </p><br>";*/?>
                 <!--<label class="col-form-label col-sm-12" for="podrucje_rada"><p>Подручје рада:</p></label>-->
                 <?php
-                $result = $this->model_admin->dohvati_podrucje();
-                $data['podrucje'] = $result;
+               // $result = $this->model_admin->dohvati_podrucje();
+                //$data['podrucje'] = $result;
                 //var_dump($result);
                 /* foreach ($korisnici as $row) {
                   echo $row['ime'] . "&nbsp";
                   echo $row['prezime'] . "&nbsp";
                   echo $row ['email'] . "&nbsp"; */
-                foreach ($result as $row) {
+                foreach ($podrucje as $row) {
                     //echo '<option value="' . $row['idpodrucje_rada'] . '">';
                     echo $row['naziv'] . "&nbsp&nbsp";
                     echo '</option>';
