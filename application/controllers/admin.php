@@ -298,10 +298,12 @@ class admin extends CI_Controller {
     }
 
     public function predmet() {
-         $result = $this->model_admin->dohvati_podrucje();
+        $result = $this->model_admin->dohvati_podrucje();
         $result1 = $this->model_admin->dohvati_profil();
         $data['podrucje'] = $result;
         $data['profil'] = $result1;
+        $result = $this->model_admin->dohvati_skolska_godina();
+        $data['godina_obrazovanja'] = $result;
         
         $this->loadView("predmet.php",$data);
     }

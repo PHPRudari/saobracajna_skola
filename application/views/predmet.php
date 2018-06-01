@@ -1,6 +1,5 @@
 <?php 
-var_dump($podrucje);
-var_dump($profil);
+var_dump($godina_obrazovanja);
 ?>
 
 <body>
@@ -162,17 +161,7 @@ var_dump($profil);
                 <!--<input type="text" class="form-control col-sm-12" name="godina_obrazovanja" placeholder="Година образовања" value="<?php echo set_value("godina_obrazovanja"); ?>"><?php echo form_error("godina_obrazovanja", '<span style="color:red">', '</span>'); ?><br>-->
                 
                 <select name="godina_obrazovanja" class="form-control ">
-                    <option selected hidden ><?php
-                        if (!isset($_SESSION['ucenik']['iducenik'])) {
-                            echo 'Година образовања';
-                        } else {
-                            foreach ($godina_obrazovanja as $go) {
-                                if ($go['idgodina_obrazovanja'] == $_SESSION['ucenik']['godina_obrazovanja_idgodina_obrazovanja'])
-                                    echo ($go['naziv']);
-                            }
-                        }
-                        ?>
-                    </option>
+                   <option selected hidden>Година образовања:</option>
                     <?php
                     foreach ($godina_obrazovanja as $row) {
                         echo '<option value="' . $row['idgodina_obrazovanja'] . '">';

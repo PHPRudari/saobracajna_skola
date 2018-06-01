@@ -1,6 +1,4 @@
-<?php 
-var_dump($data);
-?>
+
 
 
 <div class="row">
@@ -9,7 +7,7 @@ var_dump($data);
         <br><h4>Izabran je učenik: <?php echo $_SESSION['ucenik']['ime']." ".$_SESSION['ucenik']['prezime']."&nbsp;&nbsp;&nbsp;&nbsp; Broj učenika ".$_SESSION['ucenik']['jedinstveni_broj_ucenik']?></h4>
       
     </div>
-</div>
+</div><br>
 <div class="row">
     Izaberite rok:
     <select name="rok">
