@@ -2,6 +2,7 @@
 if (isset($error))
     echo $error;
 //var_dump($_POST);
+//var_dump($predmet);
 
 
 if (!isset($_SESSION['ucenik']['iducenik'])) {

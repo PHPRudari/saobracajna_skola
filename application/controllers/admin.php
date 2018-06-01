@@ -200,6 +200,7 @@ class admin extends CI_Controller {
     public function profesor($result = NULL) {
         $result = $this->model_admin->dohvati_predmet();
         $data['predmet'] = $result;
+       
         $result1 = $this->model_admin->profesor_predaje();
         $data['predmeti'] = $result1;
 
