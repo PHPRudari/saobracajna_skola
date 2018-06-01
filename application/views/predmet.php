@@ -1,5 +1,6 @@
 <?php
 //var_dump($godina_obrazovanja);
+
 ?>
 <!--   GRUPA     --->
 <body>
@@ -166,7 +167,7 @@
 
 
 
-                <select name="profil" id="profil" class="form-control">
+                <select name="obrazovni_profil" id="profil" class="form-control">
                     <option selected hidden>Образовни профил</option>
 
                     <?php
@@ -211,15 +212,37 @@
 
         <!--<a href="<?php echo site_url($controller . "/prijava_ispita") ?>">Пријава испита</a>-->
             </div>
-            </form>
+            
         </div>
 
 
         <div class="col-md-6">
             <br><br><br>
+            
+            
+            
+            
             <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 500px;">
-                Tabela 3
+                <?php
+                //
+                ?>
+                
+                <?php
+                
+                foreach ($predmet as $row) {
+                    //echo '<option value="' . $row['idpodrucje_rada'] . '">';
+                    echo $row['naziv_predmet'] . "&nbsp&nbsp";
+                    echo '</option>';
+                    ?>
+                    <a href="<?php echo site_url($controller . "/obrisi_novi_predmet/" . $row['idpredmet']); ?>"
+                       onclick="return confirm('Да ли сте сигурни да желите да обришете предмет?');">Obriši</a><br>
+
+                <?php } ?>                
+                </form>
             </div>
+            
+            
+            
         </div>     
 
     </div>
