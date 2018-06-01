@@ -22,7 +22,7 @@
         <div class="col-md-6" >
             <br><br>
             <?php echo form_open($controller . '/unesi_podrucje'); ?>
-            <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 400px;">
+            <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 500px;">
                 <?php
                 //$query=$this->db->query("SELECT * FROM srednja_skola.korisnik where guid='1';");
 
@@ -104,7 +104,7 @@
         <div class="col-md-6" >
             <br><br>
             
-            <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 400px;">
+            <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 500px;">
                 <?php
                 //$query=$this->db->query("SELECT * FROM srednja_skola.korisnik where guid='1';");
 
@@ -121,7 +121,7 @@
                   echo $row['ime'] . "&nbsp";
                   echo $row['prezime'] . "&nbsp";
                   echo $row ['email'] . "&nbsp"; */
-                foreach ($profil as $row) {
+              /*  foreach ($profil as $row) {
                     //echo '<option value="' . $row['idpodrucje_rada'] . '">';
                     echo $row['naziv'] . "&nbsp&nbsp";
                     echo '</option>';
@@ -129,7 +129,7 @@
                     <a href="<?php echo site_url($controller . "/obrisi_profil/" . $row['idobrazovni_profil']); ?>"
                        onclick="return confirm('Да ли сте сигурни да желите да обришете образовни профил?');">Obriši</a><br>
 
-<?php } ?>                
+<?php } */?>                
                 </form>
             </div>
         </div>
@@ -217,7 +217,7 @@ foreach ($godina_obrazovanja as $row) {
 
         <div class="col-md-6">
             <br><br><br>
-            <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 400px;">
+            <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 500px;">
                 Tabela 3
             </div>
         </div>     
