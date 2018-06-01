@@ -364,7 +364,7 @@ class model_admin extends CI_Model {
             'naziv' => $this->input->post("obrazovni_profil"),
             'podrucje_rada_idpodrucje_rada' => $this->input->post("podrucje_rada"),
         );
-        var_dump($data);
+        //var_dump($data);
         $this->db->insert("obrazovni_profil", $data);
     }
 
