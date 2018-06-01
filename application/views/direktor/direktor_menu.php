@@ -1,4 +1,4 @@
-
+<?php var_dump($_SESSION);?>
 <div class="row">
     <div class="col-md-12">
 
@@ -42,10 +42,10 @@
 
 
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="<?php echo site_url("direktor/prijava_ispita/") ?>">Пријава испита</a>
+                        <a class="nav-link" href="<?php echo site_url("direktor/prijava_ispita/") ?>">Пријава испита</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="<?php echo site_url("direktor/raspored/") ?>">Распоред</a>
+                        <a class="nav-link" href="<?php echo site_url("direktor/raspored/") ?>">Распоред</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo site_url("direktor/statistika/") ?>">Статистика</a>
@@ -55,7 +55,17 @@
                     </li>
                 </ul>
                 <ul  class="navbar-nav ">
+                    <li class="nav-item nav-link mr-sm-2">
+                        <small style="color:blue">Korisnik:</small>
+                        <?php 
+                            echo $_SESSION['ime']." ".$_SESSION['prezime'];
+                            
+                            ?>
+                        
+                    </li>
+                    
                     <li class="nav-item">
+                       
                         <a class="nav-link mr-sm-2"  href="<?php echo site_url("direktor/do_logout/") ?>">Излогуј се</a>
                     </li>
                 </ul>

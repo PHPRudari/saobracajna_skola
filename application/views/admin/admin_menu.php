@@ -42,10 +42,10 @@
                         <a class="nav-link" href="<?php echo site_url("admin/predmet/")?>">Predmet</a>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="<?php echo site_url("admin/prijava_ispita/")?>">Prijava ispita</a>
+                        <a class="nav-link " href="<?php echo site_url("admin/prijava_ispita/")?>">Prijava ispita</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="<?php echo site_url("admin/raspored/")?>">Raspored</a>
+                        <a class="nav-link " href="<?php echo site_url("admin/raspored/")?>">Raspored</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo site_url("admin/statistika/")?>">Statistika</a>
@@ -53,6 +53,14 @@
                    
                 </ul>
                 <ul  class="navbar-nav ">
+                     <li class="nav-item nav-link mr-sm-2">
+                        <small style="color:blue">Korisnik:</small>
+                        <?php 
+                            echo $_SESSION['ime']." ".$_SESSION['prezime'];
+                            
+                            ?>
+                        
+                    </li>
                 <li class="nav-item">
                     <a class="nav-link mr-sm-2"  href="<?php echo site_url("admin/do_logout/")?>">Izloguj se</a>
                 </li>
