@@ -358,7 +358,7 @@ class model_admin extends CI_Model {
 
     
     public function obrisi_profil($idprofil) {
-
+var_dump($idprofil);
         $this->db->query("delete from obrazovni_profil where idobrazovni_profil='$idprofil'");
     }
 
