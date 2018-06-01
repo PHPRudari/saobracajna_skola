@@ -306,7 +306,8 @@ class admin extends CI_Controller {
         $data['profil'] = $result1;
         $result = $this->model_admin->dohvati_skolska_godina();
         $data['godina_obrazovanja'] = $result;
-        
+        $result=$this->model_admin->dohvati_predmet();
+        $data['predmet']=$result;
         $this->loadView("predmet.php",$data);
     }
 
@@ -379,6 +380,21 @@ class admin extends CI_Controller {
         }
     }
     
+    public function unesi_novi_predmet() {
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+        // $_POST = $_SESSION['ucenik'];
+        $this->form_validation->set_rules('ime_predmeta', 'Ime_predmeta', 'required', array('required' => 'Ово поље је обавезно.'));
+
+        if ($this->form_validation->run() === FALSE) {
+            $this->predmet();
+        } else {
+            $this->model_admin->unesi_novi_predmet();
+            $data['poruka'] = "Образовни профил је успешно додат у базу."; //TODO
+            redirect(site_url("/$this->controller/predmet"));
+        }
+    }
+    
     public function obrisi_profil($idprofil) {
         $this->model_admin->obrisi_profil($idprofil);
         $data = array(
@@ -393,7 +409,15 @@ class admin extends CI_Controller {
         $this->session->set_flashdata($data);
         redirect(site_url("/$this->controller/predmet"));
     }
-
+/*DRAGAN*/
+    public function obrisi_novi_predmet($idpredmet) {
+        $this->model_admin->obrisi_novi_predmet($idpredmet);
+        $data = array(
+            'poruka' => "Предмет је успешно обрисан.");
+        $this->session->set_flashdata($data);
+        redirect(site_url("/$this->controller/predmet"));
+    }
+    
     function do_upload() {
 
         $id = $_SESSION['ucenik']['iducenik'];

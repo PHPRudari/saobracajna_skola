@@ -1,5 +1,6 @@
 <?php
 //var_dump($godina_obrazovanja);
+
 ?>
 <!--   GRUPA     --->
 <body>
@@ -22,7 +23,7 @@
         <div class="col-md-6" >
             <br><br>
             <?php echo form_open($controller . '/unesi_podrucje'); ?>
-            <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 400px;">
+            <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 500px;">
                 <?php
                 //$query=$this->db->query("SELECT * FROM srednja_skola.korisnik where guid='1';");
 
@@ -47,7 +48,7 @@
                     <a href="<?php echo site_url($controller . "/obrisi_podrucje/" . $row['idpodrucje_rada']); ?>"
                        onclick="return confirm('Да ли сте сигурни да желите да обришете подручје рада?');">Obriši</a><br>
 
-<?php } ?>                
+                <?php } ?>                
                 </form>
             </div>
         </div>
@@ -60,7 +61,7 @@
 
     <div class="row">
         <div class="col-md-6">
-<?php echo form_open($controller . '/unesi_obrazovni_profil'); ?>
+            <?php echo form_open($controller . '/unesi_obrazovni_profil'); ?>
 
 
 
@@ -98,13 +99,13 @@
                 <!--<input class="dugme3 btn btn-primary btn-lg btn-block" type="submit" name="obrisi" value="Обриши">-->
                 <input class="dugme1 btn btn-primary btn-lg btn-block" type="submit" name="snimi" value="Сачувај">
             </div>
-            
+
         </div>
-<!--  OVO ISPRAVLJAM  -->
+        <!--  OVO ISPRAVLJAM  -->
         <div class="col-md-6" >
             <br><br>
-            
-            <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 400px;">
+
+            <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 500px;">
                 <?php
                 //$query=$this->db->query("SELECT * FROM srednja_skola.korisnik where guid='1';");
 
@@ -129,7 +130,7 @@
                     <a href="<?php echo site_url($controller . "/obrisi_profil/" . $row['idobrazovni_profil']); ?>"
                        onclick="return confirm('Да ли сте сигурни да желите да обришете образовни профил?');">Obriši</a><br>
 
-<?php } ?>                
+                <?php } ?>                
                 </form>
             </div>
         </div>
@@ -140,7 +141,7 @@
 
     <div class="row">
         <div class="col-md-6">
-<?php echo form_open($controller . '/unesi_novi_predmet'); ?>
+            <?php echo form_open($controller . '/unesi_novi_predmet'); ?>
 
             <div id="unos_predmeta" class="form-group">
                <!-- <input type="text" name="predmet" value="predmet" disabled><br>
@@ -166,7 +167,7 @@
 
 
 
-                <select name="profil" id="profil" class="form-control">
+                <select name="obrazovni_profil" id="profil" class="form-control">
                     <option selected hidden>Образовни профил</option>
 
                     <?php
@@ -186,13 +187,13 @@
 
                 <select name="godina_obrazovanja" class="form-control ">
                     <option selected hidden>Година образовања:</option>
-<?php
-foreach ($godina_obrazovanja as $row) {
-    echo '<option value="' . $row['idgodina_obrazovanja'] . '">';
-    echo $row['naziv'];
-    echo '</option>';
-}
-?> 
+                    <?php
+                    foreach ($godina_obrazovanja as $row) {
+                        echo '<option value="' . $row['idgodina_obrazovanja'] . '">';
+                        echo $row['naziv'];
+                        echo '</option>';
+                    }
+                    ?> 
                 </select><br>
 
 
@@ -211,24 +212,46 @@ foreach ($godina_obrazovanja as $row) {
 
         <!--<a href="<?php echo site_url($controller . "/prijava_ispita") ?>">Пријава испита</a>-->
             </div>
-            </form>
+            
         </div>
 
 
         <div class="col-md-6">
             <br><br><br>
-            <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 400px;">
-                Tabela 3
+            
+            
+            
+            
+            <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 500px;">
+                <?php
+                //
+                ?>
+                
+                <?php
+                
+                foreach ($predmet as $row) {
+                    //echo '<option value="' . $row['idpodrucje_rada'] . '">';
+                    echo $row['naziv_predmet'] . "&nbsp&nbsp";
+                    echo '</option>';
+                    ?>
+                    <a href="<?php echo site_url($controller . "/obrisi_novi_predmet/" . $row['idpredmet']); ?>"
+                       onclick="return confirm('Да ли сте сигурни да желите да обришете предмет?');">Obriši</a><br>
+
+                <?php } ?>                
+                </form>
             </div>
+            
+            
+            
         </div>     
 
     </div>
     <div class="row">
         <div class="col-md-6">
-        <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/predmet/"); ?>">Освежи страну</a><br>    
+            <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/predmet/"); ?>">Освежи страну</a><br>    
         </div>
         <div class="col-md-6">
-        <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik/"); ?>">Врати се на ученика</a><br>
+            <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik/"); ?>">Врати се на ученика</a><br>
         </div>
     </div>
 </body>

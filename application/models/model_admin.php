@@ -347,6 +347,7 @@ class model_admin extends CI_Model {
     } 
 
     
+    
     public function unesi_podrucje() {
  
         $data = array(
@@ -355,7 +356,30 @@ class model_admin extends CI_Model {
 
         $this->db->insert("podrucje_rada", $data);
     }
+    
+    
+// obrati paznju !!!
+    public function unesi_novi_predmet() {
+ 
+        $data = array(
+            'naziv_predmet' => $this->input->post("ime_predmeta"),
+            'godina_obrazovanja_idgodina_obrazovanja' => $this->input->post("godina_obrazovanja"),
+            'obrazovni_profil_idobrazovni_profil' => $this->input->post("obrazovni_profil"),
+                
+        );
+        var_dump($data);
+        $this->db->insert("predmet", $data);
+    }
+    
+    public function unesi_obrazovni_profil() {
 
+        $data = array(
+            'naziv' => $this->input->post("obrazovni_profil"),
+            'podrucje_rada_idpodrucje_rada' => $this->input->post("podrucje_rada"),
+        );
+        //var_dump($data);
+        $this->db->insert("obrazovni_profil", $data);
+    }
     
     public function obrisi_podrucje($idpodrucje) {
 
@@ -368,16 +392,12 @@ var_dump($idprofil);
         $this->db->query("delete from obrazovni_profil where idobrazovni_profil='$idprofil'");
     }
 
-    
-    public function unesi_obrazovni_profil() {
+    public function obrisi_novi_predmet($idpredmet) {
 
-        $data = array(
-            'naziv' => $this->input->post("obrazovni_profil"),
-            'podrucje_rada_idpodrucje_rada' => $this->input->post("podrucje_rada"),
-        );
-        //var_dump($data);
-        $this->db->insert("obrazovni_profil", $data);
+        $this->db->query("delete from predmet where idpredmet='$idpredmet'");
     }
+
+    
 
     public function obrisi_predmet($idpredmet) {
 
