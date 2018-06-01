@@ -1,4 +1,7 @@
+<?php 
+var_dump($_SESSION['ucenik']);
 
+?>
 
 
 <div class="row">
@@ -9,6 +12,8 @@
     </div>
 </div><br>
 <div class="row">
+    
+     <?php echo form_open($controller . '/prijava_ispita'); ?>
     Izaberite rok:
     <select name="rok">
         <?php
@@ -20,4 +25,7 @@
                     ?> 
         
     </select>
+
+
 </div>
+</form>
