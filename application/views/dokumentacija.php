@@ -3,11 +3,10 @@ if (isset($error))
     echo $error;
 
 if (!isset($_SESSION['ucenik']['iducenik'])) {
-    echo 'Niste odabrali učenika';
+    echo '<h1>Niste odabrali učenika !!!<h1>';
     exit;
 }
 ?>
-
 
 <?php echo form_open_multipart('admin/do_upload'); ?>
 
@@ -66,10 +65,13 @@ Izaberite fajl(maksimalna veličina 2 Mb):<br>
 
 
 </div>
-<div class="row">
-    <div class="col-md-12">
-    <br><br>
-    <a href="<?php echo site_url($controller . "/priznati_ispiti") ?>">Признати испити</a><br>
-    <a href="<?php echo site_url($controller . "/ucenik") ?>">Ученик</a><br>
-    </div>
-</div>
+<br><br>
+
+        <div class="row">
+            <div class="col-md-6">       
+                <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/priznati_ispiti"); ?>">Признати испити</a><br>
+            </div>
+            <div class="col-md-6">
+                <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik/"); ?>">Врати се на ученика</a><br>
+            </div>
+        </div>

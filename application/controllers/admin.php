@@ -361,6 +361,29 @@ class admin extends CI_Controller {
             redirect(site_url("/$this->controller/predmet"));
         }
     }
+    
+    public function unesi_obrazovni_profil() {
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+        // $_POST = $_SESSION['ucenik'];
+        $this->form_validation->set_rules('obrazovni_profil', 'Obrazovni_profil', 'required', array('required' => 'Ово поље је обавезно.'));
+
+        if ($this->form_validation->run() === FALSE) {
+            $this->predmet();
+        } else {
+            $this->model_admin->unesi_obrazovni_profil();
+            $data['poruka'] = "Образовни профил је успешно додат у базу."; //TODO
+            redirect(site_url("/$this->controller/predmet"));
+        }
+    }
+    
+    public function obrisi_profil($idprofil) {
+        $this->model_admin->obrisi_profil($idprofil);
+        $data = array(
+            'poruka' => "Образовни профил је успешно обрисан.");
+        $this->session->set_flashdata($data);
+        redirect(site_url("/$this->controller/predmet"));
+    }
 
     public function obrisi_podrucje($idpodrucje) {
         $this->model_admin->obrisi_podrucje($idpodrucje);

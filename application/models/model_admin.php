@@ -336,13 +336,8 @@ class model_admin extends CI_Model {
         $this->db->group_by('naziv_predmet');
         $query = $this->db->get();
 
-
-
-
-        $result = $query->result_array();
-        //$result="pera";
-        return $result;
-    }
+}
+       
     
     public function unesi_podrucje() {
 
@@ -357,6 +352,22 @@ class model_admin extends CI_Model {
     public function obrisi_podrucje($idpodrucje) {
 
         $this->db->query("delete from podrucje_rada where idpodrucje_rada='$idpodrucje'");
+    }
+    
+     public function obrisi_profil($idprofil) {
+
+        $this->db->query("delete from obrazovni_profil where idobrazovni_profil='$idprofil'");
+    }
+    
+    public function unesi_obrazovni_profil() {
+
+        $data = array(
+            'naziv' => $this->input->post("obrazovni_profil"),
+            'podrucje_rada_idpodrucje_rada' => $this->input->post("podrucje_rada"),
+
+        );
+var_dump ($data);
+        $this->db->insert("obrazovni_profil", $data);
     }
 
     public function obrisi_predmet($idpredmet) {

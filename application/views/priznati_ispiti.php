@@ -5,7 +5,7 @@ if (isset($error))
 
 
 if (!isset($_SESSION['ucenik']['iducenik'])) {
-    echo 'Niste odabrali učenika';
+    echo '<h1>Niste odabrali učenika !!! <h1>';
     exit;
 }
 ?>
@@ -27,12 +27,12 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
             <!--dodao-->
             <select name="godina_obrazovanja" >
                 <option selected hidden><?php
-if (!isset($_POST['godina_obrazovanja']))
-    echo 'Година образовања';
-else
-    echo set_value("godina_obrazovanja");
-?></option>
-                    <?php
+                    if (!isset($_POST['godina_obrazovanja']))
+                        echo 'Година образовања';
+                    else
+                        echo set_value("godina_obrazovanja");
+                    ?></option>
+                <?php
                 foreach ($godina_obrazovanja as $row) {
                     echo '<option value="' . $row['idgodina_obrazovanja'] . '">';
                     echo $row['naziv'];
@@ -42,167 +42,173 @@ else
 
             </select><br>
             <br>
-            
-           </form>  
-            
-          
+
+        </form>  
+
+
         <form name="prva_forma">
-        <input type="text" name="skola" value="<?php echo set_value("skola") ?>" placeholder="Школа">
+            <input type="text" name="skola" value="<?php echo set_value("skola") ?>" placeholder="Школа">
             <input type="text" name="svedocanstvo" value="<?php echo set_value("svedocanstvo") ?>" placeholder="Број сведочанства">
             <input type="text" name="razred" value="<?php echo set_value("razred") ?>" placeholder="Разред">
 
             <input type="submit" name="dodaj" value="Додај"><br>
-            
+
         </form>   
-            
-       </div>
+
+    </div>
     <div> 
- <?php echo form_open($controller . '/priznaj_ispite'); ?>
-    
-    <div class="row">
-       
-        <div class="col-md-6"><br>
-        
-            <p>I godina:</p>
-            
+        <?php echo form_open($controller . '/priznaj_ispite'); ?>
+
+        <div class="row">
+
+            <div class="col-md-6"><br>
+
+                <p>I godina:</p>
+
                 <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;">
-            <?php
-            foreach ($predmet as $row) {
-                if ($row['godina_obrazovanja_idgodina_obrazovanja']=="1") 
-                {
-                echo "<div class='row'>";
-                    echo "<div class='col-md-10'>";
-                    echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'];
-                echo "</div>";
-                    echo "<div class='col-md-2'>";
-                    echo '<input type="text" name="ocena['.$row['idpredmet'].']" style="width:60px" placeholder="Ocena">'. "<br>";
-                    echo "</div>";
-                      echo "</div>";
-            }
-            }
-            ?>
-        </div>
-            
-        
-        </div>
-        
-        
-        
-        <div class="col-md-6"><br>
-             <p>II godina:</p>
-            
+                    <?php
+                    foreach ($predmet as $row) {
+                        if ($row['godina_obrazovanja_idgodina_obrazovanja'] == "1") {
+                            echo "<div class='row'>";
+                            echo "<div class='col-md-10'>";
+                            echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]" disabled>' . $row['naziv_predmet'];
+                            echo "</div>";
+                            echo "<div class='col-md-2'>";
+                            echo '<input type="text" name="ocena[' . $row['idpredmet'] . ']" style="width:60px" placeholder="Ocena">' . "<br>";
+                            echo "</div>";
+                            echo "</div>";
+                        }
+                    }
+                    ?>
+                </div>
+
+
+            </div>
+
+
+
+            <div class="col-md-6"><br>
+                <p>II godina:</p>
+
                 <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
-            <?php
-            foreach ($predmet as $row) {
-                if ($row['godina_obrazovanja_idgodina_obrazovanja']=="2") 
-                {
-                echo "<div class='row'>";
-                    echo "<div class='col-md-10'>";
-                    echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'];
-                echo "</div>";
-                    echo "<div class='col-md-2'>";
-                    echo '<input type="text" name="ocena['.$row['idpredmet'].']" style="width:60px" placeholder="Ocena">'. "<br>";
-                    echo "</div>";
-                      echo "</div>";
-            }
-            }
-            ?>
-        </div>
-        </div>
-    </div>
-    <div class="row">
-       
-        <div class="col-md-6 "><br>
-        
-            <p>III godina:</p>
-            
-                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
-            <?php
-            foreach ($predmet as $row) {
-                if ($row['godina_obrazovanja_idgodina_obrazovanja']=="3") 
-                {
-                echo "<div class='row'>";
-                    echo "<div class='col-md-10'>";
-                    echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'];
-                echo "</div>";
-                    echo "<div class='col-md-2'>";
-                    echo '<input type="text" value="" name="ocena['.$row['idpredmet'].']" style="width:60px" placeholder="Ocena">'. "<br>";
-                    echo "</div>";
-                      echo "</div>";
-            }
-            }
-            ?>
-        </div>
-            
-        
-        </div>
-        
-        
-        
-        <div class="col-md-6"><br>
-             <p>IV godina:</p>
-            
-                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
-            <?php
-            foreach ($predmet as $row) {
-                if ($row['godina_obrazovanja_idgodina_obrazovanja']=="4") 
-                {
-                echo "<div class='row'>";
-                    echo "<div class='col-md-10'>";
-                    echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'];
-                echo "</div>";
-                    echo "<div class='col-md-2'>";
-                    echo '<input type="text" name="ocena['.$row['idpredmet'].']" style="width:60px" placeholder="Ocena">'. "<br>";
-                    echo "</div>";
-                      echo "</div>";
-            }
-            }
-            ?>
-        </div>
-        </div>
-    </div>
-    
-    <div class="row">
-        
-         <div class="col-md-6"><br>
-             <p>V godina:</p>
-            
-                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
-            <?php
-            foreach ($predmet as $row) {
-                if ($row['godina_obrazovanja_idgodina_obrazovanja']=="5") 
-                {
-                echo "<div class='row'>";
-                    echo "<div class='col-md-10'>";
-                    echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'];
-                echo "</div>";
-                    echo "<div class='col-md-2'>";
-                    echo '<input type="text" name="ocena['.$row['idpredmet'].']" style="width:60px" placeholder="Ocena">'. "<br>";
-                    echo "</div>";
-                      echo "</div>";
-            }
-              
-            }
-            ?>
-        </div>
-        </div>
-        <div class="col-md-6"><br><br><br><br>
-            <div class="dugme">
-                <input  type="submit" value="Unesi" name="priznaj" style="height: 100px; width: 200px">
-                <a href="<?php echo site_url($controller . "/dokumentacija") ?>">Документација</a><br>
-            <a href="<?php echo site_url($controller . "/ucenik") ?>">Ученик</a><br>
+                    <?php
+                    foreach ($predmet as $row) {
+                        if ($row['godina_obrazovanja_idgodina_obrazovanja'] == "2") {
+                            echo "<div class='row'>";
+                            echo "<div class='col-md-10'>";
+                            echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]" disabled>' . $row['naziv_predmet'];
+                            echo "</div>";
+                            echo "<div class='col-md-2'>";
+                            echo '<input type="text" name="ocena[' . $row['idpredmet'] . ']" style="width:60px" placeholder="Ocena">' . "<br>";
+                            echo "</div>";
+                            echo "</div>";
+                        }
+                    }
+                    ?>
+                </div>
             </div>
         </div>
-        
-    
-    
-    
+        <div class="row">
 
-   
+            <div class="col-md-6 "><br>
+
+                <p>III godina:</p>
+
+                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
+<?php
+foreach ($predmet as $row) {
+    if ($row['godina_obrazovanja_idgodina_obrazovanja'] == "3") {
+        echo "<div class='row'>";
+        echo "<div class='col-md-10'>";
+        echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]" disabled>' . $row['naziv_predmet'];
+        echo "</div>";
+        echo "<div class='col-md-2'>";
+        echo '<input type="text" value="" name="ocena[' . $row['idpredmet'] . ']" style="width:60px" placeholder="Ocena">' . "<br>";
+        echo "</div>";
+        echo "</div>";
+    }
+}
+?>
+                </div>
+
+
+            </div>
+
+
+
+            <div class="col-md-6"><br>
+                <p>IV godina:</p>
+
+                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
+<?php
+foreach ($predmet as $row) {
+    if ($row['godina_obrazovanja_idgodina_obrazovanja'] == "4") {
+        echo "<div class='row'>";
+        echo "<div class='col-md-10'>";
+        echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]" disabled>' . $row['naziv_predmet'];
+        echo "</div>";
+        echo "<div class='col-md-2'>";
+        echo '<input type="text" name="ocena[' . $row['idpredmet'] . ']" style="width:60px" placeholder="Ocena">' . "<br>";
+        echo "</div>";
+        echo "</div>";
+    }
+}
+?>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6"><br>
+                <p>V godina:</p>
+
+                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
+<?php
+foreach ($predmet as $row) {
+    if ($row['godina_obrazovanja_idgodina_obrazovanja'] == "5") {
+        echo "<div class='row'>";
+        echo "<div class='col-md-10'>";
+        echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]" disabled>' . $row['naziv_predmet'];
+        echo "</div>";
+        echo "<div class='col-md-2'>";
+        echo '<input type="text" name="ocena[' . $row['idpredmet'] . ']" style="width:60px" placeholder="Ocena">' . "<br>";
+        echo "</div>";
+        echo "</div>";
+    }
+}
+?>
+                </div>
+            </div>
+            <div class="col-md-6"><br><br><br><br>
+                <div class="dugme">
+                    <input  type="submit" value="Unesi" name="priznaj" style="height: 100px; width: 200px">
+                    <!--<a href="<?php echo site_url($controller . "/dokumentacija") ?>">Документација</a><br>-->
+
+                </div> 
+
+            </div>
+        </div> 
+        <br>
         
- </div>       
-    
-</form>
+        <div class="row">
+            <div class="col-md-6">       
+                <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/dokumentacija"); ?>">Документација</a><br>
+            </div>
+            <div class="col-md-6">
+                <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik/"); ?>">Врати се на ученика</a><br>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+    </form>
 </div>
 
 </body>

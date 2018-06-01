@@ -1,4 +1,12 @@
+<?php
+if (isset($error))
+    echo $error;
 
+if (!isset($_SESSION['ucenik']['iducenik'])) {
+    echo '<h1>Niste odabrali učenika !!!<h1>';
+    exit;
+}
+?>
 
 
 <div class="row">
