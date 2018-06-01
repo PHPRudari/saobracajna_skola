@@ -326,19 +326,25 @@ class model_admin extends CI_Model {
         return $result;
     }
 
-    public function dohvati_predmet($god = "") {
+    public function dohvati_predmet() {
         //$this->db->distinct("");
         $this->db->from("predmet");
-        $this->db->like("godina_obrazovanja_idgodina_obrazovanja", $god);
-        $this->db->select("idpredmet, naziv_predmet,godina_obrazovanja_idgodina_obrazovanja");
+       // $this->db->like("godina_obrazovanja_idgodina_obrazovanja");
+        $this->db->select("idpredmet, naziv_predmet");
         $this->db->group_by('naziv_predmet');
         $query = $this->db->get();
         $result = $query->result_array();
         return $result;
        
-      
-  
-    }
+            }
+            
+    public function dohvati_predmet_ucenik() {
+        $this->db->from("predmet");
+        $this->db->select ("*");
+        $query=$this->db->get();
+        $result=$query->result_array();
+        return $result;
+    } 
 
     
     public function unesi_podrucje() {

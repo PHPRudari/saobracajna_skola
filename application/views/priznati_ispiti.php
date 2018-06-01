@@ -2,7 +2,7 @@
 if (isset($error))
     echo $error;
 //var_dump($_POST);
-//var_dump($predmet);
+//var_dump($predmet_ucenik);
 
 
 if (!isset($_SESSION['ucenik']['iducenik'])) {
@@ -68,8 +68,9 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
                 <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;">
                     <?php
-                    foreach ($predmet as $row) {
-                        if ($row['godina_obrazovanja_idgodina_obrazovanja'] == "1") {
+                    foreach ($predmet_ucenik as $row) {
+                       // var_dump($row)
+                        if ($row['godina_obrazovanja_idgodina_obrazovanja']=='1' && $row['obrazovni_profil_idobrazovni_profil']==$_POST['obrazovni_profil_idobrazovni_profil']) {
                             echo "<div class='row'>";
                             echo "<div class='col-md-10'>";
                             echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]" disabled>' . $row['naziv_predmet'];
@@ -93,8 +94,8 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
                 <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
                     <?php
-                    foreach ($predmet as $row) {
-                        if ($row['godina_obrazovanja_idgodina_obrazovanja'] == "2") {
+                    foreach ($predmet_ucenik as $row) {
+                        if ($row['godina_obrazovanja_idgodina_obrazovanja']=='2' && $row['obrazovni_profil_idobrazovni_profil']==$_POST['obrazovni_profil_idobrazovni_profil']) {
                             echo "<div class='row'>";
                             echo "<div class='col-md-10'>";
                             echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]" disabled>' . $row['naziv_predmet'];
@@ -117,8 +118,8 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
                 <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
 <?php
-foreach ($predmet as $row) {
-    if ($row['godina_obrazovanja_idgodina_obrazovanja'] == "3") {
+foreach ($predmet_ucenik as $row) {
+    if ($row['godina_obrazovanja_idgodina_obrazovanja']=='3' && $row['obrazovni_profil_idobrazovni_profil']==$_POST['obrazovni_profil_idobrazovni_profil']) {
         echo "<div class='row'>";
         echo "<div class='col-md-10'>";
         echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]" disabled>' . $row['naziv_predmet'];
@@ -142,8 +143,8 @@ foreach ($predmet as $row) {
 
                 <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
 <?php
-foreach ($predmet as $row) {
-    if ($row['godina_obrazovanja_idgodina_obrazovanja'] == "4") {
+foreach ($predmet_ucenik as $row) {
+    if ($row['godina_obrazovanja_idgodina_obrazovanja']=='4' && $row['obrazovni_profil_idobrazovni_profil']==$_POST['obrazovni_profil_idobrazovni_profil']) {
         echo "<div class='row'>";
         echo "<div class='col-md-10'>";
         echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]" disabled>' . $row['naziv_predmet'];
@@ -166,8 +167,8 @@ foreach ($predmet as $row) {
 
                 <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
 <?php
-foreach ($predmet as $row) {
-    if ($row['godina_obrazovanja_idgodina_obrazovanja'] == "5") {
+foreach ($predmet_ucenik as $row) {
+    if ($row['godina_obrazovanja_idgodina_obrazovanja']=='5' && $row['obrazovni_profil_idobrazovni_profil']==$_POST['obrazovni_profil_idobrazovni_profil']) {
         echo "<div class='row'>";
         echo "<div class='col-md-10'>";
         echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]" disabled>' . $row['naziv_predmet'];
