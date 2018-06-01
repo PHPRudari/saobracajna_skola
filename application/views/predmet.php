@@ -126,7 +126,7 @@
                     echo $row['naziv'] . "&nbsp&nbsp";
                     echo '</option>';
                     ?>
-                    <a href="<?php echo site_url($controller . "/obrisi_profil/" . $row['naziv']); ?>"
+                    <a href="<?php echo site_url($controller . "/obrisi_profil/" . $row['idobrazovni_profil']); ?>"
                        onclick="return confirm('Да ли сте сигурни да желите да обришете образовни профил?');">Obriši</a><br>
 
 <?php } ?>                
