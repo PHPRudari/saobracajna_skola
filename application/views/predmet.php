@@ -1,5 +1,5 @@
 <?php 
-var_dump($godina_obrazovanja);
+//var_dump($godina_obrazovanja);
 ?>
 
 <body>
@@ -133,7 +133,7 @@ var_dump($godina_obrazovanja);
 
                 
                   <!--<label class="col-form-label col-sm-12" for="obrazovni_profil"><p><p> </p></label>-->
-                <!--<input type="text" class="form-control col-sm-12" name="obrazovni_profil" placeholder="Образовни профил" value="<?php echo set_value("obrazovni_profil"); ?>"><?php echo form_error("obrazovni_profil", '<span style="color:red">', '</span>'); ?><br>-->
+                <!--<input type="text" class="form-control col-sm-12" name="obrazovni_profil" placeholder="Образовни профил" value="</?php echo set_value("obrazovni_profil"); ?>"></?php echo form_error("obrazovni_profil", '<span style="color:red">', '</span>'); ?><br>-->
                 
                
                
@@ -158,7 +158,7 @@ var_dump($godina_obrazovanja);
                 
                 
                 <!--<label class="col-form-label col-sm-12" for="godina_obrazovanja"><p><p> </p></label>-->
-                <!--<input type="text" class="form-control col-sm-12" name="godina_obrazovanja" placeholder="Година образовања" value="<?php echo set_value("godina_obrazovanja"); ?>"><?php echo form_error("godina_obrazovanja", '<span style="color:red">', '</span>'); ?><br>-->
+                <!--<input type="text" class="form-control col-sm-12" name="godina_obrazovanja" placeholder="Година образовања" value="</?php echo set_value("godina_obrazovanja"); ?>"></?php echo form_error("godina_obrazovanja", '<span style="color:red">', '</span>'); ?><br>-->
                 
                 <select name="godina_obrazovanja" class="form-control ">
                    <option selected hidden>Година образовања:</option>
@@ -178,9 +178,15 @@ var_dump($godina_obrazovanja);
 
                 <!--<input type="submit" class="dugme3 btn btn-primary btn-lg btn-block" name="izmeni" value="Измени">-->
                 <!--<input type="submit" class="dugme3 btn btn-primary btn-lg btn-block" name="obrisi" value="Обриши">-->
-                <input type="submit" class="dugme1 btn btn-primary btn-lg btn-block" name="snimi" value="Сачувај"><br><br>
-                <a href="<?php echo site_url($controller . "/ucenik") ?>">Врати се назад</a><br>
-                <a href="<?php echo site_url($controller . "/prijava_ispita") ?>">Пријава испита</a>
+                <input type="submit" class="dugme1 btn btn-primary btn-lg btn-block" name="snimi" value="Сачувај"><br><br><br><br>
+                
+                
+                
+                
+            <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik/"); ?>">Врати се на ученика</a><br>
+
+        
+                <!--<a href="<?php echo site_url($controller . "/prijava_ispita") ?>">Пријава испита</a>-->
             </div>
             </form>
         </div>
