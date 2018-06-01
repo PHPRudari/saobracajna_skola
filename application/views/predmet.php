@@ -67,8 +67,7 @@
                 <!--<label class="col-form-label col-sm-12" for="podrucje_rada"><p><p> </p></label>-->
                 <!--<input type="text" class="form-control col-sm-12" name="podrucje_rada" placeholder="Подручје рада" value="</?php echo set_value("podrucje_rada"); ?>"></?php echo form_error("podrucje_rada", '<span style="color:red">', '</span>'); ?><br>-->
                 
-                <div class="col-form-label col-sm-12">
-
+               
             
             <select id="podrucje" name="podrucje_rada" class="form-control ">
 
@@ -87,7 +86,7 @@
                 ?>
 
             </select><br>
-        </div>
+        
                 
                 <input type="text" class="form-control col-sm-12" name="obrazovni_profil" placeholder="Образовни профил"value="<?php echo set_value("podrucje_rada"); ?>"><?php echo form_error("obrazovni_profil", '<span style="color:red">', '</span>'); ?><br>
                 <!--<input class="dugme3 btn btn-primary btn-lg btn-block" type="submit" name="izmeni" value="Измени">-->
@@ -130,7 +129,29 @@
 
                 
                   <!--<label class="col-form-label col-sm-12" for="obrazovni_profil"><p><p> </p></label>-->
-                <input type="text" class="form-control col-sm-12" name="obrazovni_profil" placeholder="Образовни профил" value="<?php echo set_value("obrazovni_profil"); ?>"><?php echo form_error("obrazovni_profil", '<span style="color:red">', '</span>'); ?><br>
+                <!--<input type="text" class="form-control col-sm-12" name="obrazovni_profil" placeholder="Образовни профил" value="<?php echo set_value("obrazovni_profil"); ?>"><?php echo form_error("obrazovni_profil", '<span style="color:red">', '</span>'); ?><br>-->
+                
+               
+               
+
+
+ <select name="profil" id="profil" class="form-control">
+    <option selected hidden>Образовни профил</option>
+    
+    <?php 
+    
+    foreach ($profil as $row)
+        
+    {
+    echo '<option value="'.$row['idobrazovni_profil'].'">';
+    echo $row['naziv'];
+    echo '</option>';
+    }
+    ?>
+    
+</select><br>
+                
+                
                 
                 <!--<label class="col-form-label col-sm-12" for="godina_obrazovanja"><p><p> </p></label>-->
                 <!--<input type="text" class="form-control col-sm-12" name="godina_obrazovanja" placeholder="Година образовања" value="<?php echo set_value("godina_obrazovanja"); ?>"><?php echo form_error("godina_obrazovanja", '<span style="color:red">', '</span>'); ?><br>-->
