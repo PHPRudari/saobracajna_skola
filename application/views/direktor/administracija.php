@@ -100,7 +100,7 @@
 
 
         <h6><br>Промените своју лозинку за приступ</h6>
-        
+        <br>
         <div class="form-group row form-inline">
             <label class="col-form-label col-sm-4" for="tren_lozinka">Тренутна лозинка:</label>
             <input type="password"  class="form-control" name="tren_lozinka" placeholder="Тренутна лозинка" value="<?php echo set_value("tren_lozinka"); ?>"><?php echo form_error("tren_lozinka", '<span style="color:red">', '</span>'); ?><br>

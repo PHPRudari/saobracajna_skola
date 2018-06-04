@@ -109,7 +109,7 @@
         </div>
         <!--  OVO ISPRAVLJAM  -->
         <div class="col-md-6" >
-            <br><br>
+            <br><br><br>
 
             <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 95%;">
                 <?php
