@@ -12,6 +12,14 @@
             </div>
         </div>
     </div>
+    <div>
+        <?php
+        $poruka = $this->session->userdata('poruka');
+        $poruka1 = $this->session->userdata('poruka1');
+        echo '<h6 style="color:red">'.$poruka."</h6>";
+        echo '<h6 style="color:red">'.$poruka1."</h6>";
+        ?>
+    </div>
 </div>
 </form>
  <!-- <input type="submit" value="Тражи"> -->
@@ -98,7 +106,9 @@
 
 <div class="row">
 
-    <div class="col-md-6 ">    
+    <div class="col-md-6 ">
+        
+
         Изабери предмете:<br><br>
         <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 95%;">
             <?php
@@ -110,7 +120,7 @@
     </div>
 
 
-
+ 
 
         <!-- <a href="<//?php echo site_url("admin/index")?>">Врати се назад</a>-->
 
@@ -119,12 +129,7 @@
         <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 95%;">
 
 
-        <?php
-        $poruka = $this->session->userdata('poruka');
-        $poruka1 = $this->session->userdata('poruka1');
-        echo $poruka;
-        echo $poruka1;
-        ?>
+       
     
         <?php
         if ($predmeti > 0) {
@@ -143,6 +148,7 @@
 
         </form>
     </div>
+</div>
 </div>
 
 

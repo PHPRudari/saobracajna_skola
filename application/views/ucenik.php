@@ -30,8 +30,13 @@
 
 
         <a class="dugme1 btn btn-primary btn-lg btn-block "  href="<?php echo site_url($controller . "/dokumentacija") ?>">Документација</a><br>
-      <?php if($this->session->flashdata('info'))
-     echo '<h3 style="color:red">'.$this->session->flashdata('info').'</h3>'; ?>
+      <?php
+            
+      if($this->session->flashdata('info'))
+     echo '<h3 style="color:red">'.$this->session->flashdata('info').'</h3>';
+       if($this->session->flashdata('poruka'))
+     echo '<h5 style="color:red">'.$this->session->flashdata('poruka').'</h5>';
+      ?>
     </div>
     <div class="col-md-6 ">
 
@@ -42,6 +47,7 @@
 
 
     </div>
+</div>
 
     <div class="row">
         <div class="col-md-6">
