@@ -62,7 +62,7 @@
                                         <label class="sr-only" for="form-password">Password</label>
                                         <input type="password" name="password" id="password" placeholder="Лозинка..." class="form-password form-control" id="form-password">
                                     </div>
-                                    <button type="submit" class="btn">Улогуј се!</button>
+                                    <button type="submit" class="btn dugme2">Улогуј се!</button>
                                 </form>
                             </div>
                         </div>

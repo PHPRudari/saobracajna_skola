@@ -3,9 +3,12 @@
 
 ?>
 <!--   GRUPA     --->
-<body>
+
     <div class="row">
+        <h3>Унос подручја рада, образовног профила и предмета</h3>
         <div class="col-md-6">
+            
+            
             <?php echo form_open($controller . '/unesi_podrucje'); ?>
 
             <div id="podrucje_rada" class="form-group ">
@@ -15,7 +18,7 @@
                 <input type="text" class="form-control col-sm-12" name="podrucje_rada" placeholder="Унеси подручје рада" value="<?php echo set_value("podrucje_rada"); ?>"><?php echo form_error("podrucje_rada", '<span style="color:red">', '</span>'); ?><br>
                 <!--<input class="dugme3 btn btn-primary btn-lg btn-block" type="submit" name="izmeni" value="Измени">-->
                 <!--<input class="dugme3 btn btn-primary btn-lg btn-block" type="submit" name="obrisi" value="Обриши">-->
-                <input class="dugme1 btn btn-primary btn-lg btn-block" type="submit" name="snimi" value="Сачувај">
+                <input class="dugme2 btn btn-primary btn-lg btn-block" type="submit" name="snimi" value="Сачувај">
             </div>
             </form>
         </div>
@@ -23,7 +26,7 @@
         <div class="col-md-6" >
             <br><br>
             <?php echo form_open($controller . '/unesi_podrucje'); ?>
-            <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 500px;">
+            <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 95%;">
                 <?php
                 //$query=$this->db->query("SELECT * FROM srednja_skola.korisnik where guid='1';");
 
@@ -97,7 +100,7 @@
                 <input type="text" class="form-control col-sm-12" name="obrazovni_profil" placeholder="Образовни профил"value="<?php echo set_value("obrazovni_profil"); ?>"><?php echo form_error("obrazovni_profil", '<span style="color:red">', '</span>'); ?><br>
                 <!--<input class="dugme3 btn btn-primary btn-lg btn-block" type="submit" name="izmeni" value="Измени">-->
                 <!--<input class="dugme3 btn btn-primary btn-lg btn-block" type="submit" name="obrisi" value="Обриши">-->
-                <input class="dugme1 btn btn-primary btn-lg btn-block" type="submit" name="snimi" value="Сачувај">
+                <input class="dugme2 btn btn-primary btn-lg btn-block" type="submit" name="snimi" value="Сачувај">
             </div>
 
         </div>
@@ -105,7 +108,7 @@
         <div class="col-md-6" >
             <br><br>
 
-            <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 500px;">
+            <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 95%;">
                 <?php
                 //$query=$this->db->query("SELECT * FROM srednja_skola.korisnik where guid='1';");
 
@@ -203,7 +206,7 @@
 
                 <!--<input type="submit" class="dugme3 btn btn-primary btn-lg btn-block" name="izmeni" value="Измени">-->
                 <!--<input type="submit" class="dugme3 btn btn-primary btn-lg btn-block" name="obrisi" value="Обриши">-->
-                <input type="submit" class="dugme1 btn btn-primary btn-lg btn-block" name="snimi" value="Сачувај"><br><br><br><br>
+                <input type="submit" class="dugme2 btn btn-primary btn-lg btn-block" name="snimi" value="Сачувај"><br><br><br><br>
 
 
 
@@ -222,7 +225,7 @@
             
             
             
-            <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 500px;">
+            <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 95%;">
                 <?php
                 //
                 ?>
@@ -254,5 +257,5 @@
             <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik/"); ?>">Врати се на ученика</a><br>
         </div>
     </div>
-</body>
+
 

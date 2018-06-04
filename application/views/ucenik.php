@@ -9,7 +9,7 @@
 
 
 <div class="form-group row pretraga">
-
+    <h3>Унос и претрага ученика</h3>
         <!--<form name="registracija" method="POST" action="<?php echo site_url($controller . "/unesi_ucenika") ?>">-->
 
     <div class="row col-md-12">
@@ -28,16 +28,17 @@
 <div class="row">
     <div class="col-md-6 ">
 
-        <a class="dugme1 btn btn-primary btn-lg btn-block " href="<?php echo site_url($controller . "/dokumentacija") ?>">Документација</a><br>
+
+        <a class="dugme1 btn btn-primary btn-lg btn-block "  href="<?php echo site_url($controller . "/dokumentacija") ?>">Документација</a><br>
     </div>
     <div class="col-md-6 ">
-      
-            <a class="dugme1 btn btn-primary btn-lg btn-block col-sm-6" href="<?php echo site_url($controller . "/priznati_ispiti") ?>">Признати испити</a>
-       
-       
- <a class="dugme1 btn btn-primary btn-lg btn-block col-sm-6" href="<?php echo site_url($controller . "/prijava_ispita") ?>">Пријави испите</a><br>
 
-        
+        <a class="dugme1 btn btn-primary btn-lg btn-block col-sm-6" href="<?php echo site_url($controller . "/priznati_ispiti") ?>">Признати испити</a><br>
+
+
+        <a class="dugme1 btn btn-primary btn-lg btn-block col-sm-6" href="<?php echo site_url($controller . "/prijava_ispita") ?>">Пријави испите</a><br>
+
+
     </div>
 
     <div class="row">
