@@ -155,9 +155,8 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
         </div>
     </div>
     <div class="col-md-6"><br><br><br><br>
-        <div class="dugme">
-            <input  type="submit" value="Unesi" name="priznaj" style="height: 100px; width: 200px">
-            <!--<a href="<?php echo site_url($controller . "/dokumentacija") ?>">Документација</a><br>-->
+        <div>
+            <input class="dugme2 btn btn-primary btn-lg btn-block" type="submit" value="Unesi" name="priznaj" style="height: 100px;">
 
         </div> 
 
