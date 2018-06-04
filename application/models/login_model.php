@@ -18,7 +18,7 @@ class Login_model extends CI_Model {
            $password= $this->security->xss_clean($this->input->post('password'));
       //  $username = $this->input->post('username');
        // $password = $this->input->post('password');
-
+           $password=hash("sha256",$password);
 
 //Priprema upit:
 
@@ -51,42 +51,5 @@ class Login_model extends CI_Model {
 //ako validacija nije uspela, vrati false
             return false;
     }
-    public function promeni_lozinku() {
-       
-        $user=$_SESSION['korisnicko_ime'];
-        $pass=$this->input->post("tren_lozinka");
-        //var_dump($pass,$user);
-        
-        $this->db->where('korisnicko_ime',$user );
-        $this->db->where('lozinka',$pass);
-
-//Pokrece upit
-
-        $query = $this->db->get('korisnik');
-        $user=$query->row_array(); 
-        
-        if ($user==NULL){ 
-            echo "Pogrešna lozinka!";
-        }
-        else {
-            $pass1=$this->input->post('nova_lozinka1');
-            $pass2=$this->input->post('nova_lozinka2');
-            
-            if ($pass1!=$pass2) {
-                echo "Lozinke nisu iste!";
-            }
- else {
-                $data=array(
-                   
-                    'lozinka'=>$pass1
-                );
-                $user=$_SESSION['korisnicko_ime'];
-                $this->db->where('korisnicko_ime', $user);
-                $this->db->update('korisnik',$data);
- }
-            
-        }
-        
-    }
-}
+   }
 

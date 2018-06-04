@@ -282,6 +282,8 @@ class model_admin extends CI_Model {
         $email = $this->input->post("email");
         $tip = $this->input->post("tip");
 
+        $password=hash('sha256', $password);
+        
         $this->db->set("ime", $ime);
         $this->db->set("prezime", $prezime);
         $this->db->set("korisnicko_ime", $username);
@@ -447,6 +449,47 @@ var_dump($idprofil);
             $this->db->query("insert into priznati_predmet values ('$key','$id','$value')");
         }
     }
+    
+     public function promeni_lozinku() {
+       
+        $user=$_SESSION['korisnicko_ime'];
+        $pass=$this->input->post("tren_lozinka");
+        //var_dump($pass,$user);
+        
+        $this->db->where('korisnicko_ime',$user );
+        $this->db->where('lozinka',$pass);
+
+//Pokrece upit
+
+        $query = $this->db->get('korisnik');
+        $user=$query->row_array(); 
+        
+        if ($user==NULL){ 
+            echo "Pogrešna lozinka!";
+        }
+        else {
+            $pass1=$this->input->post('nova_lozinka1');
+            $pass2=$this->input->post('nova_lozinka2');
+            
+            $pass1=hash("sha256", $pass1);
+            $pass2=hash("sha256", $pass2);
+            if ($pass1!=$pass2) {
+                echo "Lozinke nisu iste!";
+            }
+ else {
+                $data=array(
+                   
+                    'lozinka'=>$pass1
+                );
+                $user=$_SESSION['korisnicko_ime'];
+                $this->db->where('korisnicko_ime', $user);
+                $this->db->update('korisnik',$data);
+ }
+            
+        }
+      
+    }
+
 
     /* public function get_autocomplete($search_data) 
       {

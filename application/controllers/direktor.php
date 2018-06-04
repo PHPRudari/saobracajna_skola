@@ -111,7 +111,7 @@ class direktor extends admin {
  }
  
  public function promena_lozinke() {
-     $this->load->model('login_model');
+     $this->load->model('model_admin');
      $this->login_model->promeni_lozinku();
  }
  

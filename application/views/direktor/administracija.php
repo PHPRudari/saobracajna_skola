@@ -39,11 +39,11 @@
         <?php echo form_open($controller . '/promena_lozinke'); ?>
         <h6><br>Промените своју лозинку за приступ</h6>
         Тренутна лозинка:
-        <input type="password" name="tren_lozinka" placeholder="Тренутна лозинка">
+        <input type="password" name="tren_lozinka" placeholder="Тренутна лозинка"><br>
         Нова лозинка:
-        <input type="password" name="nova_lozinka1" placeholder="Нова лозинка">
+        <input type="password" name="nova_lozinka1" placeholder="Нова лозинка"><br>
         Поновите лозинку:
-        <input type="password" name="nova_lozinka2" placeholder="Поновите лозинка">
+        <input type="password" name="nova_lozinka2" placeholder="Поновите лозинка"><br>
         <input value="Измени лозинку" type="submit">
         </form>
         
@@ -75,7 +75,7 @@
             echo $row ['email'] . "&nbsp";
             $ime = $row['idkorisnik'];
             ?>
-            <a href="<?php echo site_url($controller . "/obrisi_predmet/" . $ime); ?>"
+            <a href="<?php echo site_url($controller . "/obrisi_operatera/" . $ime); ?>"
                onclick="return confirm('Да ли сте сигурни да желите да обришете оператера?');">Obriši</a><br>
 
 
