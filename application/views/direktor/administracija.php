@@ -99,7 +99,7 @@
 
 
 
-        <h6><br>Промените своју лозинку за приступ</h6>
+        <h6><br>Промените своју лозинку за приступ:</h6>
         <br>
         <div class="form-group row form-inline">
             <label class="col-form-label col-sm-4" for="tren_lozinka">Тренутна лозинка:</label>

@@ -109,7 +109,7 @@
     <div class="col-md-6 ">
         
 
-        Изабери предмете:<br><br>
+        <h6>Изабери предмете:</h6><br>
         <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 95%;">
             <?php
             foreach ($predmet as $row) {
@@ -125,7 +125,7 @@
         <!-- <a href="<//?php echo site_url("admin/index")?>">Врати се назад</a>-->
 
         <div class="col-md-6 ">    
-        Предмети на којима је ангажован професор:<br><br>
+            <h6>Предмети на којима је ангажован професор:</h6><br>
         <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 95%;">
 
 

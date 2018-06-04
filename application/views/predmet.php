@@ -17,7 +17,7 @@
             <div id="podrucje_rada" class="form-group ">
 
 <!--<input type="text" name="podrucje_rada" placeholder="Подручје рада" disabled>-->
-                <label class="col-form-label col-sm-12" for="podrucje_rada"><p>Подручје рада:</p></label><br>
+                <br><label class="col-form-label col-sm-12" for="podrucje_rada"><h6>Подручје рада:</h6></label>
                 <input type="text" class="form-control col-sm-12" name="podrucje_rada" placeholder="Унеси подручје рада" value="<?php echo set_value("podrucje_rada"); ?>"><?php echo form_error("podrucje_rada", '<span style="color:red">', '</span>'); ?><br>
                 <!--<input class="dugme3 btn btn-primary btn-lg btn-block" type="submit" name="izmeni" value="Измени">-->
                 <!--<input class="dugme3 btn btn-primary btn-lg btn-block" type="submit" name="obrisi" value="Обриши">-->
@@ -74,7 +74,7 @@
             <div id="unos_obrazovnog_profila" class="form-group">
 
 <!--<input type="text" name="obrazovni_profil" value="Образовни профил" disabled>--><br>
-                <label class="col-form-label col-sm-12" for="obrazovni_profil"><p>Образовни профил:</p></label>
+                <br><label class="col-form-label col-sm-12" for="obrazovni_profil"><h6>Образовни профил:</h6></label>
 
 <!--<label class="col-form-label col-sm-12" for="podrucje_rada"><p><p> </p></label>-->
 <!--<input type="text" class="form-control col-sm-12" name="podrucje_rada" placeholder="Подручје рада" value="</?php echo set_value("podrucje_rada"); ?>"></?php echo form_error("podrucje_rada", '<span style="color:red">', '</span>'); ?><br>-->
@@ -163,7 +163,7 @@
                     <option value="godina">Година образовања</option>
                     <option value="<?php ?>">Година образовања<</option>      
                </select><br>--><br>
-                <label class="col-form-label col-sm-12" for="ime_predmeta"><p>Додај предмет:</p></label>
+                <br><label class="col-form-label col-sm-12" for="ime_predmeta"><h6>Додај предмет:</h6></label>
 
 
   <!--<label class="col-form-label col-sm-12" for="obrazovni_profil"><p><p> </p></label>-->

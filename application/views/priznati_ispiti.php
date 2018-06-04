@@ -56,6 +56,9 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
         </form>   
 
     </div>
+    
+    
+    
     <div> 
         <?php echo form_open($controller . '/priznaj_ispite'); ?>
 
@@ -65,7 +68,7 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
                 <p>I godina:</p>
 
-                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;">
+                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 95%;">
                     <?php
                     foreach ($predmet_ucenik as $row) {
                        // var_dump($row)
@@ -91,7 +94,7 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
             <div class="col-md-6"><br>
                 <p>II godina:</p>
 
-                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
+                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 95%;;">
                     <?php
                     foreach ($predmet_ucenik as $row) {
                         if ($row['godina_obrazovanja_idgodina_obrazovanja']=='2' && $row['obrazovni_profil_idobrazovni_profil']==$_POST['obrazovni_profil_idobrazovni_profil']) {
@@ -109,13 +112,15 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
                 </div>
             </div>
         </div>
+        
+        
         <div class="row">
 
             <div class="col-md-6 "><br>
 
                 <p>III godina:</p>
 
-                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
+                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 95%;;">
 <?php
 foreach ($predmet_ucenik as $row) {
     if ($row['godina_obrazovanja_idgodina_obrazovanja']=='3' && $row['obrazovni_profil_idobrazovni_profil']==$_POST['obrazovni_profil_idobrazovni_profil']) {
@@ -140,7 +145,7 @@ foreach ($predmet_ucenik as $row) {
             <div class="col-md-6"><br>
                 <p>IV godina:</p>
 
-                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
+                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 95%;;">
 <?php
 foreach ($predmet_ucenik as $row) {
     if ($row['godina_obrazovanja_idgodina_obrazovanja']=='4' && $row['obrazovni_profil_idobrazovni_profil']==$_POST['obrazovni_profil_idobrazovni_profil']) {
@@ -159,12 +164,14 @@ foreach ($predmet_ucenik as $row) {
             </div>
         </div>
 
+        
+        
         <div class="row">
 
             <div class="col-md-6"><br>
-                <p>V godina:</p>
+                <p>Специјализација:</p>
 
-                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
+                <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 95%;;">
 <?php
 foreach ($predmet_ucenik as $row) {
     if ($row['godina_obrazovanja_idgodina_obrazovanja']=='5' && $row['obrazovni_profil_idobrazovni_profil']==$_POST['obrazovni_profil_idobrazovni_profil']) {
@@ -184,13 +191,14 @@ foreach ($predmet_ucenik as $row) {
             <div class="col-md-6"><br><br><br><br>
                 <div class="dugme">
                     <input  type="submit" value="Unesi" name="priznaj" style="height: 100px; width: 200px">
-                    <!--<a href="<?php echo site_url($controller . "/dokumentacija") ?>">Документација</a><br>-->
+                    <!--<a href="</?php echo site_url($controller . "/dokumentacija") ?>">Документација</a><br>-->
 
                 </div> 
 
             </div>
         </div> 
         <br>
+        
         
         <div class="row">
             <div class="col-md-6">       
