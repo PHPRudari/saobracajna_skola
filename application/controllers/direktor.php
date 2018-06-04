@@ -110,6 +110,12 @@ class direktor extends admin {
      }
  }
  
+ public function promena_lozinke() {
+     $this->load->model('login_model');
+     $this->login_model->promeni_lozinku();
+ }
+ 
+ 
 }
 
 //https://itsolutionstuff.com/post/codeigniter-3-generate-pdf-from-view-using-dompdf-library-with-exampleexample.html
