@@ -330,7 +330,8 @@ class admin extends CI_Controller {
 
     public function prijava_ispita() {
         $this->dohvati_rok();
-
+        $result=$this->model_admin->nepolozeni_ispiti();
+        $_SESSION['nepolozeni_ispiti']=$result;
         $this->loadView("prijava_ispita.php");
     }
 

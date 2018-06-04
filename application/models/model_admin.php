@@ -489,6 +489,18 @@ var_dump($idprofil);
         }
       
     }
+    
+    public function nepolozeni_ispiti() {
+        $id=$_SESSION['ucenik']['iducenik'];
+        
+        $query=$this->db->query("SELECT * FROM ispiti i LEFT JOIN priznati_predmet pp ON pp.predmet_idpredmet = i.idpredmet WHERE pp.predmet_idpredmet IS NULL and iducenik=$id;");
+                
+        $result = $query->result_array();
+        return $result;
+        
+        
+        
+    }
 
 
     /* public function get_autocomplete($search_data) 
