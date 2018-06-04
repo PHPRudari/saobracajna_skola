@@ -30,6 +30,8 @@
 
 
         <a class="dugme1 btn btn-primary btn-lg btn-block "  href="<?php echo site_url($controller . "/dokumentacija") ?>">Документација</a><br>
+      <?php if($this->session->flashdata('info'))
+     echo '<h3 style="color:red">'.$this->session->flashdata('info').'</h3>'; ?>
     </div>
     <div class="col-md-6 ">
 

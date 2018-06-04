@@ -77,7 +77,7 @@ class admin extends CI_Controller {
         $data['godina_obrazovanja'] = $result;
         $result = $this->model_admin->dohvati_tip_ucenik();
         $data['tip_ucenik'] = $result;
-
+     
         if (isset($_SESSION['ucenik'])) {
             $_POST = $_SESSION['ucenik'];
         }

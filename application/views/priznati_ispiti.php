@@ -6,11 +6,10 @@ if (isset($error))
 
 
 if (!isset($_SESSION['ucenik']['iducenik'])) {
-    echo '<h1>Niste odabrali učenika !!! <h1>';
-    exit;
+    $this->session->set_flashdata('info', 'Нисте одабрали ученика!');  
+    redirect(site_url("/$this->controller/ucenik"));
 }
 ?>
-
 <body>
 
 
