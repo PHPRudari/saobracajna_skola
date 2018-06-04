@@ -10,23 +10,38 @@
        <!-- <form name="administracija" action="<?//php echo site_url($controller."/unos_operatera") ?>" method="POST">-->
         <br>
         <h3>Унос нових оператера:</h3>
-        Име:<br>                
-        <input type="text" name="ime" value="<?php echo set_value("ime") ?>" placeholder="Унесите име"><?php echo form_error('ime', '<span style="color:red">', '</span>'); ?><br>
+        
+        <div class="form-group row form-inline">
+                <label class="col-form-label col-sm-4" for="ime">Име:</label>
+                <input type="text"  class="form-control" name="ime" placeholder="Унеси име" value="<?php echo set_value("ime"); ?>"><?php echo form_error("ime", '<span style="color:red">', '</span>'); ?><br>
+        </div>
+        
+        <div class="form-group row form-inline">
+                <label class="col-form-label col-sm-4" for="prezime">Презиме:</label>
+                <input type="text"  class="form-control" name="prezime" placeholder="Унеси презиме" value="<?php echo set_value("prezime"); ?>"><?php echo form_error("prezime", '<span style="color:red">', '</span>'); ?><br>
+        </div>
 
-        Презиме:<br>
-        <input type="text" name="prezime" value="<?php echo set_value("prezime") ?>"placeholder="Унесите презиме"><?php echo form_error('prezime', '<span style="color:red">', '</span>'); ?><br>
+        <div class="form-group row form-inline">
+                <label class="col-form-label col-sm-4" for="kor_ime">Корисничко име:</label>
+                <input type="text"  class="form-control" name="kor_ime" placeholder="Унеси корисничко име" value="<?php echo set_value("kor_ime"); ?>"><?php echo form_error("kor_ime", '<span style="color:red">', '</span>'); ?><br>
+        </div>
+        
+        <div class="form-group row form-inline">
+                <label class="col-form-label col-sm-4" for="lozinka">Лозинка:</label>
+                <input type="password"  class="form-control" name="lozinka" placeholder="Унеси лозинку" value="<?php echo set_value("lozinka"); ?>"><?php echo form_error("lozinka", '<span style="color:red">', '</span>'); ?><br>
+        </div>
 
-        Корисничко име:<br>
-        <input type="text" name="kor_ime" value="<?php echo set_value("kor_ime") ?>"placeholder="Koр. име:"><?php echo form_error('kor_ime', '<span style="color:red">', '</span>'); ?><br>
+        <div class="form-group row form-inline">
+                <label class="col-form-label col-sm-4" for="lozinka">Поновите лозинку:</label>
+                <input type="password"  class="form-control" name="lozinka2" placeholder="Поновите лозинку" value="<?php echo set_value("lozinka2"); ?>"><?php echo form_error("lozinka2", '<span style="color:red">', '</span>'); ?><br>
+        </div>
 
-        Лозинка:<br>
-        <input type="password" name="lozinka" value="<?php echo set_value("lozinka") ?>" placeholder="Лозинка:"><?php echo form_error('lozinka', '<span style="color:red">', '</span>'); ?><br>
+        <div class="form-group row form-inline">
+                <label class="col-form-label col-sm-4" for="lozinka">Е-пошта:</label>
+                <input type="email"  class="form-control" name="email" placeholder="Унесите е-пошту" value="<?php echo set_value("email"); ?>"><?php echo form_error("email", '<span style="color:red">', '</span>'); ?><br>
+        </div>
 
-        Поновите лозинку:<br>
-        <input type="password" name="lozinka2" value="<?php echo set_value("lozinka2") ?>"placeholder="Поновите лозинку..."><?php echo form_error('lozinka2', '<span style="color:red">', '</span>'); ?><br>
-
-        E-mail:<br>
-        <input type="email" name="email" value="<?php echo set_value("email") ?>" placeholder="Email"><?php echo form_error('email', '<span style="color:red">', '</span>'); ?><br><br>
+        
         <input type="hidden" name="tip" value="1">
         <input type="submit" value="Сачувај"> <br>
 
