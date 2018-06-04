@@ -9,7 +9,7 @@
         <?php echo form_open($controller . '/unos_operatera'); ?>
        <!-- <form name="administracija" action="<?//php echo site_url($controller."/unos_operatera") ?>" method="POST">-->
 
-        <h3>Унос нових оператера:</h3>
+        <h3 style="color:green">Унос нових оператера:</h3>
         Име:<br>                
         <input type="text" name="ime" value="<?php echo set_value("ime") ?>" placeholder="Унесите име"><?php echo form_error('ime', '<span style="color:red">', '</span>'); ?><br>
 
@@ -36,18 +36,29 @@
         echo $poruka;
         ?>
 
+        <?php echo form_open($controller . '/promena_lozinke'); ?>
+        <h6><br>Промените своју лозинку за приступ</h6>
+        Тренутна лозинка:
+        <input type="password" name="tren_lozinka" placeholder="Тренутна лозинка">
+        Нова лозинка:
+        <input type="password" name="nova_lozinka1" placeholder="Нова лозинка">
+        Поновите лозинку:
+        <input type="password" name="nova_lozinka2" placeholder="Поновите лозинка">
+        <input value="Измени лозинку" type="submit">
+        </form>
+        
     </div>
 
 
 
     <div class="col-md-6">
 
-        <div class="something">
+<!--        <div class="something">
             <input name="search_data" id="search_data" type="text" onkeyup="ajaxSearch();">
             <div id="suggestions">
                 <div id="autoSuggestionsList"></div>
             </div>
-        </div>
+        </div>-->
 
 
         <?php
@@ -56,8 +67,8 @@
 
 
 
-
-        echo "Име Презиме E-пошта <br>";
+        echo '<h3 style="color:green">Списак оператера у бази:</h3><br><br>';
+        echo "Име Презиме E-пошта <br><br>";
         foreach ($korisnici as $row) {
             echo $row['ime'] . "&nbsp";
             echo $row['prezime'] . "&nbsp";
