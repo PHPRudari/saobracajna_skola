@@ -74,9 +74,9 @@ body {
 }
 .footer {
     /*background: url("../slike/login_pozadina1.jpg") no-repeat center center fixed;*/
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0,0,0,0.9);
     margin-top:20px;
-    position: relative;
+    position: fixed;
     margin-top: 50px;
     height: 40px;
     bottom:0;

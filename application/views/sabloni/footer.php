@@ -5,7 +5,7 @@
 
 <div id="footer">
     <nav class="navbar navbar-default navbar-fixed-bottom footer" role="navigation">
-        <small>Copyright &copy; PHP Rudari 2018 by Voja Macola</small>
+        <small>Copyright &copy Saobraćajno tehnička škola Zemun; Desing and code by PHP Rudari 2018 (Voja & Friends)</small>
     </nav>
 
 </div>
