@@ -8,8 +8,8 @@
         <?php // echo validation_errors(); ?>
         <?php echo form_open($controller . '/unos_operatera'); ?>
        <!-- <form name="administracija" action="<?//php echo site_url($controller."/unos_operatera") ?>" method="POST">-->
-
-        <h3 style="color:green">Унос нових оператера:</h3>
+        <br>
+        <h3>Унос нових оператера:</h3>
         Име:<br>                
         <input type="text" name="ime" value="<?php echo set_value("ime") ?>" placeholder="Унесите име"><?php echo form_error('ime', '<span style="color:red">', '</span>'); ?><br>
 
@@ -67,7 +67,7 @@
 
 
 
-        echo '<h3 style="color:green">Списак оператера у бази:</h3><br><br>';
+        echo '<br><h3>Списак оператера у бази:</h3><br><br>';
         echo "Име Презиме E-пошта <br><br>";
         foreach ($korisnici as $row) {
             echo $row['ime'] . "&nbsp";
