@@ -82,7 +82,9 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
                             echo "</div>";
                             echo "</div>";
                         }
+                        
                     }
+                    
                     ?>
                 </div>
 

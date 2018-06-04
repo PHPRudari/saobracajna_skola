@@ -18,7 +18,7 @@ class Login_model extends CI_Model {
            $password= $this->security->xss_clean($this->input->post('password'));
       //  $username = $this->input->post('username');
        // $password = $this->input->post('password');
-           $password=hash("sha256",$password);
+          // $password=hash("sha256",$password);
 
 //Priprema upit:
 

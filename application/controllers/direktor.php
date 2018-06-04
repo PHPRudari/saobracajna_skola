@@ -85,7 +85,9 @@ class direktor extends admin {
             redirect(site_url('/direktor/administracija'));
         }
         
-        
+        public function promena_lozinke() {
+            $this->model_admin->promeni_lozinku();
+        }
     
         
         

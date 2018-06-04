@@ -455,7 +455,7 @@ var_dump($idprofil);
         $user=$_SESSION['korisnicko_ime'];
         $pass=$this->input->post("tren_lozinka");
         //var_dump($pass,$user);
-        
+        $pass=hash("sha256", $pass);
         $this->db->where('korisnicko_ime',$user );
         $this->db->where('lozinka',$pass);
 

@@ -40,6 +40,9 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
         <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;">
             <?php
+            
+           
+            
             foreach ($_SESSION['nepolozeni_ispiti'] as $row) {
                 // var_dump($row)
                 if ($row['godina_obrazovanja_idgodina_obrazovanja'] == '1') {
@@ -50,6 +53,7 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
                     echo "</div>";
                 }
+                else echo '<h5 style="color:red">Положени су сви испити са ове године.</h5>';
             }
             ?>
         </div>
@@ -72,6 +76,7 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
                     echo "</div>";
                 }
+                else echo '<h5 style="color:red">Положени су сви испити са ове године.</h5>';
             }
             ?>
         </div>
@@ -95,6 +100,7 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
                     echo "</div>";
                 }
+                else echo '<h5 style="color:red">Положени су сви испити са ове године.</h5>';
             }
             ?>
         </div>
@@ -119,6 +125,7 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
                     echo "</div>";
                 }
+                else echo '<h5 style="color:red">Положени су сви испити са ове године.</h5>';
             }
             ?>
         </div>
@@ -142,6 +149,7 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
                     echo "</div>";
                 }
+                else echo '<h5 style="color:red">Положени су сви испити са ове године.</h5>';
             }
             ?>
         </div>
