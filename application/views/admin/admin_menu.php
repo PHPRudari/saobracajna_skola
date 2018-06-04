@@ -24,9 +24,9 @@
                             Unos podataka
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <a class="dropdown-item" href="<?php echo site_url("admin/ucenik/") ?>">Učenik</a>
-                            <a class="dropdown-item" href="<?php echo site_url("admin/profesor/") ?>">Profesor</a>
-                            <a class="dropdown-item" href="<?php echo site_url("admin/predmet/") ?>">Predmet</a>
+                            <a class="dropdown-item padajuca_lista" href="<?php echo site_url("admin/ucenik/") ?>">Učenik</a>
+                            <a class="dropdown-item padajuca_lista" href="<?php echo site_url("admin/profesor/") ?>">Profesor</a>
+                            <a class="dropdown-item padajuca_lista" href="<?php echo site_url("admin/predmet/") ?>">Predmet</a>
                         </div>
                     </div>
                     
@@ -42,10 +42,10 @@
                         <a class="nav-link" href="<?php echo site_url("admin/predmet/")?>">Predmet</a>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="<?php echo site_url("admin/prijava_ispita/")?>">Prijava ispita</a>
+                        <a class="nav-link" href="<?php echo site_url("admin/prijava_ispita/")?>">Prijava ispita</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="<?php echo site_url("admin/raspored/")?>">Raspored</a>
+                        <a class="nav-link" href="<?php echo site_url("admin/raspored/")?>">Raspored</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo site_url("admin/statistika/")?>">Statistika</a>

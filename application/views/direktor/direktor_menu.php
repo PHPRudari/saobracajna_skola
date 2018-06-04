@@ -42,10 +42,10 @@
 
 
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="<?php echo site_url("direktor/prijava_ispita/") ?>">Пријава испита</a>
+                        <a class="nav-link" href="<?php echo site_url("direktor/prijava_ispita/") ?>">Пријава испита</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="<?php echo site_url("direktor/raspored/") ?>">Распоред</a>
+                        <a class="nav-link" href="<?php echo site_url("direktor/raspored/") ?>">Распоред</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo site_url("direktor/statistika/") ?>">Статистика</a>
