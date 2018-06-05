@@ -463,7 +463,7 @@ class admin extends CI_Controller {
         //var_dump($_POST['ocena']);
     }
 
-    public function stampa() {
+    public function stampa($ime) {
 
         $this->load->library('pdfgenerator');
         $data['users'] = array(
@@ -472,7 +472,7 @@ class admin extends CI_Controller {
             array('firstname' => 'I am', 'lastname' => 'User', 'email' => 'iam@user.com'),
             array('firstname' => 'I am', 'lastname' => 'Quality Assurance', 'email' => 'iam@qualityassurance.com')
         );
-        $html = $this->load->view('ucenik', $data, true);
+        $html = $this->load->view("izvestaji/$ime", $data, true);
         $filename = 'report_' . time();
         $this->pdfgenerator->generate($html, $filename, true, 'A4', 'portrait');
     }
@@ -483,7 +483,8 @@ class admin extends CI_Controller {
     }
 
     public function prijavljeni_ispiti() {
-        $this->model_admin->prijavljeni_ispiti();
+        $result=$this->model_admin->prijavljeni_ispiti();
+        $_SESSION['prijavljeni']=$result;
         $this->loadView("izvestaji/prijavljeni.php");
     }
     

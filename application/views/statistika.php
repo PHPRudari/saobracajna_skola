@@ -5,5 +5,5 @@
 <a href="<?php echo site_url($controller . "/stampa") ?>">Odstampaj</a><br>
 
 
-<a  href="<?php echo site_url($controller . "/prijavljeni_ispiti") ?>">Штампај пријављене испите</a>
+<a  href="<?php echo site_url($controller . "/stampa/prijavljeni") ?>">Штампај пријављене испите</a>
 
