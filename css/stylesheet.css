@@ -23,9 +23,10 @@ body {
 
 .container {
     /*  background-color: lightgrey;*/
+    position: relative;
     color:whitesmoke;
     border-radius: 5px;
-    margin:0 auto;
+    margin:90px auto;
     box-shadow: 5px 5px 15px black;
     background-color: rgb (0,0,0,0.4);
     padding-bottom: 50px;
@@ -40,9 +41,14 @@ body {
 
 }
 
-#header {
-    margin:20px;
-    padding-top: 10px;
+.header {
+    width: 100%;
+    /*margin:20px;
+    padding-top: 10px;*/
+    position: fixed;
+    top:0;
+   
+    z-index: 5000;
 }
 
 
@@ -59,7 +65,7 @@ body {
 }
 
 .navbar {
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0,0,0,0.9);
     height: 70px;
     /* background: url("../slike/login_pozadina1.jpg") no-repeat center center fixed;*/
     color:white;
