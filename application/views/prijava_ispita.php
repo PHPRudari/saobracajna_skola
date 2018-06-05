@@ -17,18 +17,20 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
 
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6">
 
-        <br><h4>Izabran je  učenik: <?php echo $_SESSION['ucenik']['ime'] . " " . $_SESSION['ucenik']['prezime'] . "&nbsp;&nbsp;&nbsp;&nbsp; Broj učenika " . $_SESSION['ucenik']['jedinstveni_broj_ucenik'] ?></h4>
+        <br><h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Изабран је ученик: <?php echo $_SESSION['ucenik']['ime'] . " " . $_SESSION['ucenik']['prezime'] ?></h4>
+        <br><h4><?php echo " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Јединствени број ученика: " . $_SESSION['ucenik']['jedinstveni_broj_ucenik'] ?></h4>
 
     </div>
 </div><br>
 
 <?php echo form_open($controller . '/prijavi_ispite'); ?>
 
-<div class="row">
-    <p>Izaberite rok:</p>
-    <select name="rok">
+<div class="col-md-6 form-group row form-inline">
+
+    <label class="col-sm-4 col-form-label" for="rok">Изаберите рок:</label>
+        <select name="rok" class="form-control col-sm-8">
         <?php
         foreach ($_SESSION['rok'] as $row) {
             echo '<option value="' . $row['idtip_roka'] . '">';
@@ -39,8 +41,9 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
     </select>
 
+
 </div>
- 
+
 <div class="row">
 
        
