@@ -178,7 +178,7 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
     <div class="col-md-6"><br><br><br><br>
         <div>
              <?php if (isset ($_SESSION['prijava']))
-            echo $_SESSION['prijava'];
+            echo '<h3 style="color:red">'.$_SESSION['prijava']."</h3>";
         
         ?>
             <input class="dugme2 btn btn-primary btn-lg btn-block" type="submit" value="Unesi" name="priznaj" style="height: 100px;">
