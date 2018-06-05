@@ -56,6 +56,14 @@
                 </ul>
                 <ul  class="navbar-nav ">
                     <li class="nav-item">
+                <a class="nav-link" href="<?php echo site_url("direktor/index/") ?>">        
+                        <?php
+                        $name = $this->session->userdata('ime');
+                        $tip = $this->session->userdata('tip');
+                        echo "Улогован је " . $name;
+                        ?></a>
+                    </li>   
+                    <li class="nav-item">
                         <a class="nav-link mr-sm-2"  href="<?php echo site_url("direktor/do_logout/") ?>">Излогуј се</a>
                     </li>
                 </ul>
