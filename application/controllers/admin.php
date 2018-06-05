@@ -482,6 +482,11 @@ class admin extends CI_Controller {
          redirect(site_url("/$this->controller/prijava_ispita"));
     }
 
+    public function prijavljeni_ispiti() {
+        $this->model_admin->prijavljeni_ispiti();
+        $this->loadView("izvestaji/prijavljeni.php");
+    }
+    
 }
 
 //https://arjunphp.com/generating-a-pdf-in-codeigniter-using-mpdf/

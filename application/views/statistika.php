@@ -2,6 +2,8 @@
     Under construction...
 </h1>
 
-<a href="<?php echo site_url($controller . "/stampa") ?>">Odstampaj</a>
+<a href="<?php echo site_url($controller . "/stampa") ?>">Odstampaj</a><br>
 
+
+<a  href="<?php echo site_url($controller . "/prijavljeni_ispiti") ?>">Штампај пријављене испите</a>
 

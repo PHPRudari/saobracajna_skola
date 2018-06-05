@@ -538,4 +538,11 @@ class model_admin extends CI_Model {
           } */
     }
 
+    public function prijavljeni_ispiti() {
+        $query=$this->db->query("select * from polaganje_ispit");
+        $result = $query->result_array();
+       
+        return $result;
+    }
+    
 }
