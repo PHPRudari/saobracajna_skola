@@ -303,4 +303,13 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
         }
     }
+    
+
+
+$(".predmeti").each(function(){
+    if($(this).children().length === 0)
+        $(this).parent().remove();
+})
+
+
 </script>
