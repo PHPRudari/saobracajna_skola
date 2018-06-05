@@ -12,6 +12,7 @@ body {
     background: url("../slike/pozadina1-siva.jpg") no-repeat center center fixed;
     z-index: -1;
     color:whitesmoke;
+    width: 99%;
 
 
 }
