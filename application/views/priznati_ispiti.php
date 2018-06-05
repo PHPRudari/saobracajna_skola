@@ -1,9 +1,8 @@
 <?php
-if (isset($error))
-    echo $error;
-//var_dump($_POST);
+
+//r_dump($_POST);
 //var_dump($predmet_ucenik);
-///var_dump($_SESSION);
+//var_dump($_SESSION);
 //var_dump($profil);
 
 
@@ -12,7 +11,6 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
     redirect(site_url("/$this->controller/ucenik"));
 }
 ?>
-<body>
 
 
     <div class="row">

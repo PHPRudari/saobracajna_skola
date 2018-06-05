@@ -494,6 +494,7 @@ class model_admin extends CI_Model {
         $query = $this->db->query("SELECT * FROM ispiti i LEFT JOIN priznati_predmet pp ON pp.predmet_idpredmet = i.idpredmet WHERE pp.predmet_idpredmet IS NULL and iducenik=$id;");
 
         $result = $query->result_array();
+       
         return $result;
     }
 
