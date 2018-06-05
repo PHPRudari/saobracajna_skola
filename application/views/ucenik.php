@@ -294,7 +294,7 @@
                     }
                     ?>
 
-                </select><br>
+                </select>
             </div>
 
             <div class="form-group row form-inline">
@@ -323,7 +323,7 @@
 </select><br>-->
 
 
-            <br>
+           
 
             <div class="form-group row form-inline">
 
