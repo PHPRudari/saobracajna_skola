@@ -1,18 +1,8 @@
 <?php
-
-
-//r_dump($_POST);
-//var_dump($predmet_ucenik);
-//var_dump($_SESSION);
-//var_dump($profil);
-
-
 if (!isset($_SESSION['ucenik']['iducenik'])) {
     $this->session->set_flashdata('info', 'Нисте одабрали ученика!');
     redirect(site_url("/$this->controller/ucenik"));
 }
-
-
 ?>
 
 
@@ -29,45 +19,41 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 <div class="row">
     <p>Izaberite rok:</p>
     <select name="rok">
-        <?php
-        foreach ($_SESSION['rok'] as $row) {
-            echo '<option value="' . $row['idtip_roka'] . '">';
-            echo $row['naziv'];
-            echo '</option>';
-        }
-        ?> 
+<?php
+foreach ($_SESSION['rok'] as $row) {
+    echo '<option value="' . $row['idtip_roka'] . '">';
+    echo $row['naziv'];
+    echo '</option>';
+}
+?> 
 
     </select>
 
 </div>
- 
+
 <div class="row">
 
-       
-       
-    
+
+
+
     <div class="col-md-6"><br>
 
         <p>I godina:</p>
 
         <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;">
-            <?php
-            
-           
-            
-            foreach ($_SESSION['nepolozeni_ispiti'] as $row) {
-                // var_dump($row)
-                if ($row['godina_obrazovanja_idgodina_obrazovanja'] == '1') {
-                    echo "<div class='row'>";
-                    echo "<div class='col-md-10'>";
-                    echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'];
-                    echo "</div>";
+<?php
+foreach ($_SESSION['nepolozeni_ispiti'] as $row) {
+    // var_dump($row)
+    if ($row['godina_obrazovanja_idgodina_obrazovanja'] == '1') {
+        echo "<div class='row'>";
+        echo "<div class='col-md-10'>";
+        echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'];
+        echo "</div>";
 
-                    echo "</div>";
-                }
-               
-            }
-            ?>
+        echo "</div>";
+    }
+}
+?>
         </div>
     </div>
 
@@ -77,20 +63,19 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
         <p>II godina:</p>
 
         <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
-            <?php
-            foreach ($_SESSION['nepolozeni_ispiti'] as $row) {
-                // var_dump($row)
-                if ($row['godina_obrazovanja_idgodina_obrazovanja'] == '2') {
-                    echo "<div class='row'>";
-                    echo "<div class='col-md-10'>";
-                    echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'];
-                    echo "</div>";
+<?php
+foreach ($_SESSION['nepolozeni_ispiti'] as $row) {
+    // var_dump($row)
+    if ($row['godina_obrazovanja_idgodina_obrazovanja'] == '2') {
+        echo "<div class='row'>";
+        echo "<div class='col-md-10'>";
+        echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'];
+        echo "</div>";
 
-                    echo "</div>";
-                }
-               
-            }
-            ?>
+        echo "</div>";
+    }
+}
+?>
         </div>
     </div>
 </div>
@@ -101,20 +86,19 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
         <p>III godina:</p>
 
         <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
-            <?php
-            foreach ($_SESSION['nepolozeni_ispiti'] as $row) {
-                // var_dump($row)
-                if ($row['godina_obrazovanja_idgodina_obrazovanja'] == '3') {
-                    echo "<div class='row'>";
-                    echo "<div class='col-md-10'>";
-                    echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'];
-                    echo "</div>";
+<?php
+foreach ($_SESSION['nepolozeni_ispiti'] as $row) {
+    // var_dump($row)
+    if ($row['godina_obrazovanja_idgodina_obrazovanja'] == '3') {
+        echo "<div class='row'>";
+        echo "<div class='col-md-10'>";
+        echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'];
+        echo "</div>";
 
-                    echo "</div>";
-                }
-               
-            }
-            ?>
+        echo "</div>";
+    }
+}
+?>
         </div>
 
 
@@ -126,24 +110,21 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
         <p>IV godina:</p>
 
         <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
-            <?php
-            
-            
-            
-            foreach ($_SESSION['nepolozeni_ispiti'] as $row) {
-                // var_dump($row)
-                if ($row['godina_obrazovanja_idgodina_obrazovanja'] == '4') {
-                    echo "<div class='row'>";
-                    echo "<div class='col-md-10'>";
-                    echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'];
-                    echo "</div>";
+<?php
+foreach ($_SESSION['nepolozeni_ispiti'] as $row) {
+    // var_dump($row)
+    if ($row['godina_obrazovanja_idgodina_obrazovanja'] == '4') {
+        echo "<div class='row'>";
+        echo "<div class='col-md-10'>";
+        echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'];
+        echo "</div>";
 
-                    echo "</div>";
-                }
-                        
-            //    else echo '<h5 style="color:red">Положени су сви испити са ове године.</h5>';
-            }
-            ?>
+        echo "</div>";
+    }
+
+    //    else echo '<h5 style="color:red">Положени су сви испити са ове године.</h5>';
+}
+?>
         </div>
     </div>
 </div>
@@ -154,30 +135,30 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
         <p>V godina:</p>
 
         <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
-           
-            <?php
-            foreach ($_SESSION['nepolozeni_ispiti'] as $row) {
-                // var_dump($row)
-                if ($row['godina_obrazovanja_idgodina_obrazovanja'] == '5') {
-                    echo "<div class='row'>";
-                    echo "<div class='col-md-10'>";
-                    echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'];
-                    echo "</div>";
 
-                    echo "</div>";
-                }
-                
-            }
-            ?>
-          
+<?php
+foreach ($_SESSION['nepolozeni_ispiti'] as $row) {
+    // var_dump($row)
+    if ($row['godina_obrazovanja_idgodina_obrazovanja'] == '5') {
+        echo "<div class='row'>";
+        echo "<div class='col-md-10'>";
+        echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]">' . $row['naziv_predmet'];
+        echo "</div>";
+
+        echo "</div>";
+    }
+}
+?>
+
         </div>
     </div>
     <div class="col-md-6"><br><br><br><br>
         <div>
-             <?php if (isset ($_SESSION['prijava']))
-            echo $_SESSION['prijava'];
-        
-        ?>
+            <?php
+            if (isset($_SESSION['prijava']))
+                echo '<h3 style="color:red">'.$_SESSION['prijava'].'</h3>';
+       
+            ?>
             <input class="dugme2 btn btn-primary btn-lg btn-block" type="submit" value="Unesi" name="priznaj" style="height: 100px;">
 
         </div> 
@@ -209,9 +190,9 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
 <script>
 
-$(".predmeti").each(function(){
-    if($(this).children().length === 0)
-        $(this).parent().remove();
-})
+    $(".predmeti").each(function () {
+        if ($(this).children().length === 0)
+            $(this).parent().remove();
+    })
 
 </script>

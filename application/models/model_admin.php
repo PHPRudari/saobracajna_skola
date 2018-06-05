@@ -445,7 +445,7 @@ class model_admin extends CI_Model {
                 redirect(site_url("/$this->controller/priznati_ispiti"));
             }
             else
-                $this->session->set_flashdata('priznaj', 'Успешно сте признали испите.');
+                $this->session->set_flashdata('priznaj', 'Успешно сте признали испит(е).');
                 $this->db->query("insert into priznati_predmet values ('$key','$id','$value')");
                 redirect(site_url("/$this->controller/priznati_ispiti"));
         }
