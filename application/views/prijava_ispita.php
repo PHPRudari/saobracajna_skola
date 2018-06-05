@@ -1,13 +1,10 @@
 <?php
-if (isset($error))
-    echo $error;
+
 
 if (!isset($_SESSION['ucenik']['iducenik'])) {
     $this->session->set_flashdata('info', 'Нисте одабрали ученика!');
     redirect(site_url("/$this->controller/ucenik"));
 }
-
-//var_dump($_SESSION['nepolozeni_ispiti']);
 ?>
 
 
@@ -18,6 +15,9 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
     </div>
 </div><br>
+
+<?php echo form_open($controller . '/prijavi_ispite'); ?>
+
 <div class="row">
     <p>Izaberite rok:</p>
     <select name="rok">
@@ -32,8 +32,11 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
     </select>
 
 </div>
+ 
 <div class="row">
 
+       
+    
     <div class="col-md-6"><br>
 
         <p>I godina:</p>
@@ -53,7 +56,7 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
                     echo "</div>";
                 }
-                else echo '<h5 style="color:red">Положени су сви испити са ове године.</h5>';
+               
             }
             ?>
         </div>
@@ -76,7 +79,7 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
                     echo "</div>";
                 }
-                else echo '<h5 style="color:red">Положени су сви испити са ове године.</h5>';
+               
             }
             ?>
         </div>
@@ -100,7 +103,7 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
                     echo "</div>";
                 }
-                else echo '<h5 style="color:red">Положени су сви испити са ове године.</h5>';
+               
             }
             ?>
         </div>
@@ -115,6 +118,9 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
         <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
             <?php
+            
+            
+            
             foreach ($_SESSION['nepolozeni_ispiti'] as $row) {
                 // var_dump($row)
                 if ($row['godina_obrazovanja_idgodina_obrazovanja'] == '4') {
@@ -125,7 +131,8 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
                     echo "</div>";
                 }
-                else echo '<h5 style="color:red">Положени су сви испити са ове године.</h5>';
+                        
+            //    else echo '<h5 style="color:red">Положени су сви испити са ове године.</h5>';
             }
             ?>
         </div>
@@ -138,6 +145,7 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
         <p>V godina:</p>
 
         <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
+           
             <?php
             foreach ($_SESSION['nepolozeni_ispiti'] as $row) {
                 // var_dump($row)
@@ -149,9 +157,10 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
                     echo "</div>";
                 }
-                else echo '<h5 style="color:red">Положени су сви испити са ове године.</h5>';
+                
             }
             ?>
+          
         </div>
     </div>
     <div class="col-md-6"><br><br><br><br>
@@ -162,6 +171,7 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
     </div>
 </div> 
+</form>
 <br>
 
 <div class="row">
@@ -183,3 +193,12 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
 </form>
 </div>
+
+<script>
+
+$(".predmeti").each(function(){
+    if($(this).children().length === 0)
+        $(this).parent().remove();
+})
+
+</script>

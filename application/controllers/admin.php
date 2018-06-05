@@ -475,6 +475,10 @@ class admin extends CI_Controller {
         $filename = 'report_' . time();
         $this->pdfgenerator->generate($html, $filename, true, 'A4', 'portrait');
     }
+    
+    public function prijavi_ispite() {
+         $this->model_admin->prijavi_ispite();
+    }
 
 }
 

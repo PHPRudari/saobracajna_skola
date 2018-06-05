@@ -491,6 +491,7 @@ var_dump($idprofil);
     }
     
     public function nepolozeni_ispiti() {
+       
         $id=$_SESSION['ucenik']['iducenik'];
         
         $query=$this->db->query("SELECT * FROM ispiti i LEFT JOIN priznati_predmet pp ON pp.predmet_idpredmet = i.idpredmet WHERE pp.predmet_idpredmet IS NULL and iducenik=$id;");
@@ -501,7 +502,28 @@ var_dump($idprofil);
         
         
     }
+    
+    public function prijavi_ispite() {
 
+        //    var_dump($_POST['predmet']);
+        //   var_dump($_POST['ocena']);
+        // var_dump($_SESSION['ucenik']['iducenik']);
+        //$predmet=$_POST['predmet'];
+               //$ocena=5;
+        // var_dump($ocena);
+       // var_dump($_POST);
+
+        $id=$_SESSION['ucenik']['jedinstveni_broj_ucenik'];
+        $rok= $_POST['rok'];
+        var_dump($id);
+        $predmet= $this->input->post('predmet');
+        
+      foreach ($predmet as  $row) {
+            
+        $this->db->query("insert into polaganje_ispit values ('$row','','',$id','$rok', date()");
+        }
+        
+    
 
     /* public function get_autocomplete($search_data) 
       {
@@ -509,4 +531,5 @@ var_dump($idprofil);
       $this->like('ime', $search_data);
       return $this->db->get('korisnik',10)->result();
       } */
-}
+    }
+      }
