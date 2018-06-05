@@ -478,6 +478,7 @@ class admin extends CI_Controller {
     
     public function prijavi_ispite() {
          $this->model_admin->prijavi_ispite();
+         redirect(site_url("/$this->controller/prijava_ispita"));
     }
 
 }

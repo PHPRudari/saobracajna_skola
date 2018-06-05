@@ -106,6 +106,10 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
                 <div class="col-md-12">
                 <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik/"); ?>">Врати се на ученика</a><br>
             </div>
+                 <?php if (isset ($_SESSION['priznaj']))
+            echo $_SESSION['priznaj'];
+        
+        ?>
             </form>   
 
         </div>

@@ -282,8 +282,8 @@ class model_admin extends CI_Model {
         $email = $this->input->post("email");
         $tip = $this->input->post("tip");
 
-        $password=hash('sha256', $password);
-        
+        $password = hash('sha256', $password);
+
         $this->db->set("ime", $ime);
         $this->db->set("prezime", $prezime);
         $this->db->set("korisnicko_ime", $username);
@@ -331,48 +331,43 @@ class model_admin extends CI_Model {
     public function dohvati_predmet() {
         //$this->db->distinct("");
         $this->db->from("predmet");
-       // $this->db->like("godina_obrazovanja_idgodina_obrazovanja");
+        // $this->db->like("godina_obrazovanja_idgodina_obrazovanja");
         $this->db->select("idpredmet, naziv_predmet");
         $this->db->group_by('naziv_predmet');
         $query = $this->db->get();
         $result = $query->result_array();
         return $result;
-       
-            }
-            
+    }
+
     public function dohvati_predmet_ucenik() {
         $this->db->from("predmet");
-        $this->db->select ("*");
-        $query=$this->db->get();
-        $result=$query->result_array();
+        $this->db->select("*");
+        $query = $this->db->get();
+        $result = $query->result_array();
         return $result;
-    } 
+    }
 
-    
-    
     public function unesi_podrucje() {
- 
+
         $data = array(
             'naziv' => $this->input->post("podrucje_rada"),
         );
 
         $this->db->insert("podrucje_rada", $data);
     }
-    
-    
+
 // obrati paznju !!!
     public function unesi_novi_predmet() {
- 
+
         $data = array(
             'naziv_predmet' => $this->input->post("ime_predmeta"),
             'godina_obrazovanja_idgodina_obrazovanja' => $this->input->post("godina_obrazovanja"),
             'obrazovni_profil_idobrazovni_profil' => $this->input->post("obrazovni_profil"),
-                
         );
         var_dump($data);
         $this->db->insert("predmet", $data);
     }
-    
+
     public function unesi_obrazovni_profil() {
 
         $data = array(
@@ -382,15 +377,14 @@ class model_admin extends CI_Model {
         //var_dump($data);
         $this->db->insert("obrazovni_profil", $data);
     }
-    
+
     public function obrisi_podrucje($idpodrucje) {
 
         $this->db->query("delete from podrucje_rada where idpodrucje_rada='$idpodrucje'");
     }
 
-    
     public function obrisi_profil($idprofil) {
-var_dump($idprofil);
+        var_dump($idprofil);
         $this->db->query("delete from obrazovni_profil where idobrazovni_profil='$idprofil'");
     }
 
@@ -398,8 +392,6 @@ var_dump($idprofil);
 
         $this->db->query("delete from predmet where idpredmet='$idpredmet'");
     }
-
-    
 
     public function obrisi_predmet($idpredmet) {
 
@@ -444,92 +436,105 @@ var_dump($idprofil);
             //  var_dump($key);
             //var_dump($value);
 
+            $query = $this->db->query("select * from priznati_predmet where ucenik_iducenik='$id' and predmet_idpredmet='$key'");
 
+            $count_row = $query->num_rows();
 
-            $this->db->query("insert into priznati_predmet values ('$key','$id','$value')");
+            if ($count_row > 0) {
+                $this->session->set_flashdata('priznaj', 'Већ сте признали неки од тих испита.');
+                redirect(site_url("/$this->controller/priznati_ispiti"));
+            }
+            else
+                $this->session->set_flashdata('priznaj', 'Успешно сте признали испите.');
+                $this->db->query("insert into priznati_predmet values ('$key','$id','$value')");
+                redirect(site_url("/$this->controller/priznati_ispiti"));
         }
     }
+
     
-     public function promeni_lozinku() {
-       
-        $user=$_SESSION['korisnicko_ime'];
-        $pass=$this->input->post("tren_lozinka");
+    public function promeni_lozinku() {
+
+        $user = $_SESSION['korisnicko_ime'];
+        $pass = $this->input->post("tren_lozinka");
         //var_dump($pass,$user);
-        $pass=hash("sha256", $pass);
-        $this->db->where('korisnicko_ime',$user );
-        $this->db->where('lozinka',$pass);
+        $pass = hash("sha256", $pass);
+        $this->db->where('korisnicko_ime', $user);
+        $this->db->where('lozinka', $pass);
 
 //Pokrece upit
 
         $query = $this->db->get('korisnik');
-        $user=$query->row_array(); 
-        
-        if ($user==NULL){ 
+        $user = $query->row_array();
+
+        if ($user == NULL) {
             echo "Pogrešna lozinka!";
-        }
-        else {
-            $pass1=$this->input->post('nova_lozinka1');
-            $pass2=$this->input->post('nova_lozinka2');
-            
-            $pass1=hash("sha256", $pass1);
-            $pass2=hash("sha256", $pass2);
-            if ($pass1!=$pass2) {
+        } else {
+            $pass1 = $this->input->post('nova_lozinka1');
+            $pass2 = $this->input->post('nova_lozinka2');
+
+            $pass1 = hash("sha256", $pass1);
+            $pass2 = hash("sha256", $pass2);
+            if ($pass1 != $pass2) {
                 echo "Lozinke nisu iste!";
-            }
- else {
-                $data=array(
-                   
-                    'lozinka'=>$pass1
+            } else {
+                $data = array(
+                    'lozinka' => $pass1
                 );
-                $user=$_SESSION['korisnicko_ime'];
+                $user = $_SESSION['korisnicko_ime'];
                 $this->db->where('korisnicko_ime', $user);
-                $this->db->update('korisnik',$data);
- }
-            
+                $this->db->update('korisnik', $data);
+            }
         }
-      
     }
-    
+
     public function nepolozeni_ispiti() {
-       
-        $id=$_SESSION['ucenik']['iducenik'];
-        
-        $query=$this->db->query("SELECT * FROM ispiti i LEFT JOIN priznati_predmet pp ON pp.predmet_idpredmet = i.idpredmet WHERE pp.predmet_idpredmet IS NULL and iducenik=$id;");
-                
+
+        $id = $_SESSION['ucenik']['iducenik'];
+
+        $query = $this->db->query("SELECT * FROM ispiti i LEFT JOIN priznati_predmet pp ON pp.predmet_idpredmet = i.idpredmet WHERE pp.predmet_idpredmet IS NULL and iducenik=$id;");
+
         $result = $query->result_array();
         return $result;
-        
-        
-        
     }
-    
+
     public function prijavi_ispite() {
 
         //    var_dump($_POST['predmet']);
         //   var_dump($_POST['ocena']);
         // var_dump($_SESSION['ucenik']['iducenik']);
         //$predmet=$_POST['predmet'];
-               //$ocena=5;
+        //$ocena=5;
         // var_dump($ocena);
-       // var_dump($_POST);
+        // var_dump($_POST);
 
-        $id=$_SESSION['ucenik']['jedinstveni_broj_ucenik'];
-        $rok= $_POST['rok'];
+        $id = $_SESSION['ucenik']['jedinstveni_broj_ucenik'];
+        $rok = $_POST['rok'];
         var_dump($id);
-        $predmet= $this->input->post('predmet');
-        
-      foreach ($predmet as  $row) {
-            
-        $this->db->query("insert into polaganje_ispit values ('$row','','',$id','$rok', date()");
-        }
-        
-    
+        $predmet = $this->input->post('predmet');
 
-    /* public function get_autocomplete($search_data) 
-      {
-      $this->db-> select('ime, idkorisnik');
-      $this->like('ime', $search_data);
-      return $this->db->get('korisnik',10)->result();
-      } */
+        foreach ($predmet as $row) {
+
+            $query = $this->db->query("select * from polaganje_ispit where ucenik_jedinstveni_broj_ucenik='$id' and predmet_idpredmet='$row' and rok_idtip_roka='$rok'");
+
+            $count_row = $query->num_rows();
+
+            if ($count_row > 0) {
+
+                $this->session->set_flashdata('prijava', 'Већ сте пријавили неки од тих испита.');
+                redirect(site_url("/$this->controller/prijava_ispita"));
+            } else
+                $this->db->query("insert into polaganje_ispit values ('',NULL, now(),'$row','$id','$rok')");
+            $this->session->set_flashdata('prijava', 'Успешно сте пријавили испит(е).');
+        }
+
+
+
+        /* public function get_autocomplete($search_data) 
+          {
+          $this->db-> select('ime, idkorisnik');
+          $this->like('ime', $search_data);
+          return $this->db->get('korisnik',10)->result();
+          } */
     }
-      }
+
+}
