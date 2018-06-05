@@ -4,7 +4,7 @@
 <div class="form-group row pretraga">
     <h3>Унос и претрага професора</h3>
     <div class="row col-md-12">
-        <label for="search_data" class="col-2 col-form-label"> <br>Претрага: </label>
+        <label for="search_data" class=" pretraga1  col-2 col-form-label"> Претрага: </label>
         <div class="col-10">  
             <br><input class="form-control col-10" name="search_data" id="search_data" type="text" onkeyup="ajaxSearchProf();">
             <div id="suggestions">
