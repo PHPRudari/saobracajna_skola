@@ -80,7 +80,7 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
                 <h3>Сведочанство:</h3>
                 <br>
 
-                <div class="form-group row form-inline">
+                <!--<div class="form-group row form-inline">
                     <label class="col-form-label col-sm-4 " for="skola">Школа:</label>
                     <input type="text" class="form-control " name="skola" placeholder="Унеси школу" value="<?php echo set_value("skola"); ?>"><?php echo form_error("skola", '<span style="color:red">', '</span>'); ?><br>
                 </div>
@@ -94,11 +94,18 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
                     <label class="col-form-label col-sm-4 " for="razred">Разред:</label>
                     <input type="text" class="form-control " name="razred" placeholder="Унеси разред" value="<?php echo set_value("razred"); ?>"><?php echo form_error("razred", '<span style="color:red">', '</span>'); ?><br>
                 </div>
-                <br>
+                <br>-->
 
                 <div class="col-md-12">
-                    <input type="submit" class="dugme2 btn btn-primary btn-lg btn-block" name="dodaj" value="Пошаљи скенирана документа"><br>
-                </div>
+                    <!--<input type="submit" class="dugme2 btn btn-primary btn-lg btn-block" name="dodaj" value="Сачувај"><br>-->
+               
+                    <h6>Обавезно сачувати скенирана сведочанства ученика у пољу Документација!</h6><br>
+                
+                <a class="dugme3 btn btn-primary btn-lg btn-block "  href="<?php echo site_url($controller . "/dokumentacija") ?>">Документација</a><br>
+            </div>
+                <div class="col-md-12">
+                <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik/"); ?>">Врати се на ученика</a><br>
+            </div>
             </form>   
 
         </div>
@@ -248,14 +255,7 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
         <br>
 
 
-        <div class="row">
-            <div class="col-md-6">       
-                <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/dokumentacija"); ?>">Документација</a><br>
-            </div>
-            <div class="col-md-6">
-                <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik/"); ?>">Врати се на ученика</a><br>
-            </div>
-        </div>
+        
 
 
 
