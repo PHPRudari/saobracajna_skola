@@ -6,57 +6,100 @@ if (isset($error))
 
 
 if (!isset($_SESSION['ucenik']['iducenik'])) {
-    $this->session->set_flashdata('info', 'Нисте одабрали ученика!');  
+    $this->session->set_flashdata('info', 'Нисте одабрали ученика!');
     redirect(site_url("/$this->controller/ucenik"));
 }
 ?>
 <body>
 
 
-    <div>
-        <form name="ispiti">
-            <input type="text" name="ime" value="<?php echo set_value("ime") ?>" placeholder="Име">
-            <input type="text" name="prezime" value="<?php echo set_value("prezime") ?>" placeholder="Презиме">
-            <input type="text" name="jedinstveni_broj" value="<?php echo set_value("jedinstveni_broj_ucenik") ?>" placeholder="Јединствени број"><br>
+    <div class="row">
+        <div class="col-md-6">
+            <form name="ispiti">
+                <br>   
+                <h3>Ученик:</h3>
+                <br>
+                <div class="form-group row form-inline">
+                    <label class="col-form-label col-sm-4 " for="ime">Име:</label>
+                    <input type="text" class="form-control " name="ime" placeholder="Унеси име" value="<?php echo set_value("ime"); ?>"><?php echo form_error("ime", '<span style="color:red">', '</span>'); ?><br>
+                </div>
+
+                <div class="form-group row form-inline">
+                    <label class="col-form-label col-sm-4 " for="prezime">Презиме:</label>
+                    <input type="text" class="form-control " name="prezime" placeholder="Унеси презиме" value="<?php echo set_value("prezime"); ?>"><?php echo form_error("prezime", '<span style="color:red">', '</span>'); ?><br>
+                </div>
+
+                <div class="form-group row form-inline">
+                    <label class="col-form-label col-sm-4" for="jedinstveni_broj">Јединствени број:</label>
+                    <input type="text"  class="form-control" name="jedinstveni_broj" placeholder="Унеси јединствени број" value="<?php echo set_value("jedinstveni_broj_ucenik"); ?>"><?php echo form_error("jedinstveni_broj", '<span style="color:red">', '</span>'); ?><br>
+                </div>
+
+                <div class="form-group row form-inline">
+                    <label class="col-form-label col-sm-4" for="obrazovni_profil">Образовни профил:</label>
+                    <input type="text"  class="form-control" name="obrazovni_profil" placeholder="Унеси образовни профил" value="<?php echo set_value("obrazovni_profil_idobrazovni_profil"); ?>"><?php echo form_error("obrazovni_profil", '<span style="color:red">', '</span>'); ?><br>
+                </div>
 
 
-
-            <input type="text" value="<?php echo set_value("obrazovni_profil_idobrazovni_profil") ?>" name="obrazovni_profil" placeholder="Назив образовног профила">
+                <div class="form-group row form-inline">
+                    <label class="col-form-label col-sm-4" for="godina_obrazovanja">Година образовања:</label>
+                    <input type="text"  class="form-control" name="godina_obrazovanja" placeholder="Унеси годину образовања" value="<?php echo set_value("idgodina_obrazovanja"); ?>"><?php echo form_error("godina_obrazovanja", '<span style="color:red">', '</span>'); ?><br>
+                </div>
 
 <!--<input type="text" name="godina_obrazovanja" placeholder="Година образовања">-->
-            <!--dodao-->
-            <select name="godina_obrazovanja" >
-                <option selected hidden><?php
-                    if (!isset($_POST['godina_obrazovanja']))
-                        echo 'Година образовања';
-                    else
-                        echo set_value("godina_obrazovanja");
-                    ?></option>
-                <?php
-                foreach ($godina_obrazovanja as $row) {
-                    echo '<option value="' . $row['idgodina_obrazovanja'] . '">';
-                    echo $row['naziv'];
-                    echo '</option>';
-                }
-                ?>
+                <!--dodao-->
+                <!--  OVO PROVERITI            
+                                  <select name="godina_obrazovanja" >
+                                  <option selected hidden><?//php
+                                      if (!isset($_POST['godina_obrazovanja']))
+                                          echo 'Година образовања';
+                                      else
+                                          echo set_value("godina_obrazovanja");
+                                      ?></option>
+                                  <?//php
+                                  foreach ($godina_obrazovanja as $row) {
+                                      echo '<option value="' . $row['idgodina_obrazovanja'] . '">';
+                                      echo $row['naziv'];
+                                      echo '</option>';
+                                  }
+                                  ?>
+              
+                              </select><br>-->
+                <br>
 
-            </select><br>
-            <br>
+            </form>  
+        </div>
 
-        </form>  
+        <div class="col-md-6">
+            <form name="prva_forma">
+                <br>   
+                <h3>Сведочанство:</h3>
+                <br>
 
+                <div class="form-group row form-inline">
+                    <label class="col-form-label col-sm-4 " for="skola">Школа:</label>
+                    <input type="text" class="form-control " name="skola" placeholder="Унеси школу" value="<?php echo set_value("skola"); ?>"><?php echo form_error("skola", '<span style="color:red">', '</span>'); ?><br>
+                </div>
 
-        <form name="prva_forma">
-            <input type="text" name="skola" value="<?php echo set_value("skola") ?>" placeholder="Школа">
-            <input type="text" name="svedocanstvo" value="<?php echo set_value("svedocanstvo") ?>" placeholder="Број сведочанства">
-            <input type="text" name="razred" value="<?php echo set_value("razred") ?>" placeholder="Разред">
+                <div class="form-group row form-inline">
+                    <label class="col-form-label col-sm-4 " for="svedocanstvo">Број сведочанства:</label>
+                    <input type="text" class="form-control " name="svedocanstvo" placeholder="Унеси број сведочанства" value="<?php echo set_value("skola"); ?>"><?php echo form_error("svedocanstvo", '<span style="color:red">', '</span>'); ?><br>
+                </div>
+                
+                <div class="form-group row form-inline">
+                    <label class="col-form-label col-sm-4 " for="razred">Разред:</label>
+                    <input type="text" class="form-control " name="razred" placeholder="Унеси разред" value="<?php echo set_value("razred"); ?>"><?php echo form_error("razred", '<span style="color:red">', '</span>'); ?><br>
+                </div>
+                <br>
+                
+<div class="col-md-12">
+            <input type="submit" class="dugme2 btn btn-primary btn-lg btn-block" name="dodaj" value="Пошаљи скенирана документа"><br>
+        </div>
+            </form>   
 
-            <input type="submit" name="dodaj" value="Додај"><br>
-
-        </form>   
+        </div>
 
     </div>
-    
+
     
     
     <div> 
@@ -71,8 +114,8 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
                 <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 95%;">
                     <?php
                     foreach ($predmet_ucenik as $row) {
-                       // var_dump($row)
-                        if ($row['godina_obrazovanja_idgodina_obrazovanja']=='1' && $row['obrazovni_profil_idobrazovni_profil']==$_POST['obrazovni_profil_idobrazovni_profil']) {
+                        // var_dump($row)
+                        if ($row['godina_obrazovanja_idgodina_obrazovanja'] == '1' && $row['obrazovni_profil_idobrazovni_profil'] == $_POST['obrazovni_profil_idobrazovni_profil']) {
                             echo "<div class='row'>";
                             echo "<div class='col-md-10'>";
                             echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]" disabled>' . $row['naziv_predmet'];
@@ -82,9 +125,7 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
                             echo "</div>";
                             echo "</div>";
                         }
-                        
                     }
-                    
                     ?>
                 </div>
 
@@ -99,7 +140,7 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
                 <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 95%;;">
                     <?php
                     foreach ($predmet_ucenik as $row) {
-                        if ($row['godina_obrazovanja_idgodina_obrazovanja']=='2' && $row['obrazovni_profil_idobrazovni_profil']==$_POST['obrazovni_profil_idobrazovni_profil']) {
+                        if ($row['godina_obrazovanja_idgodina_obrazovanja'] == '2' && $row['obrazovni_profil_idobrazovni_profil'] == $_POST['obrazovni_profil_idobrazovni_profil']) {
                             echo "<div class='row'>";
                             echo "<div class='col-md-10'>";
                             echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]" disabled>' . $row['naziv_predmet'];
@@ -114,8 +155,8 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
                 </div>
             </div>
         </div>
-        
-        
+
+
         <div class="row">
 
             <div class="col-md-6 "><br>
@@ -123,20 +164,20 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
                 <p>III godina:</p>
 
                 <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 95%;;">
-<?php
-foreach ($predmet_ucenik as $row) {
-    if ($row['godina_obrazovanja_idgodina_obrazovanja']=='3' && $row['obrazovni_profil_idobrazovni_profil']==$_POST['obrazovni_profil_idobrazovni_profil']) {
-        echo "<div class='row'>";
-        echo "<div class='col-md-10'>";
-        echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]" disabled>' . $row['naziv_predmet'];
-        echo "</div>";
-        echo "<div class='col-md-2'>";
-        echo '<input type="text" value="" name="ocena[' . $row['idpredmet'] . ']" style="width:60px" placeholder="Ocena">' . "<br>";
-        echo "</div>";
-        echo "</div>";
-    }
-}
-?>
+                    <?php
+                    foreach ($predmet_ucenik as $row) {
+                        if ($row['godina_obrazovanja_idgodina_obrazovanja'] == '3' && $row['obrazovni_profil_idobrazovni_profil'] == $_POST['obrazovni_profil_idobrazovni_profil']) {
+                            echo "<div class='row'>";
+                            echo "<div class='col-md-10'>";
+                            echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]" disabled>' . $row['naziv_predmet'];
+                            echo "</div>";
+                            echo "<div class='col-md-2'>";
+                            echo '<input type="text" value="" name="ocena[' . $row['idpredmet'] . ']" style="width:60px" placeholder="Ocena">' . "<br>";
+                            echo "</div>";
+                            echo "</div>";
+                        }
+                    }
+                    ?>
                 </div>
 
 
@@ -148,46 +189,46 @@ foreach ($predmet_ucenik as $row) {
                 <p>IV godina:</p>
 
                 <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 95%;;">
-<?php
-foreach ($predmet_ucenik as $row) {
-    if ($row['godina_obrazovanja_idgodina_obrazovanja']=='4' && $row['obrazovni_profil_idobrazovni_profil']==$_POST['obrazovni_profil_idobrazovni_profil']) {
-        echo "<div class='row'>";
-        echo "<div class='col-md-10'>";
-        echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]" disabled>' . $row['naziv_predmet'];
-        echo "</div>";
-        echo "<div class='col-md-2'>";
-        echo '<input type="text" name="ocena[' . $row['idpredmet'] . ']" style="width:60px" placeholder="Ocena">' . "<br>";
-        echo "</div>";
-        echo "</div>";
-    }
-}
-?>
+                    <?php
+                    foreach ($predmet_ucenik as $row) {
+                        if ($row['godina_obrazovanja_idgodina_obrazovanja'] == '4' && $row['obrazovni_profil_idobrazovni_profil'] == $_POST['obrazovni_profil_idobrazovni_profil']) {
+                            echo "<div class='row'>";
+                            echo "<div class='col-md-10'>";
+                            echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]" disabled>' . $row['naziv_predmet'];
+                            echo "</div>";
+                            echo "<div class='col-md-2'>";
+                            echo '<input type="text" name="ocena[' . $row['idpredmet'] . ']" style="width:60px" placeholder="Ocena">' . "<br>";
+                            echo "</div>";
+                            echo "</div>";
+                        }
+                    }
+                    ?>
                 </div>
             </div>
         </div>
 
-        
-        
+
+
         <div class="row">
 
             <div class="col-md-6"><br>
                 <p>Специјализација:</p>
 
                 <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 95%;;">
-<?php
-foreach ($predmet_ucenik as $row) {
-    if ($row['godina_obrazovanja_idgodina_obrazovanja']=='5' && $row['obrazovni_profil_idobrazovni_profil']==$_POST['obrazovni_profil_idobrazovni_profil']) {
-        echo "<div class='row'>";
-        echo "<div class='col-md-10'>";
-        echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]" disabled>' . $row['naziv_predmet'];
-        echo "</div>";
-        echo "<div class='col-md-2'>";
-        echo '<input type="text" name="ocena[' . $row['idpredmet'] . ']" style="width:60px" placeholder="Ocena">' . "<br>";
-        echo "</div>";
-        echo "</div>";
-    }
-}
-?>
+                    <?php
+                    foreach ($predmet_ucenik as $row) {
+                        if ($row['godina_obrazovanja_idgodina_obrazovanja'] == '5' && $row['obrazovni_profil_idobrazovni_profil'] == $_POST['obrazovni_profil_idobrazovni_profil']) {
+                            echo "<div class='row'>";
+                            echo "<div class='col-md-10'>";
+                            echo '<input type="checkbox" value="' . $row['idpredmet'] . '" name="predmet[]" disabled>' . $row['naziv_predmet'];
+                            echo "</div>";
+                            echo "<div class='col-md-2'>";
+                            echo '<input type="text" name="ocena[' . $row['idpredmet'] . ']" style="width:60px" placeholder="Ocena">' . "<br>";
+                            echo "</div>";
+                            echo "</div>";
+                        }
+                    }
+                    ?>
                 </div>
             </div>
             <div class="col-md-6"><br><br><br><br>
@@ -200,8 +241,8 @@ foreach ($predmet_ucenik as $row) {
             </div>
         </div> 
         <br>
-        
-        
+
+
         <div class="row">
             <div class="col-md-6">       
                 <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/dokumentacija"); ?>">Документација</a><br>
