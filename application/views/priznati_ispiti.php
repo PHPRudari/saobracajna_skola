@@ -3,6 +3,8 @@ if (isset($error))
     echo $error;
 //var_dump($_POST);
 //var_dump($predmet_ucenik);
+///var_dump($_SESSION);
+//var_dump($profil);
 
 
 if (!isset($_SESSION['ucenik']['iducenik'])) {
@@ -36,36 +38,39 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
                 <div class="form-group row form-inline">
                     <label class="col-form-label col-sm-4" for="obrazovni_profil">Образовни профил:</label>
-                    <input type="text"  class="form-control" name="obrazovni_profil" placeholder="Унеси образовни профил" value="<?php echo set_value("obrazovni_profil_idobrazovni_profil"); ?>"><?php echo form_error("obrazovni_profil", '<span style="color:red">', '</span>'); ?><br>
+                    <input type="text"  class="form-control" name="obrazovni_profil" placeholder="Унеси образовни профил" value="<?php 
+                    foreach ($profil as $row) {
+                        if($row['idobrazovni_profil']==$_SESSION['ucenik']['obrazovni_profil_idobrazovni_profil'])
+                        echo $row['naziv'];
+                    }
+                    ?>"><?php echo form_error("obrazovni_profil", '<span style="color:red">', '</span>'); ?><br>
                 </div>
 
 
                 <div class="form-group row form-inline">
-                    <label class="col-form-label col-sm-4" for="godina_obrazovanja">Година образовања:</label>
-                    <input type="text"  class="form-control" name="godina_obrazovanja" placeholder="Унеси годину образовања" value="<?php echo set_value("idgodina_obrazovanja"); ?>"><?php echo form_error("godina_obrazovanja", '<span style="color:red">', '</span>'); ?><br>
+
+                    <label class="col-sm-4 col-form-label" for="godina_obrazovanja">Година образовања:</label>
+                    <select name="godina_obrazovanja" class="form-control ">
+                        <option selected hidden ><?php
+                            if (!isset($_SESSION['ucenik']['iducenik'])) {
+                                echo 'Година образовања';
+                            } else {
+                                foreach ($godina_obrazovanja as $go) {
+                                    if ($go['idgodina_obrazovanja'] == $_SESSION['ucenik']['godina_obrazovanja_idgodina_obrazovanja'])
+                                        echo ($go['naziv']);
+                                }
+                            }
+                            ?>
+                        </option>
+                        <?php
+                        foreach ($godina_obrazovanja as $row) {
+                            echo '<option value="' . $row['idgodina_obrazovanja'] . '">';
+                            echo $row['naziv'];
+                            echo '</option>';
+                        }
+                        ?> 
+                    </select><br>
                 </div>
-
-<!--<input type="text" name="godina_obrazovanja" placeholder="Година образовања">-->
-                <!--dodao-->
-                <!--  OVO PROVERITI            
-                                  <select name="godina_obrazovanja" >
-                                  <option selected hidden><?//php
-                                      if (!isset($_POST['godina_obrazovanja']))
-                                          echo 'Година образовања';
-                                      else
-                                          echo set_value("godina_obrazovanja");
-                                      ?></option>
-                                  <?//php
-                                  foreach ($godina_obrazovanja as $row) {
-                                      echo '<option value="' . $row['idgodina_obrazovanja'] . '">';
-                                      echo $row['naziv'];
-                                      echo '</option>';
-                                  }
-                                  ?>
-              
-                              </select><br>-->
-                <br>
-
             </form>  
         </div>
 
@@ -84,24 +89,24 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
                     <label class="col-form-label col-sm-4 " for="svedocanstvo">Број сведочанства:</label>
                     <input type="text" class="form-control " name="svedocanstvo" placeholder="Унеси број сведочанства" value="<?php echo set_value("skola"); ?>"><?php echo form_error("svedocanstvo", '<span style="color:red">', '</span>'); ?><br>
                 </div>
-                
+
                 <div class="form-group row form-inline">
                     <label class="col-form-label col-sm-4 " for="razred">Разред:</label>
                     <input type="text" class="form-control " name="razred" placeholder="Унеси разред" value="<?php echo set_value("razred"); ?>"><?php echo form_error("razred", '<span style="color:red">', '</span>'); ?><br>
                 </div>
                 <br>
-                
-<div class="col-md-12">
-            <input type="submit" class="dugme2 btn btn-primary btn-lg btn-block" name="dodaj" value="Пошаљи скенирана документа"><br>
-        </div>
+
+                <div class="col-md-12">
+                    <input type="submit" class="dugme2 btn btn-primary btn-lg btn-block" name="dodaj" value="Пошаљи скенирана документа"><br>
+                </div>
             </form>   
 
         </div>
 
     </div>
 
-    
-    
+
+
     <div> 
         <?php echo form_open($controller . '/priznaj_ispite'); ?>
 
