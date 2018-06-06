@@ -3,8 +3,9 @@
 <?php
 //echo validation_errors();
 //var_dump($_SESSION['ucenik']['iducenik']);
-//var_dump($_SESSION['ucenik']);
+var_dump($_SESSION['ucenik']);
 //var_dump($godina_obrazovanja);
+var_dump($profil);
 ?>
 
 
@@ -300,9 +301,29 @@
             <div class="form-group row form-inline">
                 <label class="col-sm-4 col-form-label" for="profil">Образовни профил:</label>
                 <select name="profil" id="profil" class="form-control ">
-                    <option selected hidden>Прво изаберите подручје рада</option>
+                    <option selected hidden><?php
+                    if (!isset($_SESSION['ucenik']['iducenik'])) {
+                            echo 'Прво изаберите подручје рада';
+                            } else {
+                                
+                               /* foreach ($godina_obrazovanja as $go) {
+                                if ($go['idgodina_obrazovanja'] == $_SESSION['ucenik']['godina_obrazovanja_idgodina_obrazovanja'])
+                                    echo ($go['naziv']);*/
+                                
+                                foreach ($profil as $row) {
+                                    if ($row['idobrazovni_profil'] == $_SESSION['ucenik']['obrazovni_profil_idobrazovni_profil'])
+                      //  echo '<option value="' . $row['idobrazovni_profil'] . '">';
+                        echo ($row['naziv']);
+                        echo '</option>';
+                    }
+                            }
+                    ?>
+                    </option>
                 </select>
             </div>
+            
+                    
+                    
 
 
 
