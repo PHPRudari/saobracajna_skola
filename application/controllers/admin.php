@@ -462,10 +462,11 @@ class admin extends CI_Controller {
         $this->model_admin->priznaj_ispite();
         //var_dump($_POST['predmet']);
         //var_dump($_POST['ocena']);
+        redirect(site_url("/$this->controller/priznati_ispiti"));
     }
 
     public function stampa($ime) {
-
+        $this->prijavljeni_ispiti();
         $this->load->library('pdfgenerator');
         $data['users'] = array(
             array('firstname' => 'I am', 'lastname' => 'Programmer', 'email' => 'iam@programmer.com'),
@@ -486,7 +487,14 @@ class admin extends CI_Controller {
     public function prijavljeni_ispiti() {
         $result=$this->model_admin->prijavljeni_ispiti();
         $_SESSION['prijavljeni']=$result;
+       // var_dump($_SESSION['prijavljeni']);
+        
         $this->loadView("izvestaji/prijavljeni.php");
+    }
+    public function ucenik_prijava() {
+        $result= $this->model_admin->ucenik_prijava();
+        $_SESSION['prijava_ucenik']=$result;
+         $this->loadView("izvestaji/ucenik_prijavljeni.php");
     }
     
 }
