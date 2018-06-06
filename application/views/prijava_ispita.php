@@ -23,15 +23,19 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
         <br><h4><?php echo " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Јединствени број ученика: " . $_SESSION['ucenik']['jedinstveni_broj_ucenik'] ?></h4>
 
     </div>
+    <div class="col-md-6">
+        <br>poruke
+    </div>
 </div>
 
 
 <div class="row">
-<div class="col-md-6 form-group row form-inline">
+<div class="col-md-6">
+    <br>
     <?php echo form_open($controller . '/prijavi_ispite'); ?>
-
-    <div class="col-sm-4 col-form-label">
-    <label  for="rok">Изаберите рок:</label>
+    <div class="form-group row form-inline">
+        
+    <label class="col-sm-4 col-form-label" for="rok">Изаберите рок:</label>
         <select name="rok" class="form-control col-sm-8">
         <?php
         foreach ($_SESSION['rok'] as $row) {
@@ -42,13 +46,18 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
         ?> 
 
     </select>
+    
     </div>
-
 </div>
+    
 <div class="col-md-6">
-    <a href="<?php echo site_url($controller . "/ucenik_prijava") ?>">Prijavljeni ispiti</a><br>
+    <br>
+    <a class="dugme1 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik_prijava") ?>">Prijavljeni ispiti</a><br>
 </div>
+</form>
 </div>
+
+
 <div class="row">
 
        
