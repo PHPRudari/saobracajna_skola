@@ -39,6 +39,7 @@
      </select>
     
     <input type="submit" value="Prikazi ispite">
+    <a  href="<?php echo site_url($controller . "/stampa/pregled_prijava") ?>">Штампај пријављене испите</a>
 </form>
     
     
