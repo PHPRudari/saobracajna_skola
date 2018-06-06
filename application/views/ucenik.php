@@ -3,9 +3,9 @@
 <?php
 //echo validation_errors();
 //var_dump($_SESSION['ucenik']['iducenik']);
-var_dump($_SESSION['ucenik']);
-//var_dump($godina_obrazovanja);
-var_dump($podrucje);
+//var_dump($_SESSION['ucenik']);
+//var_dump($podrucje);
+//var_dump($profil);
 ?>
 
 
@@ -282,10 +282,19 @@ var_dump($podrucje);
                 <select id="podrucje" name="podrucje_rada" class="form-control ">
 
                     <option selected hidden ><?php
-                        if (!isset($_POST['podrucje_rada'])) {
+                        if (!isset($_SESSION['ucenik']['iducenik'])) {
                             echo 'Подручје рада';
-                        } else
-                            echo set_value("podrucje_rada");
+                        } else {
+                                foreach ($profil as $row) {
+                                    foreach ($podrucje as $pod){
+                                    if (($row['idobrazovni_profil'] == $_SESSION['ucenik']['obrazovni_profil_idobrazovni_profil']) && ($row['podrucje_rada_idpodrucje_rada'] == $pod['idpodrucje_rada'])) {
+                        echo ($pod['naziv']);
+                        echo '</option>';
+                    }
+                            }
+                            }
+                        }
+                            
                         ?></option>
                     <?php
                     foreach ($podrucje as $row) {
@@ -305,14 +314,11 @@ var_dump($podrucje);
                     if (!isset($_SESSION['ucenik']['iducenik'])) {
                             echo 'Прво изаберите подручје рада';
                             } else {
-                                
-                               /* foreach ($godina_obrazovanja as $go) {
-                                if ($go['idgodina_obrazovanja'] == $_SESSION['ucenik']['godina_obrazovanja_idgodina_obrazovanja'])
-                                    echo ($go['naziv']);*/
+
                                 
                                 foreach ($profil as $row) {
                                     if ($row['idobrazovni_profil'] == $_SESSION['ucenik']['obrazovni_profil_idobrazovni_profil']) {
-                      //  echo '<option value="' . $row['idobrazovni_profil'] . '">';
+
                         echo ($row['naziv']);
                         echo '</option>';
                     }
