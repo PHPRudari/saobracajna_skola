@@ -2,12 +2,17 @@
 <style>body { font-family: DejaVu Sans }</style>
 <?php
 
-//var_dump($_SESSION['prijavljeni']);
+//var_dump($_SESSION);
 
-echo '<h4>Датум полагања  Predmet  Učenik</h4><br><br>';
+
+
+echo '<h4> Predmet  Učenik</h4><br><br>';
+$i=1;
+
 foreach ($_SESSION['prijavljeni'] as $row) {
     
-    echo 'Datum:'.$row['datum_prijave'].' '.$row['predmet_idpredmet'].' '.$row['ucenik_jedinstveni_broj_ucenik'].'<br>';
+    echo $i.".".$row['naziv_predmet'].' '.$row['ime'].' '.$row['prezime'].'<br>';
+    $i++;
             
 }
     

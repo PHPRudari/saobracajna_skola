@@ -442,12 +442,13 @@ class model_admin extends CI_Model {
 
             if ($count_row > 0) {
                 $this->session->set_flashdata('priznaj', 'Већ сте признали неки од тих испита.');
-                redirect(site_url("/$this->controller/priznati_ispiti"));
+               // redirect(site_url("/$this->controller/priznati_ispiti"));
             }
-            else
+            else {
                 $this->session->set_flashdata('priznaj', 'Успешно сте признали испит(е).');
                 $this->db->query("insert into priznati_predmet values ('$key','$id','$value')");
-                redirect(site_url("/$this->controller/priznati_ispiti"));
+                //redirect(site_url("/$this->controller/priznati_ispiti"));
+        }
         }
     }
 
@@ -539,7 +540,16 @@ class model_admin extends CI_Model {
     }
 
     public function prijavljeni_ispiti() {
-        $query=$this->db->query("select * from polaganje_ispit");
+        $query=$this->db->query("select * from prijavljeni_ispiti");
+        $result = $query->result_array();
+       
+        return $result;
+    }
+    
+    public function ucenik_prijava() {
+        $id = $_SESSION['ucenik']['jedinstveni_broj_ucenik'];
+       
+        $query=$this->db->query("select * from prijavljeni_ispiti where jedinstveni_broj_ucenik='$id'");
         $result = $query->result_array();
        
         return $result;
