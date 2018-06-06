@@ -99,7 +99,7 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
                
                     <h6>Обавезно сачувати скенирана сведочанства ученика у пољу Документација!</h6><br>
                 
-                <a class="dugme1 btn btn-primary btn-lg btn-block "  href="<?php echo site_url($controller . "/dokumentacija") ?>">Документација</a><br>
+                <a class="dugme3 btn btn-primary btn-lg btn-block "  href="<?php echo site_url($controller . "/dokumentacija") ?>">Документација</a><br>
             </div>
                 <div class="col-md-12">
                 <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik/"); ?>">Врати се на ученика</a><br>
