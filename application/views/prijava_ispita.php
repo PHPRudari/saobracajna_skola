@@ -24,7 +24,8 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
     </div>
     <div class="col-md-6">
-        <br>poruke
+        <br>
+            
     </div>
 </div>
 
@@ -36,7 +37,7 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
     <div class="form-group row form-inline">
         
     <label class="col-sm-4 col-form-label" for="rok">Изаберите рок:</label>
-        <select name="rok" class="form-control col-sm-8">
+        <select name="rok" class="form-control col-sm-7">
         <?php
         foreach ($_SESSION['rok'] as $row) {
             echo '<option value="' . $row['idtip_roka'] . '">';
@@ -168,7 +169,7 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 <div class="row">
 
     <div class="col-md-6"><br>
-        <p>V godina:</p>
+        <p>Специјализација:</p>
 
         <div class="predmeti" style="overflow-y: scroll; height: 200px; width: 100%;;">
            
