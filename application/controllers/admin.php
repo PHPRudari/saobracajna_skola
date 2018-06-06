@@ -497,7 +497,14 @@ class admin extends CI_Controller {
          $this->loadView("izvestaji/ucenik_prijavljeni.php");
     }
     
-}
 
+
+public function pregled_prijava() {
+    $result= $this->model_admin->pregled_prijava();
+    $_SESSION['pregled_prijava']=$result;
+    $this->loadView("izvestaji/pregled_prijava.php");
+    
+}
+}
 //https://arjunphp.com/generating-a-pdf-in-codeigniter-using-mpdf/
 ?>

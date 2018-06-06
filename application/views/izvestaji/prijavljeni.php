@@ -2,7 +2,8 @@
 <style>body { font-family: DejaVu Sans }</style>
 <?php
 
-//var_dump($_SESSION);
+//var_dump($_SESSION['rok']);
+//var_dump($_SESSION['prijavljeni']);
 
 
 
@@ -11,10 +12,17 @@ $i=1;
 
 foreach ($_SESSION['prijavljeni'] as $row) {
     
-    echo $i.".".$row['naziv_predmet'].' '.$row['ime'].' '.$row['prezime'].'<br>';
+    echo $i.".".$row['naziv_predmet'].' '.$row['ime'].' '.$row['prezime'];
+   
+       foreach ($_SESSION['rok'] as $rok) {
+           if ($rok['idtip_roka']==$row['rok_idtip_roka']) {
+                     
+            echo " ".$rok['naziv'];
+                      
+            echo '<br>';
     $i++;
-            
+       }    
 }
     
-
+}
 ?>
