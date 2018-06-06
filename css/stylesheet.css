@@ -5,6 +5,7 @@
 
 
 body {
+    font-family: Calibri;
     box-sizing: border-box;
     /*margin:0;*/
     padding:0;
@@ -103,14 +104,14 @@ body {
 }*/
 
 #autoSuggestionsList > li {
-    background: none repeat scroll 0 0 #f2f2f2;
+    background: none repeat scroll 0 0 #dfe7e7;
     border-bottom: 1px solid #E3E3E3;
     list-style: none outside none;
     padding: 3px 15px 3px 15px;
     text-align: left;
 }
 
-#autoSuggestionsList > li a { color: #008015; }
+#autoSuggestionsList > li a { color: #608484; }
 
 #autoSuggestionsList {
     z-index: 1000;
