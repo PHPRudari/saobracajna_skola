@@ -486,7 +486,7 @@ class admin extends CI_Controller {
 
     public function prijavljeni_ispiti() {
         $result=$this->model_admin->prijavljeni_ispiti();
-        $_SESSION['prijavljeni']=$result;
+        $_SESSION['prijavljeni']=$result; 
        // var_dump($_SESSION['prijavljeni']);
         
         $this->loadView("izvestaji/prijavljeni.php");
