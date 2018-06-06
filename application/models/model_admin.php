@@ -523,10 +523,11 @@ class model_admin extends CI_Model {
             if ($count_row > 0) {
 
                 $this->session->set_flashdata('prijava', 'Већ сте пријавили неки од тих испита.');
-                redirect(site_url("/$this->controller/prijava_ispita"));
-            } else
+               // redirect(site_url("/$this->controller/prijava_ispita"));
+            } else {
                 $this->db->query("insert into polaganje_ispit values ('',NULL, now(),'$row','$id','$rok')");
             $this->session->set_flashdata('prijava', 'Успешно сте пријавили испит(е).');
+        }
         }
 
 
@@ -555,4 +556,18 @@ class model_admin extends CI_Model {
         return $result;
     }
     
+    public function pregled_prijava() {
+    
+        
+        
+        $rok= $this->input->post('rok_prijave');
+        $datum= $this->input->post('godina_prijave');
+       
+                
+        $query=$this->db->query("select * from prijavljeni_ispiti where rok_idtip_roka='$rok' and YEAR(datum_prijave)='$datum'");
+        $result = $query->result_array();
+       
+        return $result;
+
+    }
 }
