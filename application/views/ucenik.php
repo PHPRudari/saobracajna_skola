@@ -5,7 +5,7 @@
 //var_dump($_SESSION['ucenik']['iducenik']);
 var_dump($_SESSION['ucenik']);
 //var_dump($godina_obrazovanja);
-var_dump($profil);
+var_dump($podrucje);
 ?>
 
 
@@ -311,11 +311,12 @@ var_dump($profil);
                                     echo ($go['naziv']);*/
                                 
                                 foreach ($profil as $row) {
-                                    if ($row['idobrazovni_profil'] == $_SESSION['ucenik']['obrazovni_profil_idobrazovni_profil'])
+                                    if ($row['idobrazovni_profil'] == $_SESSION['ucenik']['obrazovni_profil_idobrazovni_profil']) {
                       //  echo '<option value="' . $row['idobrazovni_profil'] . '">';
                         echo ($row['naziv']);
                         echo '</option>';
                     }
+                            }
                             }
                     ?>
                     </option>
