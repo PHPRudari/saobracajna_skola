@@ -54,7 +54,7 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 <div class="col-md-6">
     <br>
     <a class="dugme1 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik_prijava") ?>">Prijavljeni ispiti</a><br>
-    <a class="dugme1 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/stampa/ucenik_stampa") ?>">Штампај пријављене испите</a>
+   
 </div>
 
 </div>

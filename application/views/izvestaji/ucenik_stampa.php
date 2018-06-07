@@ -14,7 +14,7 @@ echo "<table class='table table-striped table-hover'>";
 echo "<tr>";
 echo "<th>Naziv predmeta</th>";
 echo "<th>Godina </th>";
-echo "<th>Prijavljeno za rok</th>";
+echo "<th>Rok</th>";
 echo "<th>Оцена</th>";
 echo "<th>Датум полагања</th>";
 echo "</tr>";

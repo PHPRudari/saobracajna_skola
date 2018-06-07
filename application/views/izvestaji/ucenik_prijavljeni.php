@@ -4,6 +4,16 @@ $ispiti = $_SESSION['prijava_ucenik'];
 ?>
 
 <style>body { font-family: DejaVu Sans }</style>
+
+<div class="row">
+    <div class="col-md-6">
+    <a class="dugme1 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/stampa/ucenik_stampa") ?>">Штампај пријављене испите</a>
+    </div>
+    <div class="col-md-6">
+     <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik/"); ?>">Врати се на ученика</a>
+    </div>
+</div>
+
 <div class="row">
 
 <?php
