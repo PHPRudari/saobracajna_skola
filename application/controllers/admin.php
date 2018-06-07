@@ -491,11 +491,21 @@ class admin extends CI_Controller {
         
         $this->loadView("izvestaji/prijavljeni.php");
     }
+    
+    public function pregled_priznatih() {
+        $result=$this->model_admin->pregled_priznatih();
+        $_SESSION['priznati']=$result; 
+       // var_dump($_SESSION['prijavljeni']);
+        
+        $this->loadView("pregled_priznatih.php");
+    }
+    
     public function ucenik_prijava() {
         $result= $this->model_admin->ucenik_prijava();
         $_SESSION['prijava_ucenik']=$result;
          $this->loadView("izvestaji/ucenik_prijavljeni.php");
     }
+    
     
 
 

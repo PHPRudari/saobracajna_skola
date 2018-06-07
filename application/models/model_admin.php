@@ -570,4 +570,15 @@ class model_admin extends CI_Model {
         return $result;
 
     }
+    
+    public function pregled_priznatih(){
+         $id = $_SESSION['ucenik']['iducenik'];
+                  
+        $query=$this->db->query("SELECT * FROM priznati_predmet where ucenik_iducenik='$id'");  
+        
+        $result = $query->result_array();
+       
+        return $result;
+    }
+    
 }
