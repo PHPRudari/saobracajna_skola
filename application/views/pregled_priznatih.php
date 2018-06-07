@@ -1,6 +1,7 @@
 
 <?php
 $ispiti = $_SESSION['priznati'];
+//var_dump($ispiti);
 ?>
 
 <!--<style>body { font-family: DejaVu Sans }</style>-->
@@ -22,10 +23,11 @@ $ispiti = $_SESSION['priznati'];
 <div class="row">
 
 <?php
-echo "<table class='table table-striped table-hover'>";
+echo "<table class='table table-striped table-hover text-align:center'>";
 echo "<tr>";
 echo "<th>Назив предмета</th>";
 echo "<th>Година </th>";
+echo "<th>Оцена </th>";
 //echo "<th>Пријављено за рок</th>";
 echo "<th></th>";
 echo "</tr>";
@@ -35,6 +37,7 @@ foreach ($ispiti as $red) {
     echo "<tr>";
     echo "<td>" . $red['naziv_predmet'] . "</td>";
     echo "<td>" . $red['godina_obrazovanja_idgodina_obrazovanja'] . "</td>";
+    echo "<td>" . $red['ocena'] . "</td>";
     ?>
     <td><a href="<?php echo site_url($controller . "/obrisi_priznati_ispit/".$red['idpredmet'] ); ?>"
            onclick="return confirm('Да ли сте сигурни да желите да обришете признати испит?');">Обриши</a></td>
