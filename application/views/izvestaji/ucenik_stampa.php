@@ -7,7 +7,7 @@ $ispiti=$_SESSION['prijava_ucenik'];
 
 <style>body { font-family: DejaVu Sans }</style>
 <div class="row">
-   
+  <br><h4><?php echo $_SESSION['ucenik']['ime'] . " " . $_SESSION['ucenik']['prezime']."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " .  $_SESSION['ucenik']['jedinstveni_broj_ucenik'] ?></h4> 
 <?php 
 
 echo "<table class='table table-striped table-hover'>";
@@ -15,7 +15,8 @@ echo "<tr>";
 echo "<th>Naziv predmeta</th>";
 echo "<th>Godina </th>";
 echo "<th>Prijavljeno za rok</th>";
-echo "<th></th>";
+echo "<th>Оцена</th>";
+echo "<th>Датум полагања</th>";
 echo "</tr>";
 
 
@@ -28,15 +29,19 @@ echo "<tr>";
                      
             echo "<td>".$rok['naziv']."</td>";
          
+            echo "<td>____</td>";
+             echo "<td>___________</td>";
             
            }
 }
- echo "<td>"."Obriši"."</td>"; 
+ 
  echo '</tr>';
 }
 
 
 echo "</table>"
 ?>
-       
+       <
 </div>
+
+
