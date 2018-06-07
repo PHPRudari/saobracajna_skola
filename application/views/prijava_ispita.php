@@ -11,11 +11,13 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 }
 ?>
 
+<br>
+<h3>Пријава испита</h3>
 
 <div class="row">
     <div class="col-md-6">
 
-        <br><h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Изабран је ученик: <?php echo $_SESSION['ucenik']['ime'] . " " . $_SESSION['ucenik']['prezime'] ?></h4>
+        <br><h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ученик: <?php echo $_SESSION['ucenik']['ime'] . " " . $_SESSION['ucenik']['prezime'] ?></h4>
         <br><h4><?php echo " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Јединствени број ученика: " . $_SESSION['ucenik']['jedinstveni_broj_ucenik'] ?></h4>
 
     </div>

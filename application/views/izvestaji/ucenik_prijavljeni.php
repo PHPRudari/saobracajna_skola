@@ -4,6 +4,8 @@ $ispiti = $_SESSION['prijava_ucenik'];
 ?>
 
 <style>body { font-family: DejaVu Sans }</style>
+<br>
+<h3>Преглед пријављених испита</h3>
 
 <div class="row">
     <div class="col-md-6">
@@ -22,9 +24,9 @@ $ispiti = $_SESSION['prijava_ucenik'];
 <?php
 echo "<table class='table table-striped table-hover'>";
 echo "<tr>";
-echo "<th>Naziv predmeta</th>";
-echo "<th>Godina </th>";
-echo "<th>Prijavljeno za rok</th>";
+echo "<th>Назив предмета</th>";
+echo "<th>Година </th>";
+echo "<th>Пријављено за рок</th>";
 echo "<th></th>";
 echo "</tr>";
 
@@ -41,7 +43,7 @@ foreach ($ispiti as $red) {
     }
     ?> 
     <td><a href="<?php echo site_url($controller . "/obrisi_prijavljeni_ispit/".$red['predmet_idpredmet'] ); ?>"
-           onclick="return confirm('Да ли сте сигурни да желите да обришете испит?');">Obriši</a></td>
+           onclick="return confirm('Да ли сте сигурни да желите да обришете испит?');">Обриши</a></td>
         <?php
         echo '</tr>';
         
