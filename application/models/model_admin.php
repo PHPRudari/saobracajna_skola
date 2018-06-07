@@ -581,12 +581,18 @@ class model_admin extends CI_Model {
     public function pregled_priznatih(){
          $id = $_SESSION['ucenik']['iducenik'];
                   
-        $query=$this->db->query("SELECT p.naziv_predmet, p.godina_obrazovanja_idgodina_obrazovanja from predmet p, priznati_predmet pp 
+        $query=$this->db->query("SELECT p.idpredmet, p.naziv_predmet, p.godina_obrazovanja_idgodina_obrazovanja, pp.ucenik_iducenik from predmet p, priznati_predmet pp 
 where p.idpredmet = pp.predmet_idpredmet and pp.ucenik_iducenik='$id'");  
         
         $result = $query->result_array();
        
         return $result;
+    }
+    
+    public function obrisi_priznati_ispit($idpredmet) {
+       $id = $_SESSION['ucenik']['iducenik'];
+        $this->db->query("delete from priznati_predmet where predmet_idpredmet='$idpredmet' and ucenik_iducenik='$id'");
+        
     }
     
 }

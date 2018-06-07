@@ -508,6 +508,13 @@ class admin extends CI_Controller {
         $this->loadView("pregled_priznatih.php");
     }
     
+    public function obrisi_priznati_ispit($idpredmet) {
+         $this->model_admin->obrisi_priznati_ispit($idpredmet);
+        
+        redirect(site_url("/$this->controller/pregled_priznatih"));
+        
+    }
+    
     
     
     

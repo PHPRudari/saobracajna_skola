@@ -1,15 +1,6 @@
 
 <?php
-
-
-var_dump($ispiti);
-
-foreach ($_SESSION['priznati'] as $row ) {
-    echo $row['naziv_predmet']." ".$row['godina_obrazovanja_idgodina_obrazovanja']."<br>";
-    echo "Dodaj brisanje";
-}
 $ispiti = $_SESSION['priznati'];
-
 ?>
 
 <!--<style>body { font-family: DejaVu Sans }</style>-->
@@ -44,15 +35,9 @@ foreach ($ispiti as $red) {
     echo "<tr>";
     echo "<td>" . $red['naziv_predmet'] . "</td>";
     echo "<td>" . $red['godina_obrazovanja_idgodina_obrazovanja'] . "</td>";
-    foreach ($_SESSION['rok'] as $rok) {
-        if ($rok['idtip_roka'] == $red['rok_idtip_roka']) {
-
-            echo "<td>" . $rok['naziv'] . "</td>";
-        }
-    }
     ?>
-    <td><a href="<?php echo site_url($controller . "/obrisi_prijavljeni_ispit/".$red['predmet_idpredmet'] ); ?>"
-           onclick="return confirm('Да ли сте сигурни да желите да обришете испит?');">Обриши</a></td>
+    <td><a href="<?php echo site_url($controller . "/obrisi_priznati_ispit/".$red['idpredmet'] ); ?>"
+           onclick="return confirm('Да ли сте сигурни да желите да обришете признати испит?');">Обриши</a></td>
         <?php
         echo '</tr>';
 
