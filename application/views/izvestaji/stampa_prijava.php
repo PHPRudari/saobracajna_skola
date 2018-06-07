@@ -54,9 +54,14 @@ echo "</tr>";
 $i = 1;
 
 if ($_SESSION['pregled_prijava'] == NULL) {
+<<<<<<< HEAD
     echo '<td>Nema prijavljenih ispita u ovom roku</td>';
 } else
     foreach ($_SESSION['pregled_prijava'] as $row) {
+=======
+    echo 'Нема пријављених испита у овом року.';
+}
+>>>>>>> f80be15dde32fa0ed0629116c442df110df3089f
 
         echo "<tr>";
         echo "<td class='tabela'>" . $row['jedinstveni_broj_ucenik'] . "</td>";
