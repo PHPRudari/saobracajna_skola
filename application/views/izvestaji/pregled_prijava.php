@@ -1,18 +1,19 @@
 
-
+<br>
+    <h3>Преглед пријава</h3>
 <div class="row">
-    <div class="col-md-6">
-        <h4> Сприсак пријављених испита за <?php
+    <div class="col-md-8">
+        <h5> Сприсак пријављених испита за <?php
             foreach ($_SESSION['rok'] as $rok) {
                 if ($rok['idtip_roka'] == $_POST['rok_prijave']) {
 
                     echo $rok['naziv'];
                 }
             }
-            ?>  рок </h4>
+            ?>  рок <?php echo $_POST['godina_prijave']?>. године </h5>
     </div>
-    <div class="col-md-6"> 
-        <a class="dugme2" href="<?php echo site_url($controller . "/stampa/stampa_prijava") ?>">Штампај пријављене испите</a><br>
+    <div class="col-md-4"> 
+        <a class="dugme2 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/stampa/stampa_prijava") ?>">Штампај пријављене испите</a><br>
     </div>
 </div>    
 <?php
@@ -21,10 +22,9 @@
 
 
 ?>
-<br>
-    <h3>Преглед пријава</h3>
+
 <?php
-echo '<h4> Predmet  Učenik</h4><br><br>';
+
 
 
 
