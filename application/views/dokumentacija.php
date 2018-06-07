@@ -20,15 +20,16 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
         </div>
         <!--<input type="file" name="userfile" value="Izaberite fajl" size="20" />-->
     <br>
+    <div class="row">
         <div class="col-md-6">
             <input type="submit" class="dugme2 btn btn-primary btn-lg btn-block" name="Sacuvaj" value="Сачувај"><br>
-            
+        </div>
+        <div class="col-md-6">
         <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik/"); ?>">Врати се на ученика</a><br>    
-            
         </div>
 
         <!--<input type="submit" value="Пошаљи">-->
-    
+    </div>
     </form>
 </div>
 
