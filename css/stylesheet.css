@@ -2,6 +2,9 @@
     padding-top: 100px;
 }
 
+::-webkit-scrollbar {
+display: none;
+}
 
 
 body {
@@ -14,9 +17,9 @@ body {
     z-index: -1;
     color:whitesmoke;
     width: 99%;
-
-
+    
 }
+
 #container {
     min-height:100%;
     position:relative;

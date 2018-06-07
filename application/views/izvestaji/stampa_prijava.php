@@ -1,28 +1,13 @@
+<style>body { font-family: DejaVu Sans }</style>
 
-<a  href="<?php echo site_url($controller . "/stampa/stampa_prijava") ?>">Штампај пријављене испите</a>
     <?php
 
 //var_dump($_SESSION['rok']);
 //var_dump($_SESSION['prijavljeni']);
 
-<<<<<<< HEAD
-?>
-<br>
-    <h3>Преглед пријава</h3>
-<?php
+
+
 echo '<h4> Predmet  Učenik</h4><br><br>';
-=======
-
-
-echo "<table class='table table-striped table-hover'>";
-echo "<tr>";
-echo "<th>Učenik:</th>";
-echo "<th>Prezime </th>";
-echo "<th>Ime </th>";
-echo "<th>Naziv predmeta</th>";
-echo "<th>Godina</th>";
-echo "</tr>";
->>>>>>> 98f7eadd73cac4e420d4f33fc4c3a2aae33daf65
 $i=1;
 
 if ($_SESSION['pregled_prijava'] == NULL) {
@@ -50,4 +35,3 @@ foreach ($_SESSION['pregled_prijava'] as $row) {
 
 
 ?>
-
