@@ -2,6 +2,11 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/xampp/htdocs/saobracajna_skola/application/models/model_admin.php</file>
+            <file>file:/C:/xampp/htdocs/saobracajna_skola/application/views/prijava_ispita.php</file>
+            <file>file:/C:/xampp/htdocs/saobracajna_skola/application/controllers/admin.php</file>
+            <file>file:/C:/xampp/htdocs/saobracajna_skola/application/views/priznati_ispiti.php</file>
+        </group>
     </open-files>
 </project-private>
