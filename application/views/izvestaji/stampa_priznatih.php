@@ -1,10 +1,17 @@
 <style>body { 
-        font-size: 12px;
-        font-family: DejaVu Sans }
+        font-size: 14px;
+        font-family: DejaVu Sans ;
+        
+            
+    }
     .tabela {
        padding-right:  20px;
        text-align: center;
     }
+    .table {
+     text-align: left;
+     line-height: 150%;
+ }
 </style>
 
 
@@ -13,7 +20,7 @@
     <div class="col-md-8">
         <div class="row">
   <br><h4><?php echo $_SESSION['ucenik']['ime'] . " " . $_SESSION['ucenik']['prezime']."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " .  $_SESSION['ucenik']['jedinstveni_broj_ucenik'] ?></h4> 
-        <h4> Списак признатих испита</h4>
+        <h3> Списак признатих испита</h3>
     </div>
     
 </div>    
@@ -23,11 +30,11 @@
 ?>
 
 <?php
-echo "<table class='table table-striped table-hover'>";
+echo "<table class='table'>";
 echo "<tr>";
-echo "<th>Назив предмета</th>";
-echo "<th>Година </th>";
-echo "<th>Оцена </th>";
+echo "<th class='table' width='400'>Назив предмета</th>";
+echo "<th width='50'>Година </th>";
+echo "<th width='50'>Оцена </th>";
 echo "</tr>";
 $i = 1;
 
