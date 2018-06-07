@@ -547,6 +547,13 @@ class model_admin extends CI_Model {
         return $result;
     }
     
+    public function obrisi_prijavljeni_ispit($idpredmet) {
+       $id = $_SESSION['ucenik']['jedinstveni_broj_ucenik'];
+        $this->db->query("delete from polaganje_ispit where predmet_idpredmet='$idpredmet' and ucenik_jedinstveni_broj_ucenik='$id'");
+        
+    }
+    
+    
     public function ucenik_prijava() {
         $id = $_SESSION['ucenik']['jedinstveni_broj_ucenik'];
        

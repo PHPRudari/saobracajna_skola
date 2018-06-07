@@ -492,6 +492,14 @@ class admin extends CI_Controller {
         $this->loadView("izvestaji/prijavljeni.php");
     }
     
+    public function obrisi_prijavljeni_ispit($idpredmet) {
+         $this->model_admin->obrisi_prijavljeni_ispit($idpredmet);
+        
+        redirect(site_url("/$this->controller/ucenik_prijava"));
+        
+    }
+    
+    
     public function pregled_priznatih() {
         $result=$this->model_admin->pregled_priznatih();
         $_SESSION['priznati']=$result; 
@@ -499,6 +507,9 @@ class admin extends CI_Controller {
         
         $this->loadView("pregled_priznatih.php");
     }
+    
+    
+    
     
     public function ucenik_prijava() {
         $result= $this->model_admin->ucenik_prijava();
