@@ -12,9 +12,9 @@ $ispiti=$_SESSION['prijava_ucenik'];
 
 echo "<table class='table table-striped table-hover'>";
 echo "<tr>";
-echo "<th>Naziv predmeta</th>";
-echo "<th>Godina </th>";
-echo "<th>Rok</th>";
+echo "<th>Назив предмета</th>";
+echo "<th>Година </th>";
+echo "<th>Рок</th>";
 echo "<th>Оцена</th>";
 echo "<th>Датум полагања</th>";
 echo "</tr>";

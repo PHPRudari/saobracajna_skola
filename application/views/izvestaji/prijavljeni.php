@@ -1,5 +1,6 @@
 
-<style>body { font-family: DejaVu Sans }</style>
+<!--<style>body { font-family: DejaVu Sans }</style>-->
+<style>body { font-family: calibri, sans-serif }</style>
 <?php
 
 //var_dump($_SESSION['rok']);

@@ -20,6 +20,13 @@
 //var_dump($_SESSION['pregled_prijava']);
 
 
+?>
+<br>
+    <h3>Преглед пријава</h3>
+<?php
+echo '<h4> Predmet  Učenik</h4><br><br>';
+
+
 
 echo "<table class='table table-striped table-hover'>";
 echo "<tr>";

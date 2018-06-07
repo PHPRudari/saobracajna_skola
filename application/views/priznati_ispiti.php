@@ -12,8 +12,10 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 }
 ?>
 
-
+<br>
+    <h3>Признати испити</h3>
     <div class="row">
+        
         <div class="col-md-6">
             <form name="ispiti">
                 <br>   
