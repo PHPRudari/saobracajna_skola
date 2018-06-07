@@ -4,8 +4,10 @@
 //var_dump($_SESSION['rok']);
 //var_dump($_SESSION['prijavljeni']);
 
-
-
+?>
+<br>
+    <h3>Преглед пријава</h3>
+<?php
 echo '<h4> Predmet  Učenik</h4><br><br>';
 $i=1;
 
