@@ -1,8 +1,8 @@
 
-<a href="<?php echo site_url($controller . "/stampa") ?>">Odstampaj</a><br>
+<!--<a href="</?php echo site_url($controller . "/stampa") ?>">Odstampaj</a><br>
 
 
-<a  href="<?php echo site_url($controller . "/stampa/prijavljeni") ?>">Штампај пријављене испите</a>
+<a  href="</?php echo site_url($controller . "/stampa/prijavljeni") ?>">Штампај пријављене испите</a>-->
 
 
 <div class="row">
@@ -18,7 +18,7 @@
                 echo "</option>";
             }
             ?>
-    </select> <br>
+    </select> 
     
      <select name="rok_prijave">
     <option selected hidden>Рок</option>
@@ -39,7 +39,7 @@
      </select>
     
     <input type="submit" value="Prikazi ispite">
-    <a  href="<?php echo site_url($controller . "/stampa/pregled_prijava") ?>">Штампај пријављене испите</a>
+    
 </form>
     
     
