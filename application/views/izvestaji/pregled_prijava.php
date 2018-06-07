@@ -5,6 +5,7 @@
     <div class="col-md-8">
         <h5> Списак пријављених испита за <?php
             if (isset($_POST['rok_prijave'])) {
+               
                 foreach ($_SESSION['rok'] as $rok) {
                     if ($rok['idtip_roka'] == $_POST['rok_prijave']) {
 

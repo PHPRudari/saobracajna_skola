@@ -54,14 +54,11 @@ echo "</tr>";
 $i = 1;
 
 if ($_SESSION['pregled_prijava'] == NULL) {
-<<<<<<< HEAD
+
     echo '<td>Nema prijavljenih ispita u ovom roku</td>';
 } else
     foreach ($_SESSION['pregled_prijava'] as $row) {
-=======
-    echo 'Нема пријављених испита у овом року.';
-}
->>>>>>> f80be15dde32fa0ed0629116c442df110df3089f
+   
 
         echo "<tr>";
         echo "<td class='tabela'>" . $row['jedinstveni_broj_ucenik'] . "</td>";
@@ -70,26 +67,6 @@ if ($_SESSION['pregled_prijava'] == NULL) {
         echo "<td class='tabela'>" . $row['naziv_predmet'] . "</td>";
         echo "<td>" . $row['godina_obrazovanja_idgodina_obrazovanja'] . "</td>";
 
-
-
-
-
-
-
-
-
-
-
-
-
-        /*   foreach ($_SESSION['rok'] as $rok) {
-          if ($rok['idtip_roka']==$row['rok_idtip_roka']) {
-
-          // echo " ".$rok['naziv'];
-
-          echo '<br>';
-          $i++;
-          }
-          } */
+           
     }
 ?>
