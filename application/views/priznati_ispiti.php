@@ -102,11 +102,12 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
                 <a class="dugme1 btn btn-primary btn-lg btn-block "  href="<?php echo site_url($controller . "/dokumentacija") ?>">Документација</a><br>
             </div>
                 <div class="col-md-12">
-                <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik/"); ?>">Врати се на ученика</a><br>
+                <a class="dugme1 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/pregled_priznatih/"); ?>">Преглед признатих испита</a><br>
             </div>
                 <div class="col-md-12">
-                <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/pregled_priznatih/"); ?>">Преглед признатих испита</a><br>
+                <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik/"); ?>">Врати се на ученика</a><br>
             </div>
+                
                  <?php if (isset ($_SESSION['priznaj']))
             echo '<h3 style="color:red">'.$_SESSION['priznaj'].'</h3>';
         

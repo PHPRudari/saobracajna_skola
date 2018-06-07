@@ -22,6 +22,9 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
     <br>
         <div class="col-md-6">
             <input type="submit" class="dugme2 btn btn-primary btn-lg btn-block" name="Sacuvaj" value="Сачувај"><br>
+            
+        <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik/"); ?>">Врати се на ученика</a><br>    
+            
         </div>
 
         <!--<input type="submit" value="Пошаљи">-->
@@ -57,8 +60,8 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
                     echo "<div class='col-md-4'>";
                     echo "<br><br>";
-                    echo "<br><i class='far fa-file-alt fa-4x'></i><br>";
-                    echo "<a href=" . base_url("uploads/$id/$file") . ">$file</a>";
+                    //echo "<br><i class='far fa-file-alt fa-4x'></i><br>";
+                    echo "<a class='white' href=" . base_url("uploads/$id/$file") . "><i class='far fa-file-alt fa-4x'></i><br>$file</a>";
                     echo "</div>";
                 }
                 ?>
@@ -78,9 +81,9 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 
         <div class="row">
     <div class="col-md-6">
-        <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik/"); ?>">Врати се на ученика</a><br>
+        <!--<a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik/"); ?>">Врати се на ученика</a><br>-->
     </div>
     <div class="col-md-6">       
-        <a class="dugme1 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/priznati_ispiti"); ?>">Признати испити</a><br>
+        <!--<a class="dugme1 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/priznati_ispiti"); ?>">Признати испити</a><br>-->
     </div>
 </div>

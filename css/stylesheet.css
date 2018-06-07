@@ -276,3 +276,7 @@ a:hover {
     box-shadow: 1px 1px 3px black;
 
 }
+.white {
+    color:white;
+    font-size: 22px;
+}

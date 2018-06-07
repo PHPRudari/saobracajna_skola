@@ -31,6 +31,7 @@
 
 
         <a class="dugme1 btn btn-primary btn-lg btn-block "  href="<?php echo site_url($controller . "/dokumentacija") ?>">Документација</a><br>
+        <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ubij_sesiju_ucenik/"); ?>">Освежи страну</a><br>
       <?php
             
       if($this->session->flashdata('info'))
@@ -396,7 +397,7 @@
 
 
         <div class="col-md-6">
-            <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ubij_sesiju_ucenik/"); ?>">Освежи страну</a><br>
+            
 
         </div>
         <div class="col-md-6">
