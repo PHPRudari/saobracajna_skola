@@ -30,7 +30,7 @@
             ?>. године </h5>
     </div>
     <div class="col-md-4"> 
-        <a class="dugme2 btn btn-primary btn-lg btn-block" target="_blank" href="<?php echo site_url($controller . "/stampa/stampa_prijava") ?>">Штампај пријављене испите</a><br>
+        <a class="dugme1 btn btn-primary btn-lg btn-block" target="_blank" href="<?php echo site_url($controller . "/stampa/stampa_prijava") ?>">Штампај пријављене испите</a><br>
 
 
 
