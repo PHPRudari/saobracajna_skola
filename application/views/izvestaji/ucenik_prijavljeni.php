@@ -3,7 +3,7 @@ $ispiti = $_SESSION['prijava_ucenik'];
 //var_dump($ispiti);
 ?>
 
-<style>body { font-family: DejaVu Sans }</style>
+<!--<style>body { font-family: DejaVu Sans }</style>-->
 <br>
 <h3>Преглед пријављених испита</h3>
 
