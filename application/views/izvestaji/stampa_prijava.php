@@ -1,8 +1,8 @@
 <style>body { 
-        font-size: 12px;
+        font-size: 14px;
         font-family: DejaVu Sans }
     .tabela {
-       padding-right:  40px;
+       padding-right:  20px;
     }
 </style>
 
