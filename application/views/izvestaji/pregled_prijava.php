@@ -57,7 +57,7 @@ if ($_SESSION['pregled_prijava'] == NULL) {
     foreach ($_SESSION['pregled_prijava'] as $row) {
 
         echo "<tr>";
-        echo "<td>" . $row['jedinstveni_broj_ucenik'] . "</td>";
+        echo "<td >" . $row['jedinstveni_broj_ucenik'] . "</td>";
         echo "<td>" . $row['prezime'] . "</td>";
         echo "<td>" . $row['ime'] . "</td>";
         echo "<td>" . $row['naziv_predmet'] . "</td>";

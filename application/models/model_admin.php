@@ -570,6 +570,8 @@ class model_admin extends CI_Model {
         $rok= $this->input->post('rok_prijave');
         $datum= $this->input->post('godina_prijave');
        
+        $_SESSION['rokk']=$rok;
+        $_SESSION['dattum']=$datum;
                 
         $query=$this->db->query("select * from prijavljeni_ispiti where rok_idtip_roka='$rok' and YEAR(datum_prijave)='$datum'");
         $result = $query->result_array();
