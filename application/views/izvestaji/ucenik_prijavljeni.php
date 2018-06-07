@@ -14,7 +14,7 @@ $ispiti = $_SESSION['prijava_ucenik'];
     </div>
     <div class="col-md-6">
         <br>
-        <a class="dugme1 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/stampa/ucenik_stampa") ?>">Штампај пријављене испите</a><br>
+        <a class="dugme1 btn btn-primary btn-lg btn-block" target="_blank" href="<?php echo site_url($controller . "/stampa/ucenik_stampa") ?>">Штампај пријављене испите</a><br>
     </div>
     
 </div>
