@@ -581,7 +581,8 @@ class model_admin extends CI_Model {
     public function pregled_priznatih(){
          $id = $_SESSION['ucenik']['iducenik'];
                   
-        $query=$this->db->query("SELECT * FROM priznati_predmet where ucenik_iducenik='$id'");  
+        $query=$this->db->query("SELECT p.naziv_predmet, p.godina_obrazovanja_idgodina_obrazovanja from predmet p, priznati_predmet pp 
+where p.idpredmet = pp.predmet_idpredmet and pp.ucenik_iducenik='$id'");  
         
         $result = $query->result_array();
        

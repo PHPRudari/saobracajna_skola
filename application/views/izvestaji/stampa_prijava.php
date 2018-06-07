@@ -11,7 +11,7 @@ echo '<h4> Predmet  Učenik</h4><br><br>';
 $i=1;
 
 if ($_SESSION['pregled_prijava'] == NULL) {
-    echo 'Nema prijavljenih ispita u ovom roku';
+    echo 'Нема пријављених испита у овом року.';
 }
 
 else
