@@ -10,7 +10,7 @@ $ispiti = $_SESSION['prijava_ucenik'];
     <a class="dugme1 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/stampa/ucenik_stampa") ?>">Штампај пријављене испите</a>
     </div>
     <div class="col-md-6">
-     <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik/"); ?>">Врати се на ученика</a>
+     <a class="dugme3 btn btn-primary btn-lg btn-block col-sm-6" href="<?php echo site_url($controller . "/prijava_ispita") ?>">Врати се на пријаву испита</a><br>
     </div>
 </div>
 

@@ -49,13 +49,21 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
     </select>
     
     </div>
-</div>
     
+</div>
+    <div class="col-md-6">
+        <br>
+    <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik/"); ?>">Врати се на ученика</a><br>
+    </div>
 <div class="col-md-6">
-    <br>
-    <a class="dugme1 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik_prijava") ?>">Prijavljeni ispiti</a><br>
+    
+    <a class="dugme1 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik_prijava") ?>">Преглед пријављених испита</a><br>
    
 </div>
+    
+<div class="col-md-6">       
+        <a class="dugme1 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/dokumentacija"); ?>">Документација</a><br>
+    </div>    
 
 </div>
 
@@ -208,14 +216,14 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 </form>
 <br>
 
-<div class="row">
+<!--<div class="row">
     <div class="col-md-6">
         <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik/"); ?>">Врати се на ученика</a><br>
     </div>
     <div class="col-md-6">       
         <a class="dugme1 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/dokumentacija"); ?>">Документација</a><br>
     </div>
-    </div>
+    </div>-->
 
 
 
