@@ -510,23 +510,23 @@ class model_admin extends CI_Model {
         // var_dump($_POST);
 
         $id = $_SESSION['ucenik']['jedinstveni_broj_ucenik'];
-        $rok = $_POST['rok'];
-        var_dump($id);
+        $rok = $this->input->post('rok');
+        
         $predmet = $this->input->post('predmet');
-
+        if(count($predmet)>0)
+        {
+        $this->session->set_flashdata('prijava', 'Успешно сте пријавили испит(е).');
+        }
         foreach ($predmet as $row) {
 
-            $query = $this->db->query("select * from polaganje_ispit where ucenik_jedinstveni_broj_ucenik='$id' and predmet_idpredmet='$row' and rok_idtip_roka='$rok'");
-
+            $query = $this->db->query("select * from polaganje_ispit where ucenik_jedinstveni_broj_ucenik='$id' and predmet_idpredmet=$row and rok_idtip_roka=$rok");
             $count_row = $query->num_rows();
 
             if ($count_row > 0) {
-
                 $this->session->set_flashdata('prijava', 'Већ сте пријавили неки од тих испита.');
                // redirect(site_url("/$this->controller/prijava_ispita"));
             } else {
                 $this->db->query("insert into polaganje_ispit values ('',NULL, now(),'$row','$id','$rok')");
-            $this->session->set_flashdata('prijava', 'Успешно сте пријавили испит(е).');
         }
         }
 
@@ -573,7 +573,7 @@ class model_admin extends CI_Model {
         $_SESSION['rokk']=$rok;
         $_SESSION['dattum']=$datum;
                 
-        $query=$this->db->query("select * from prijavljeni_ispiti where rok_idtip_roka='$rok' and YEAR(datum_prijave)='$datum'");
+        $query=$this->db->query("select * from prijavljeni_ispiti where rok_idtip_roka='$rok' and YEAR(datum_prijave)='$datum' order by prezime");
         $result = $query->result_array();
        
         return $result;

@@ -5,19 +5,43 @@ $ispiti=$_SESSION['prijava_ucenik'];
 //var_dump($ispiti);
 ?>
 
-<style>body { font-family: DejaVu Sans }</style>
-<div class="row">
+
+<style>
+    
+ body { 
+     font-family: DejaVu Sans;
+     font-size: 13px;
+        
+ }
+
+ .red1 {
+     width:700px;
+    /* border-top: 1px solid black;*/
+ }
+ .table {
+     text-align: left;
+ }
+
+ .table1 {
+     text-align: right;
+ }
+
+
+</style>
+<div class="row red1">
   <br><h4><?php echo $_SESSION['ucenik']['ime'] . " " . $_SESSION['ucenik']['prezime']."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " .  $_SESSION['ucenik']['jedinstveni_broj_ucenik'] ?></h4> 
 <?php 
 
-echo "<table class='table table-striped table-hover'>";
+echo "<table  width='500'>";
 echo "<tr>";
-echo "<th>Назив предмета</th>";
-echo "<th>Година </th>";
-echo "<th>Рок</th>";
-echo "<th>Оцена</th>";
-echo "<th>Датум полагања</th>";
+echo "<th width='250' class='table'>Назив предмета</th>";
+echo "<th width='30' class='table'>Година </th>";
+echo "<th width='70'class='table'>Рок</th>";
+echo "<th width='50' class='table'>Оцена</th>";
+echo "<th width='100'class='table'>Датум полагања</th>";
+
 echo "</tr>";
+
 
 
 foreach ($ispiti as $red) {
@@ -27,10 +51,10 @@ echo "<tr>";
     foreach ($_SESSION['rok'] as $rok) {
            if ($rok['idtip_roka']==$red['rok_idtip_roka']) {
                      
-            echo "<td>".$rok['naziv']."</td>";
+            echo "<td class='table'>".$rok['naziv']."</td>";
          
-            echo "<td>____</td>";
-             echo "<td>___________</td>";
+            echo "<td>________</td>";
+             echo "<td>____________________</td>";
             
            }
 }

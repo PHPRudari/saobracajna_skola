@@ -1,9 +1,11 @@
 <style>body { 
-        font-size: 14px;
+        font-size: 12px;
         font-family: DejaVu Sans }
     .tabela {
        padding-right:  20px;
+       text-align: center;
     }
+   
 </style>
 
 
@@ -43,11 +45,13 @@
 ?>
 
 <?php
-echo "<table class='table table-striped table-hover'>";
+echo "<table>";
 echo "<tr>";
+echo "<th >Редни број:</th>";
 echo "<th>Učenik:</th>";
 echo "<th>Prezime </th>";
 echo "<th>Ime </th>";
+//echo "<th style='width: 350px'>Naziv predmeta</th>;
 echo "<th>Naziv predmeta</th>";
 echo "<th>Godina</th>";
 echo "</tr>";
@@ -57,16 +61,18 @@ if ($_SESSION['pregled_prijava'] == NULL) {
 
     echo '<td>Nema prijavljenih ispita u ovom roku</td>';
 } else
+    $i=1;
     foreach ($_SESSION['pregled_prijava'] as $row) {
-   
+            
 
         echo "<tr>";
-        echo "<td class='tabela'>" . $row['jedinstveni_broj_ucenik'] . "</td>";
+        echo "<td  class='tabela'>".$i."</td>";
+        echo "<td  class='tabela'>" . $row['jedinstveni_broj_ucenik'] . "</td>";
         echo "<td class='tabela'>" . $row['prezime'] . "</td>";
         echo "<td class='tabela'>" . $row['ime'] . "</td>";
-        echo "<td class='tabela'>" . $row['naziv_predmet'] . "</td>";
-        echo "<td>" . $row['godina_obrazovanja_idgodina_obrazovanja'] . "</td>";
-
+        echo "<td class='naziv'>" . $row['naziv_predmet'] . "</td>";
+        echo "<td class='tabela'>" . $row['godina_obrazovanja_idgodina_obrazovanja'] . "</td>";
+        $i++;
            
     }
 ?>

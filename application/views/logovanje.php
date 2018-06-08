@@ -63,6 +63,7 @@
                                         <input type="password" name="password" id="password" placeholder="Лозинка..." class="form-password form-control" id="form-password">
                                     </div>
                                     <button type="submit" class="btn dugme2">Улогуј се!</button>
+                                    <small><a href="<?php echo site_url("login/password_reset") ?>">Заборављена лозинка?</a></small>
                                 </form>
                             </div>
                         </div>
