@@ -560,6 +560,15 @@ class model_admin extends CI_Model {
 
      public function pregled_prijava_stampa($datum, $rok) {      
 
+         $_SESSION['dattum']=$datum;
+         $_SESSION['rokk']=$rok;
+         $query = $this->db->get('tip_roka');
+         $_SESSION['rok']= $query->result_array();
+         
+         //var_dump($_SESSION['rok']);
+        // exit;
+         
+         
       $query=$this->db->query("select * from prijavljeni_ispiti where rok_idtip_roka='$rok' and YEAR(datum_prijave)='$datum' order by prezime");
       $result = $query->result_array();
      
