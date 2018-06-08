@@ -536,6 +536,7 @@ public function pregled_prijava_stampa() {
     
     
     $result= $this->model_admin->pregled_prijava_stampa($this->uri->segment(3), $this->uri->segment(4));
+   
     $_SESSION['pregled_prijava_stampa']=$result;
     //print_r($result);
     //$this->loadView("izvestaji/pregled_prijava.php");

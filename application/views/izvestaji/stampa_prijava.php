@@ -43,7 +43,7 @@
 <?php
 //var_dump($_SESSION['rok']);
 //var_dump($_SESSION['datum']);
-//var_dump($_SESSION['pregled_prijava']);
+//var_dump($_SESSION['pregled_prijava_stampa']);
 ?>
 
 <?php
@@ -59,13 +59,13 @@ echo "<th>Година</th>";
 echo "</tr>";
 $i = 1;
 
-if ($prijavljeni == NULL) {
+if ($_SESSION['pregled_prijava_stampa'] == NULL) {
 
     echo '<tr><td>Nema prijavljenih ispita u ovom roku</td></tr>';
 } else
 {
     $i=1;
-    foreach ($prijavljeni as $row) {
+    foreach ($_SESSION['pregled_prijava_stampa'] as $row) {
 
             echo "<tr>";
             echo "<td  class='tabela' width='30'>".$i."</td>";
