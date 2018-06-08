@@ -5,33 +5,33 @@
 <div class="row">
     <div class="col-md-6">
         <h5> Списак пријављених испита за <?php
-              if (isset($_SESSION['rokk'])) {
+              if ($rok) {
                
-                foreach ($_SESSION['rok'] as $rok) {
-                    if ($rok['idtip_roka'] == $_SESSION['rokk']) {
+                foreach ($_SESSION['rok'] as $rokk) {
+                    if ($rokk['idtip_roka'] == $rok) {
 
-                        echo $rok['naziv'];
+                        echo $rokk['naziv'];
                     }
                 }
             } else {
                 echo "";
             }
             ?>  рок <?php
-                 if (!isset($_SESSION['dattum'])) 
+                 if (!isset($godina)) 
                     echo " ";
                  else {                 
             
-            if (($_SESSION['dattum']) == "Година") {
-                echo " ";
-            } else {
-                
-                echo $_SESSION['dattum'];
-            }
+                        if ($godina == "Година") {
+                            echo " ";
+                        } else {
+
+                            echo $godina;
+                        }
                  }
             ?>. године </h5>
     </div>
     <div class="col-md-6"> 
-        <a class="dugme1 btn btn-primary btn-lg btn-block" target="_blank" href="<?php echo site_url($controller . "/stampa/stampa_prijava") ?>">Штампај пријављене испите</a><br>
+        <a class="dugme1 btn btn-primary btn-lg btn-block" target="_blank" href="<?php echo site_url($controller . "/pregled_prijava_stampa/".$godina."/".$rok) ?>">Штампај пријављене испите</a><br>
                 <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/statistika/") ?>">Врати се назад</a><br>
 <!--        <a class="nav-link" href="<?php echo site_url("direktor/statistika/") ?>">Статистика</a>-->
 
@@ -77,7 +77,28 @@ if ($results == NULL) {
  echo "<tr>"; 
  echo "<td colspan='5'align='right' class='paginacija'>". $links."</td>";
 echo "</tr>";
+?>
+<!--
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>-->
 
- ?>
+ 
 
 </table>

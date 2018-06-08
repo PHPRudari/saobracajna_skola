@@ -558,19 +558,11 @@ class model_admin extends CI_Model {
         return $result;
     }
 
-     public function pregled_prijava_stampa() {
-
-
-
-      $rok= $this->input->post('rok_prijave');
-      $datum= $this->input->post('godina_prijave');
-
-      $_SESSION['rokk']=$rok;
-      $_SESSION['dattum']=$datum;
+     public function pregled_prijava_stampa($datum, $rok) {      
 
       $query=$this->db->query("select * from prijavljeni_ispiti where rok_idtip_roka='$rok' and YEAR(datum_prijave)='$datum' order by prezime");
       $result = $query->result_array();
-
+     
       return $result;
 
       } 
@@ -579,23 +571,14 @@ class model_admin extends CI_Model {
         return $this->db->count_all("prijavljeni_ispiti");
     }
 
-    public function pregled_prijava($limit, $start) {
-        $rok = $this->input->post('rok_prijave');
-        $datum = $this->input->post('godina_prijave');
-
-        if (isset ($_POST['rok_prijave']))
-            $_SESSION['rokk'] = $rok;
-            
-        if (isset ($_POST['godina_prijave']))
-            $_SESSION['dattum'] = $datum;
-        
-        $rok=$_SESSION['rokk'];
-        $datum=$_SESSION['dattum'];
+    public function pregled_prijava($limit, $start, $datumruta, $rokruta) {
+        $rok = $rokruta;//$this->input->post('rok_prijave');
+        $datum = $datumruta;//$this->input->post('godina_prijave');
         
         $query=$this->db->query("select * from prijavljeni_ispiti where rok_idtip_roka='$rok' and YEAR(datum_prijave)='$datum' order by prezime limit $limit offset $start" );
         //$this->db->limit($limit, $start);
         //$query = $this->db->get("prijavljeni_ispiti");
-
+        
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
                 $data[] = $row;

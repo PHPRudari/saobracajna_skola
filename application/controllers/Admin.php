@@ -470,7 +470,7 @@ class admin extends CI_Controller {
     }
 
     public function stampa($ime) {
-        $this->prijavljeni_ispiti();
+       $this->prijavljeni_ispiti();
         $this->load->library('pdfgenerator');
         $data['users'] = array(
             array('firstname' => 'I am', 'lastname' => 'Programmer', 'email' => 'iam@programmer.com'),
@@ -534,32 +534,38 @@ class admin extends CI_Controller {
 public function pregled_prijava_stampa() {
     
     
-    $result= $this->model_admin->pregled_prijava_stampa();
-    $_SESSION['pregled_prijava']=$result;
+    $result= $this->model_admin->pregled_prijava_stampa($this->uri->segment(3), $this->uri->segment(4));
+    $_SESSION['pregled_prijava_stampa']=$result;
     //$this->loadView("izvestaji/pregled_prijava.php");
+    $this->stampa('stampa_prijava.php');
     
 }
-    
+
+public function dohvati_pregled_prijava() {
+    redirect(site_url("/$this->controller/pregled_prijava/".$this->input->post('godina_prijave')."/".$this->input->post('rok_prijave')));
+}
+
     
     public function pregled_prijava() {
-        $this->pregled_prijava_stampa();
+       
         $this->load->helper("url");
         $this->load->library('pagination');
         
-        
         $config = array();
-        $config["base_url"] = site_url() . "/$this->controller/pregled_prijava/";
+        $config["base_url"] = site_url() . "/$this->controller/pregled_prijava/". $this->uri->segment(3) ."/". $this->uri->segment(4);
         $config["total_rows"] = $this->model_admin->record_count();
         $config["per_page"] = 12;
-        $config["uri_segment"] = 3;
+        $config["uri_segment"] = 5;
        // $config["first_link"] = "Прва";
 
         $this->pagination->initialize($config);
 
-        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-        $data["results"] = $this->model_admin->pregled_prijava($config["per_page"], $page);
+        $page = ($this->uri->segment(5)) ? $this->uri->segment(5) : 0;
+        $data["results"] = $this->model_admin->pregled_prijava($config["per_page"], $page, $this->uri->segment(3), $this->uri->segment(4));
         $data["links"] = $this->pagination->create_links();
-
+        $data["rok"] = $this->uri->segment(4);
+        $data["godina"] = $this->uri->segment(3);
+        // $this->pregled_prijava_stampa();
         $this->loadview("izvestaji/pregled_prijava_paginacija.php", $data);
     }
 

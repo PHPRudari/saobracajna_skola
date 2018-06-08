@@ -9,7 +9,7 @@
         <div class="form-group row form-inline">
 
             <label class="col-sm-2 col-form-label" for="godina_prijave">Година:</label>
-            <?php echo form_open($controller . '/pregled_prijava'); ?>
+            <?php echo form_open($controller . '/dohvati_pregled_prijava'); ?>
             <br>
             <select name="godina_prijave" class="form-control">
                 <option selected hidden>Година</option>
