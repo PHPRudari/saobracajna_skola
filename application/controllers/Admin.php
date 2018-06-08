@@ -470,7 +470,7 @@ class admin extends CI_Controller {
     }
 
     public function stampa($ime) {
-       $this->prijavljeni_ispiti();
+        $data['prijavljeni']=$this->model_admin->prijavljeni_ispiti();
         $this->load->library('pdfgenerator');
         $data['users'] = array(
             array('firstname' => 'I am', 'lastname' => 'Programmer', 'email' => 'iam@programmer.com'),
@@ -478,6 +478,7 @@ class admin extends CI_Controller {
             array('firstname' => 'I am', 'lastname' => 'User', 'email' => 'iam@user.com'),
             array('firstname' => 'I am', 'lastname' => 'Quality Assurance', 'email' => 'iam@qualityassurance.com')
         );
+        //print_r($_SESSION['prijavljeni']);
         $html = $this->load->view("izvestaji/$ime", $data, true);
         $filename = 'report_' . time();
         $this->pdfgenerator->generate($html, $filename, true, 'A4', 'portrait');
@@ -536,6 +537,7 @@ public function pregled_prijava_stampa() {
     
     $result= $this->model_admin->pregled_prijava_stampa($this->uri->segment(3), $this->uri->segment(4));
     $_SESSION['pregled_prijava_stampa']=$result;
+    //print_r($result);
     //$this->loadView("izvestaji/pregled_prijava.php");
     $this->stampa('stampa_prijava.php');
     
