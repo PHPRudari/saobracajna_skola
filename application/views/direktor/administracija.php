@@ -79,7 +79,7 @@
         <br>
         <?php
         $poruka = $this->session->userdata('poruka');
-        echo $poruka;
+        echo '<h3 style="color:red">'.$poruka.'</h3>';
         ?>
 
     </div>  
