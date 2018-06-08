@@ -17,7 +17,7 @@ body {
     color: #888;
     line-height: 30px;
     text-align: center;
-    background: url("../slike/pozadina1-siva.jpg") no-repeat center center fixed;
+    background: url("../slike/pozadina_logovanje.jpg") no-repeat center center fixed;
     /*background-size: cover;*/
     background-size:cover;
 }
