@@ -24,6 +24,7 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
     <div class="col-md-6">
         <br>
 <?php
+//poruke
             if (isset($_SESSION['prijava'])) {
 
 
