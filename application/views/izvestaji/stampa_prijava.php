@@ -12,8 +12,9 @@
 </style>
 <div class="row">
     <div class="col-md-8">
-        <h4> Списак пријављених испита за <?php
+        <h5> Списак пријављених испита за <?php
             if (isset($_SESSION['rokk'])) {
+
                 foreach ($_SESSION['rok'] as $rok) {
                     if ($rok['idtip_roka'] == $_SESSION['rokk']) {
 
@@ -24,23 +25,24 @@
                 echo "";
             }
             ?>  рок <?php
-                 if (!isset($_SESSION['dattum'])) 
-                    echo " ";
-                 else {                 
-            
-            if (($_SESSION['dattum']) == "Година") {
+            if (!isset($_SESSION['dattum']))
                 echo " ";
-            } else {
-                
-                echo $_SESSION['dattum'];
+            else {
+
+                if (($_SESSION['dattum']) == "Година") {
+                    echo " ";
+                } else {
+
+                    echo $_SESSION['dattum'];
+                }
             }
-                 }
-            ?>. године </h4>
+            ?>. године </h5>
     </div>
     
 </div>    
 <?php
 //var_dump($_SESSION['rok']);
+//var_dump($_SESSION['datum']);
 //var_dump($_SESSION['pregled_prijava']);
 ?>
 
