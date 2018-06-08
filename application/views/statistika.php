@@ -38,7 +38,7 @@
     
      </select>
     
-    <input type="submit" value="Prikazi ispite">
+    <input type="submit" value="Прикажи испите">
     
 </form>
     

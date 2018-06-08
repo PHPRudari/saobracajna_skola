@@ -2,8 +2,11 @@
         font-size: 12px;
         font-family: DejaVu Sans }
     .tabela {
-       padding-right:  20px;
+       padding-right:  10px;
        text-align: center;
+    }
+    td {
+        text-aliggn: center;
     }
    
 </style>
@@ -48,12 +51,12 @@
 echo "<table>";
 echo "<tr>";
 echo "<th >Редни број:</th>";
-echo "<th>Učenik:</th>";
-echo "<th>Prezime </th>";
-echo "<th>Ime </th>";
+echo "<th>Ученик</th>";
+echo "<th>Презиме </th>";
+echo "<th>Име </th>";
 //echo "<th style='width: 350px'>Naziv predmeta</th>;
-echo "<th>Naziv predmeta</th>";
-echo "<th>Godina</th>";
+echo "<th>Назив предмета</th>";
+echo "<th>Година</th>";
 echo "</tr>";
 $i = 1;
 
@@ -66,12 +69,12 @@ if ($_SESSION['pregled_prijava'] == NULL) {
             
 
         echo "<tr>";
-        echo "<td  class='tabela'>".$i."</td>";
-        echo "<td  class='tabela'>" . $row['jedinstveni_broj_ucenik'] . "</td>";
-        echo "<td class='tabela'>" . $row['prezime'] . "</td>";
-        echo "<td class='tabela'>" . $row['ime'] . "</td>";
-        echo "<td class='naziv'>" . $row['naziv_predmet'] . "</td>";
-        echo "<td class='tabela'>" . $row['godina_obrazovanja_idgodina_obrazovanja'] . "</td>";
+        echo "<td  class='tabela' width='30'>".$i."</td>";
+        echo "<td  class='tabela' width='50'>" . $row['jedinstveni_broj_ucenik'] . "</td>";
+        echo "<td class='tabela' width='60'>" . $row['prezime'] . "</td>";
+        echo "<td class='tabela' width='60'>" . $row['ime'] . "</td>";
+        echo "<td class='naziv' width='200'>" . $row['naziv_predmet'] . "</td>";
+        echo "<td class='tabela' width='60'>" . $row['godina_obrazovanja_idgodina_obrazovanja'] . "</td>";
         $i++;
            
     }
