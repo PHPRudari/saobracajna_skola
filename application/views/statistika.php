@@ -3,7 +3,8 @@
 
 
 <a  href="</?php echo site_url($controller . "/stampa/prijavljeni") ?>">Штампај пријављене испите</a>-->
-
+<?php// var_dump($_SESSION['rok']);
+?>
 
 <div class="row">
     <?php echo form_open($controller . '/pregled_prijava'); ?>

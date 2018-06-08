@@ -131,7 +131,7 @@ img { max-width: 100%; }
     overflow: hidden;
     padding: 0 25px 15px 25px;
     background: #444;
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(0, 0, 0, 0.55);
     -moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;
     text-align: left;
 }
@@ -159,7 +159,7 @@ img { max-width: 100%; }
 .form-bottom {
     padding: 25px 25px 30px 25px;
     background: #444;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.45);
     -moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
     text-align: left;
 }

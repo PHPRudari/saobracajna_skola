@@ -342,6 +342,7 @@ class admin extends CI_Controller {
     }
 
     public function statistika() {
+        $this->dohvati_rok();
         $this->loadView("statistika.php");
     }
 
