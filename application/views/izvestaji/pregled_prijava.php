@@ -20,7 +20,7 @@
                     echo " ";
                  else {                 
             
-            if (($$_SESSION['dattum']) == "Година") {
+            if (($_SESSION['dattum']) == "Година") {
                 echo " ";
             } else {
                 
