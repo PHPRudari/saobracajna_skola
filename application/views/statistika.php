@@ -4,13 +4,14 @@
 
 <a  href="</?php echo site_url($controller . "/stampa/prijavljeni") ?>">Штампај пријављене испите</a>-->
 
-<div class="row">
-    <div col-md-6 class="form-group row form-inline">
-        
-            <label class="col-sm-4 col-form-label" for="godina_prijave">Година:</label>
+
+    <div col-md-6> 
+        <div class="form-group row form-inline">
+
+            <label class="col-sm-2 col-form-label" for="godina_prijave">Година:</label>
             <?php echo form_open($controller . '/pregled_prijava'); ?>
             <br>
-            <select name="godina_prijave" class="form-control ">
+            <select name="godina_prijave" class="form-control">
                 <option selected hidden>Година</option>
 
                 <?php
@@ -21,13 +22,13 @@
                 }
                 ?>
             </select> 
-        
-    </div>
-    <div col-md-6 class="form-group row form-inline">
-        
-            <label class="col-sm-4 col-form-label" for="rok_prijave">Рок:</label>
-            <br>
-            <select name="rok_prijave" class="form-control ">
+
+        </div>
+     
+        <div class="form-group row form-inline">
+
+            <label class="col-sm-2 col-form-label" for="rok_prijave">Рок:</label>
+            <select name="rok_prijave" class="form-control">
                 <option selected hidden>Рок</option>
 
 
@@ -40,11 +41,11 @@
                 ?>
 
             </select>
-        
-    </div>
-</div>
 
-<div class="row">
+        </div>
+    </div>
+
+
 
     <div class="col-md-6 ">  
         <br>
@@ -55,7 +56,7 @@
     </div>
 </form>
 
-</div>
+
 
 
 
