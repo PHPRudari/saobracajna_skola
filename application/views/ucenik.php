@@ -182,7 +182,7 @@
 
             <div class="form-group row form-inline">
                 <label class="col-form-label col-sm-4 " for="adresa_stan">Адреса становања:</label>
-                <input type="text" class="form-control " name="adresa_stan" placeholder="Унеси место рођења" value="<?php echo set_value("adresa_stanovanje"); ?>"><?php echo form_error("adresa_stan", '<span style="color:red">', '</span>'); ?><br>
+                <input type="text" class="form-control " name="adresa_stan" placeholder="Унеси адресу становања" value="<?php echo set_value("adresa_stanovanje"); ?>"><?php echo form_error("adresa_stan", '<span style="color:red">', '</span>'); ?><br>
             </div>
 
 <!--Адреса становања: <input  type="text" name="adresa_stan" value="</?php echo set_value("adresa_stanovanje") ?>" placeholder="Унеси адресу"><br>-->
