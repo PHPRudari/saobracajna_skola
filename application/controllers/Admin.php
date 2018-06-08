@@ -547,6 +547,7 @@ class admin extends CI_Controller {
         $config["total_rows"] = $this->model_admin->record_count();
         $config["per_page"] = 12;
         $config["uri_segment"] = 3;
+       // $config["first_link"] = "Прва";
 
         $this->pagination->initialize($config);
 

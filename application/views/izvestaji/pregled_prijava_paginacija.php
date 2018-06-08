@@ -73,7 +73,7 @@ if ($results == NULL) {
     
 
  echo "<tr>"; 
- echo "<td>". $links."</td>";
+ echo "<td colspan='5'align='right'>". $links."</td>";
 echo "</tr>";
 
  ?>
