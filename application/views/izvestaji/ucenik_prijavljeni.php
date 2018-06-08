@@ -20,6 +20,7 @@ $ispiti = $_SESSION['prijava_ucenik'];
 </div>
 
 <div class="row">
+    <div class="col-md-12">
 
 <?php
 echo "<table class='table table-striped table-hover'>";
@@ -27,8 +28,18 @@ echo "<tr>";
 echo "<th>Назив предмета</th>";
 echo "<th>Година </th>";
 echo "<th>Пријављено за рок</th>";
-echo "<th></th>";
 echo "</tr>";
+
+if (!isset($_SESSON['prijava_ucenik'])) {
+    
+    echo "<tr>";
+    echo "<td><h3 style='color:red'>Ученик нема пријављених испита.</h3></td>";
+    echo "<td></td>";
+    echo "<td></td>";
+    echo "</tr>";
+    
+} 
+else {
 
 
 foreach ($ispiti as $red) {
@@ -49,8 +60,9 @@ foreach ($ispiti as $red) {
         
     }
 
-
+}
     echo "</table>"
     ?>
 
+</div>
 </div>
