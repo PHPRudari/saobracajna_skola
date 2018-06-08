@@ -30,10 +30,10 @@ echo "<th>Назив предмета</th>";
 echo "<th>Година </th>";
 echo "<th>Оцена </th>";
 //echo "<th>Пријављено за рок</th>";
-
+echo "<th></th>";
 echo "</tr>";
 
-if (!isset($_SESSON['priznati'])) {
+if (isset($_SESSON['priznati'])) {
     
     echo "<tr>";
     echo "<td><h3 style='color:red'>Ученику није признат ниједан испит</h3></td>";

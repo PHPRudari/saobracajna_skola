@@ -1,6 +1,6 @@
 <?php
 
-//r_dump($_POST);
+//var_dump($_POST);
 //var_dump($predmet_ucenik);
 //var_dump($_SESSION);
 //var_dump($profil);

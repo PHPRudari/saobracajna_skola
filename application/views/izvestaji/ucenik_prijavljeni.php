@@ -28,9 +28,10 @@ echo "<tr>";
 echo "<th>Назив предмета</th>";
 echo "<th>Година </th>";
 echo "<th>Пријављено за рок</th>";
+ echo "<th></th>";
 echo "</tr>";
 
-if (!isset($_SESSON['prijava_ucenik'])) {
+if (isset($_SESSON['prijava_ucenik'])) {
     
     echo "<tr>";
     echo "<td><h3 style='color:red'>Ученик нема пријављених испита.</h3></td>";
