@@ -16,7 +16,7 @@ body {
     /*margin:0;*/
     padding:0;
     height:100%;
-    background: url("../slike/slika1.jpg") no-repeat center center fixed;
+    background: url("../slike/slika_pozadina.jpg") no-repeat center center fixed;
     z-index: -1;
     color:whitesmoke;        
     background-size:cover;
