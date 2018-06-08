@@ -558,7 +558,7 @@ class model_admin extends CI_Model {
         return $result;
     }
 
-    /* public function pregled_prijava() {
+     public function pregled_prijava_stampa() {
 
 
 
@@ -573,7 +573,7 @@ class model_admin extends CI_Model {
 
       return $result;
 
-      } */
+      } 
 
     public function record_count() {
         return $this->db->count_all("prijavljeni_ispiti");
