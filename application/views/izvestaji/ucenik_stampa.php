@@ -47,7 +47,7 @@ echo "</tr>";
 foreach ($ispiti as $red) {
 echo "<tr>";
     echo "<td>".$red['naziv_predmet']."</td>";
-    echo "<td>".$red['rok_idtip_roka']."</td>"; 
+    echo "<td>".$red['godina_obrazovanja_idgodina_obrazovanja']."</td>"; 
     foreach ($_SESSION['rok'] as $rok) {
            if ($rok['idtip_roka']==$red['rok_idtip_roka']) {
                      
