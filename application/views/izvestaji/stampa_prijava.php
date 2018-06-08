@@ -48,12 +48,12 @@
 echo "<table>";
 echo "<tr>";
 echo "<th >Редни број:</th>";
-echo "<th>Učenik:</th>";
-echo "<th>Prezime </th>";
-echo "<th>Ime </th>";
+echo "<th>Ученик</th>";
+echo "<th>Презиме </th>";
+echo "<th>Име </th>";
 //echo "<th style='width: 350px'>Naziv predmeta</th>;
-echo "<th>Naziv predmeta</th>";
-echo "<th>Godina</th>";
+echo "<th>Назив предмета</th>";
+echo "<th>Година</th>";
 echo "</tr>";
 $i = 1;
 
