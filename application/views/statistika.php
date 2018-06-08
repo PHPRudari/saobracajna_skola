@@ -4,7 +4,6 @@
 
 <a  href="</?php echo site_url($controller . "/stampa/prijavljeni") ?>">Штампај пријављене испите</a>-->
 
-
 <div class="row">
     
     <div class="form-group row form-inline" col-md-4>
