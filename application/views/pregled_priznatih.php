@@ -22,6 +22,7 @@ $ispiti = $_SESSION['priznati'];
 
 <div class="row">
 
+    <div class="col-md-12">
 <?php
 echo "<table class='table table-striped table-hover text-align:center'>";
 echo "<tr>";
@@ -29,9 +30,19 @@ echo "<th>Назив предмета</th>";
 echo "<th>Година </th>";
 echo "<th>Оцена </th>";
 //echo "<th>Пријављено за рок</th>";
-echo "<th></th>";
+
 echo "</tr>";
 
+if (!isset($_SESSON['priznati'])) {
+    
+    echo "<tr>";
+    echo "<td><h3 style='color:red'>Ученику није признат ниједан испит</h3></td>";
+    echo "<td></td>";
+    echo "<td></td>";
+    echo "</tr>";
+    
+}
+else {
 
 foreach ($ispiti as $red) {
     echo "<tr>";
@@ -45,10 +56,10 @@ foreach ($ispiti as $red) {
         echo '</tr>';
 
     }
-
+}
 
     echo "</table>"
     ?>
 
 </div>
-
+</div>

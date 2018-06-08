@@ -38,10 +38,7 @@ echo "<th width='50'>Оцена </th>";
 echo "</tr>";
 $i = 1;
 
-if ($_SESSION['priznati'] == NULL) {
 
-    echo '<td>Ученик нема признатих испита.</td>';
-} else
     foreach ($_SESSION['priznati'] as $row) {
    
 
