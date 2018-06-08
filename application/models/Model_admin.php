@@ -442,17 +442,15 @@ class model_admin extends CI_Model {
 
             if ($count_row > 0) {
                 $this->session->set_flashdata('priznaj', 'Већ сте признали неки од тих испита.');
-               // redirect(site_url("/$this->controller/priznati_ispiti"));
-            }
-            else {
+                // redirect(site_url("/$this->controller/priznati_ispiti"));
+            } else {
                 $this->session->set_flashdata('priznaj', 'Успешно сте признали испит(е).');
                 $this->db->query("insert into priznati_predmet values ('$key','$id','$value')");
                 //redirect(site_url("/$this->controller/priznati_ispiti"));
-        }
+            }
         }
     }
 
-    
     public function promeni_lozinku() {
 
         $user = $_SESSION['korisnicko_ime'];
@@ -495,7 +493,7 @@ class model_admin extends CI_Model {
         $query = $this->db->query("SELECT * FROM ispiti i LEFT JOIN priznati_predmet pp ON pp.predmet_idpredmet = i.idpredmet WHERE pp.predmet_idpredmet IS NULL and iducenik=$id;");
 
         $result = $query->result_array();
-       
+
         return $result;
     }
 
@@ -511,11 +509,10 @@ class model_admin extends CI_Model {
 
         $id = $_SESSION['ucenik']['jedinstveni_broj_ucenik'];
         $rok = $this->input->post('rok');
-        
+
         $predmet = $this->input->post('predmet');
-        if(count($predmet)>0)
-        {
-        $this->session->set_flashdata('prijava', 'Успешно сте пријавили испит(е).');
+        if (count($predmet) > 0) {
+            $this->session->set_flashdata('prijava', 'Успешно сте пријавили испит(е).');
         }
         foreach ($predmet as $row) {
 
@@ -524,10 +521,10 @@ class model_admin extends CI_Model {
 
             if ($count_row > 0) {
                 $this->session->set_flashdata('prijava', 'Већ сте пријавили неки од тих испита.');
-               // redirect(site_url("/$this->controller/prijava_ispita"));
+                // redirect(site_url("/$this->controller/prijava_ispita"));
             } else {
                 $this->db->query("insert into polaganje_ispit values ('',NULL, now(),'$row','$id','$rok')");
-        }
+            }
         }
 
 
@@ -541,60 +538,82 @@ class model_admin extends CI_Model {
     }
 
     public function prijavljeni_ispiti() {
-        $query=$this->db->query("select * from prijavljeni_ispiti");
+        $query = $this->db->query("select * from prijavljeni_ispiti");
         $result = $query->result_array();
-       
+
         return $result;
     }
-    
+
     public function obrisi_prijavljeni_ispit($idpredmet) {
-       $id = $_SESSION['ucenik']['jedinstveni_broj_ucenik'];
+        $id = $_SESSION['ucenik']['jedinstveni_broj_ucenik'];
         $this->db->query("delete from polaganje_ispit where predmet_idpredmet='$idpredmet' and ucenik_jedinstveni_broj_ucenik='$id'");
-        
     }
-    
-    
+
     public function ucenik_prijava() {
         $id = $_SESSION['ucenik']['jedinstveni_broj_ucenik'];
-       
-        $query=$this->db->query("select * from prijavljeni_ispiti where jedinstveni_broj_ucenik='$id'");
-        $result = $query->result_array();
-       
-        return $result;
-    }
-    
-    public function pregled_prijava() {
-    
-        
-        
-        $rok= $this->input->post('rok_prijave');
-        $datum= $this->input->post('godina_prijave');
-       
-        $_SESSION['rokk']=$rok;
-        $_SESSION['dattum']=$datum;
-                
-        $query=$this->db->query("select * from prijavljeni_ispiti where rok_idtip_roka='$rok' and YEAR(datum_prijave)='$datum' order by prezime");
-        $result = $query->result_array();
-       
-        return $result;
 
-    }
-    
-    public function pregled_priznatih(){
-         $id = $_SESSION['ucenik']['iducenik'];
-                  
-        $query=$this->db->query("SELECT p.idpredmet, p.naziv_predmet, p.godina_obrazovanja_idgodina_obrazovanja, pp.ucenik_iducenik, pp.ocena from predmet p, priznati_predmet pp 
-where p.idpredmet = pp.predmet_idpredmet and pp.ucenik_iducenik='$id'");  
-        
+        $query = $this->db->query("select * from prijavljeni_ispiti where jedinstveni_broj_ucenik='$id'");
         $result = $query->result_array();
-       
+
         return $result;
     }
-    
-    public function obrisi_priznati_ispit($idpredmet) {
-       $id = $_SESSION['ucenik']['iducenik'];
-        $this->db->query("delete from priznati_predmet where predmet_idpredmet='$idpredmet' and ucenik_iducenik='$id'");
-        
+
+    /* public function pregled_prijava() {
+
+
+
+      $rok= $this->input->post('rok_prijave');
+      $datum= $this->input->post('godina_prijave');
+
+      $_SESSION['rokk']=$rok;
+      $_SESSION['dattum']=$datum;
+
+      $query=$this->db->query("select * from prijavljeni_ispiti where rok_idtip_roka='$rok' and YEAR(datum_prijave)='$datum' order by prezime");
+      $result = $query->result_array();
+
+      return $result;
+
+      } */
+
+    public function record_count() {
+        return $this->db->count_all("prijavljeni_ispiti");
     }
+
+    public function pregled_prijava($limit, $start) {
+        $rok = $this->input->post('rok_prijave');
+        $datum = $this->input->post('godina_prijave');
+
+        $_SESSION['rokk'] = $rok;
+        $_SESSION['dattum'] = $datum;
+        $query=$this->db->query("select * from prijavljeni_ispiti where rok_idtip_roka='$rok' and YEAR(datum_prijave)='$datum' order by prezime limit $limit,$start" );
+        //$this->db->limit($limit, $start);
+        //$query = $this->db->get("prijavljeni_ispiti");
+
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+            return $data;
+        }
+        return false;
+    }
+
     
+    
+    public function pregled_priznatih() {
+        $id = $_SESSION['ucenik']['iducenik'];
+
+        $query = $this->db->query("SELECT p.idpredmet, p.naziv_predmet, p.godina_obrazovanja_idgodina_obrazovanja, pp.ucenik_iducenik, pp.ocena from predmet p, priznati_predmet pp 
+where p.idpredmet = pp.predmet_idpredmet and pp.ucenik_iducenik='$id'");
+
+        $result = $query->result_array();
+
+        return $result;
+    }
+
+    public function obrisi_priznati_ispit($idpredmet) {
+        $id = $_SESSION['ucenik']['iducenik'];
+        $this->db->query("delete from priznati_predmet where predmet_idpredmet='$idpredmet' and ucenik_iducenik='$id'");
+    }
+
 }

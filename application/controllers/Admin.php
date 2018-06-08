@@ -527,12 +527,43 @@ class admin extends CI_Controller {
     
 
 
-public function pregled_prijava() {
+/*public function pregled_prijava() {
+    
+    
     $result= $this->model_admin->pregled_prijava();
     $_SESSION['pregled_prijava']=$result;
     $this->loadView("izvestaji/pregled_prijava.php");
     
+}*/
+    
+    
+    public function pregled_prijava() {
+        $this->load->helper("url");
+        $this->load->library('pagination');
+        
+        
+        $config = array();
+        $config["base_url"] = site_url() . "/$this->controller/pregled_prijava/";
+        $config["total_rows"] = $this->model_admin->record_count();
+        $config["per_page"] = 12;
+        $config["uri_segment"] = 3;
+
+        $this->pagination->initialize($config);
+
+        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $data["results"] = $this->model_admin->
+            pregled_prijava($config["per_page"], $page);
+        $data["links"] = $this->pagination->create_links();
+
+        $this->loadview("izvestaji/pregled_prijava_paginacija.php", $data);
+    }
+
+
+
+
 }
-}
+
+
+
 //https://arjunphp.com/generating-a-pdf-in-codeigniter-using-mpdf/
 ?>
