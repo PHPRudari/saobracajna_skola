@@ -1,40 +1,60 @@
-<?php
-if (isset($error))
-    echo $error;
-
-if (!isset($_SESSION['ucenik']['iducenik'])) {
-    $this->session->set_flashdata('info', 'Нисте одабрали ученика!');  
-    redirect(site_url("/$this->controller/ucenik"));
-}
+<?php //
+//if (isset($error))
+//    echo $error;
+////var_dump($poruka);
+//if (isset($poruka))
+//    echo $poruka;
+//if (!isset($_SESSION['ucenik']['iducenik'])) {
+//    $this->session->set_flashdata('info', 'Нисте одабрали ученика!');
+//    redirect(site_url("/$this->controller/ucenik"));
+//}
 ?>
 
-
-<div>
+<div class="row>"
+<div class="col-md-6">
     <br>
     <h3>Документација ученика</h3>
     <?php echo form_open_multipart('admin/do_upload'); ?>
     <br>
     <h4>Изаберите фајл (максимална величина 2 Mb):</h4><br>
+    </div>
+     <div class="row">
     <div class="col-md-6">
         <div class="form-group row form-inline">
             <label class="col-form-label col-sm-4" for="userfile">Изаберите фајл:</label>
             <input type="file"  class="form-control" name="userfile" placeholder="Изаберите фајл" value="<?php echo set_value("userfile"); ?>" ><?php echo form_error("userfile", '<span style="color:red">', '</span>'); ?><br>
         </div>
-        </div>
-        <!--<input type="file" name="userfile" value="Izaberite fajl" size="20" />-->
+    </div>
+    <!--<input type="file" name="userfile" value="Izaberite fajl" size="20" />-->
     <br>
+    <div class="col-md-6">
+        <?php
+        if (isset($error))
+            echo $error;
+//var_dump($poruka);
+        if (isset($poruka))
+            echo $poruka;
+        if (!isset($_SESSION['ucenik']['iducenik'])) {
+            $this->session->set_flashdata('info', 'Нисте одабрали ученика!');
+            redirect(site_url("/$this->controller/ucenik"));
+        }
+        ?>  
+    </div>
+</div>
+
+
     <div class="row">
         <div class="col-md-6">
             <input type="submit" class="dugme2 btn btn-primary btn-lg btn-block" name="Sacuvaj" value="Сачувај"><br>
         </div>
         <div class="col-md-6">
-        <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik/"); ?>">Врати се на ученика</a><br>    
+            <a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik/"); ?>">Врати се на ученика</a><br>    
         </div>
 
         <!--<input type="submit" value="Пошаљи">-->
     </div>
-    </form>
-</div>
+</form>
+
 
 
 
@@ -83,7 +103,7 @@ if (!isset($_SESSION['ucenik']['iducenik'])) {
 </div>
 <br><br>
 
-        <div class="row">
+<div class="row">
     <div class="col-md-6">
         <!--<a class="dugme3 btn btn-primary btn-lg btn-block" href="<?php echo site_url($controller . "/ucenik/"); ?>">Врати се на ученика</a><br>-->
     </div>

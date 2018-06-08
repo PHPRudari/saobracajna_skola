@@ -454,8 +454,10 @@ class admin extends CI_Controller {
         } else {
 
             $data = array('upload_data' => $this->upload->data());
-
-            $this->load->view('upload_success', $data);
+           $data ['poruka'] = "<h3 style='color:red'>Документ је успешно сачуван.</h3>";
+//            $this->load->view('upload_success', $data);
+            $this->loadView('dokumentacija', $data);
+            //redirect(site_url("/$this->controller/dokumentacija"));
         }
     }
 
