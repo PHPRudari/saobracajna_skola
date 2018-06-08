@@ -509,14 +509,14 @@ class model_admin extends CI_Model {
 
         $id = $_SESSION['ucenik']['jedinstveni_broj_ucenik'];
         $rok = $this->input->post('rok');
-
+        $godina=date("Y"); 
         $predmet = $this->input->post('predmet');
         if (count($predmet) > 0) {
             $this->session->set_flashdata('prijava', 'Успешно сте пријавили испит(е).');
         }
         foreach ($predmet as $row) {
 
-            $query = $this->db->query("select * from polaganje_ispit where ucenik_jedinstveni_broj_ucenik='$id' and predmet_idpredmet=$row and rok_idtip_roka=$rok");
+            $query = $this->db->query("select * from polaganje_ispit where ucenik_jedinstveni_broj_ucenik='$id' and predmet_idpredmet=$row and rok_idtip_roka=$rok and YEAR(datum_prijave)=$godina");
             $count_row = $query->num_rows();
 
             if ($count_row > 0) {

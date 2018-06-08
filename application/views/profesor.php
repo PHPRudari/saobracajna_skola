@@ -16,8 +16,8 @@
         <?php
         $poruka = $this->session->userdata('poruka');
         $poruka1 = $this->session->userdata('poruka1');
-        echo '<h6 style="color:red">'.$poruka."</h6>";
-        echo '<h6 style="color:red">'.$poruka1."</h6>";
+        echo '<h3 style="color:red">'.$poruka."</h3>";
+        echo '<h3 style="color:red">'.$poruka1."</h3>";
         ?>
     </div>
 </div>

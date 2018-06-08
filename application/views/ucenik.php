@@ -37,7 +37,7 @@
       if($this->session->flashdata('info'))
      echo '<h3 style="color:red">'.$this->session->flashdata('info').'</h3>';
        if($this->session->flashdata('poruka'))
-     echo '<h5 style="color:red">'.$this->session->flashdata('poruka').'</h5>';
+     echo '<h3 style="color:red">'.$this->session->flashdata('poruka').'</h3>';
       ?>
     </div>
     <div class="col-md-6 ">
