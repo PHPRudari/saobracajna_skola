@@ -5,10 +5,10 @@
 <div class="row">
     <div class="col-md-8">
         <h5> Списак пријављених испита за <?php
-            if (isset($_POST['rok_prijave'])) {
+              if (isset($_SESSION['rokk'])) {
                
                 foreach ($_SESSION['rok'] as $rok) {
-                    if ($rok['idtip_roka'] == $_POST['rok_prijave']) {
+                    if ($rok['idtip_roka'] == $_SESSION['rokk']) {
 
                         echo $rok['naziv'];
                     }
@@ -17,15 +17,15 @@
                 echo "";
             }
             ?>  рок <?php
-                 if (!isset($_POST['godina_prijave'])) 
+                 if (!isset($_SESSION['dattum'])) 
                     echo " ";
                  else {                 
             
-            if (($_POST['godina_prijave']) == "Година") {
+            if (($_SESSION['dattum']) == "Година") {
                 echo " ";
             } else {
                 
-                echo $_POST['godina_prijave'];
+                echo $_SESSION['dattum'];
             }
                  }
             ?>. године </h5>

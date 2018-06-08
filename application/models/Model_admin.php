@@ -583,9 +583,16 @@ class model_admin extends CI_Model {
         $rok = $this->input->post('rok_prijave');
         $datum = $this->input->post('godina_prijave');
 
-        $_SESSION['rokk'] = $rok;
-        $_SESSION['dattum'] = $datum;
-        $query=$this->db->query("select * from prijavljeni_ispiti where rok_idtip_roka='$rok' and YEAR(datum_prijave)='$datum' order by prezime limit $limit,$start" );
+        if (isset ($_POST['rok_prijave']))
+            $_SESSION['rokk'] = $rok;
+            
+        if (isset ($_POST['godina_prijave']))
+            $_SESSION['dattum'] = $datum;
+        
+        $rok=$_SESSION['rokk'];
+        $datum=$_SESSION['dattum'];
+        
+        $query=$this->db->query("select * from prijavljeni_ispiti where rok_idtip_roka='$rok' and YEAR(datum_prijave)='$datum' order by prezime limit $limit offset $start" );
         //$this->db->limit($limit, $start);
         //$query = $this->db->get("prijavljeni_ispiti");
 
