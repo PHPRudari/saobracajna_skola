@@ -45,8 +45,8 @@ class login extends CI_Controller {
         $this->load->library('email');
 
         $this->email->from('admin@tehnickaskola.com', 'Djole');
-        $this->email->to('ovaj@example.com');
-        
+        $this->email->to('dragoljubd@gmail.com');
+        echo "Email je uspešno poslat";
         
 
         $this->email->subject('Vaša lozinka');
