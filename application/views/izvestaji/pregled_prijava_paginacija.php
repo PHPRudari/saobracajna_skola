@@ -46,16 +46,16 @@
 
 echo "<table class='table table-striped table-hover'>";
 echo "<tr>";
-echo "<th>Učenik:</th>";
-echo "<th>Prezime </th>";
-echo "<th>Ime </th>";
-echo "<th>Naziv predmeta</th>";
-echo "<th>Godina</th>";
+echo "<th>Ученик</th>";
+echo "<th>Презиме </th>";
+echo "<th>Име </th>";
+echo "<th>Назив предмета</th>";
+echo "<th>Година</th>";
 echo "</tr>";
 $i = 1;
 
 if ($results == NULL) {
-    echo '<td>Nema prijavljenih ispita u ovom roku</td>';
+    echo '<td>Нема пријављених испита у овом року.</td>';
 } else
     foreach ($results as $row) {
 
