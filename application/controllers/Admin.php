@@ -342,6 +342,7 @@ class admin extends CI_Controller {
     }
 
     public function statistika() {
+        
         $this->dohvati_rok();
         $this->loadView("statistika.php");
     }
@@ -528,17 +529,18 @@ class admin extends CI_Controller {
     
 
 
-/*public function pregled_prijava() {
+public function pregled_prijava_stampa() {
     
     
-    $result= $this->model_admin->pregled_prijava();
+    $result= $this->model_admin->pregled_prijava_stampa();
     $_SESSION['pregled_prijava']=$result;
-    $this->loadView("izvestaji/pregled_prijava.php");
+    //$this->loadView("izvestaji/pregled_prijava.php");
     
-}*/
+}
     
     
     public function pregled_prijava() {
+        $this->pregled_prijava_stampa();
         $this->load->helper("url");
         $this->load->library('pagination');
         
@@ -553,8 +555,7 @@ class admin extends CI_Controller {
         $this->pagination->initialize($config);
 
         $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-        $data["results"] = $this->model_admin->
-            pregled_prijava($config["per_page"], $page);
+        $data["results"] = $this->model_admin->pregled_prijava($config["per_page"], $page);
         $data["links"] = $this->pagination->create_links();
 
         $this->loadview("izvestaji/pregled_prijava_paginacija.php", $data);
