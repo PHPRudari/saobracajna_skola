@@ -14,7 +14,7 @@
 <div class="col-md-6">
     <br>
     <h3>Документација ученика</h3>
-    <?php echo form_open_multipart('admin/do_upload'); ?>
+    <?php echo form_open_multipart($controller .'/do_upload'); ?>
     <br>
     <h4>Изаберите фајл (максимална величина 2 Mb):</h4><br>
     </div>
