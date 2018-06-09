@@ -434,7 +434,7 @@ class admin extends CI_Controller {
 
         $config['upload_path'] = "./uploads/$id";
 
-        $config['allowed_types'] = 'txt|gif|jpg|png|pdf|doc|docx|bmp';
+        $config['allowed_types'] = 'txt|gif|jpg|png|pdf|doc|docx|bmp|xls|xlsx';
 
         $config['max_size'] = '0';
 
