@@ -2,7 +2,7 @@
 
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
-/* Author: Dragoljub Djordjevic
+/* Author: Programeri BGD
  * Description: Admin controller class
  * Ovo mogu da vide samo ulogovani korisnici
  */
@@ -410,6 +410,9 @@ class admin extends CI_Controller {
 
     public function obrisi_podrucje($idpodrucje) {
         $this->model_admin->obrisi_podrucje($idpodrucje);
+       
+        
+        
         $data['poruka'] = "Подручје рада је успешно обрисано.";
         $this->session->set_flashdata($data);
         redirect(site_url("/$this->controller/predmet"));

@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-/* Autor:Dragoljub Djordjevic
+/* Autor:Programeri BGD
  * Opis:metod za logovanje korisnika
  */
 

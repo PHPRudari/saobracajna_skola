@@ -9,7 +9,7 @@
 /**
  * Description of model_admin
  *
- * @author Korisnik
+ * @author Programeri BGD
  */
 class model_admin extends CI_Model {
 
@@ -381,7 +381,10 @@ class model_admin extends CI_Model {
     public function obrisi_podrucje($idpodrucje) {
 
         $this->db->query("delete from podrucje_rada where idpodrucje_rada='$idpodrucje'");
+     
+        
     }
+        
 
     public function obrisi_profil($idprofil) {
         var_dump($idprofil);

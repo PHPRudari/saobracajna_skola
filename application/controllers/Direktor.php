@@ -10,7 +10,7 @@ require_once APPPATH . 'controllers/Admin.php';
 /**
  * Description of direktor
  *
- * @author Korisnik
+ * @author Programeri BGD
  */
 class direktor extends admin {
 
