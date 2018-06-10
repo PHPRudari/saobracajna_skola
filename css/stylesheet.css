@@ -88,8 +88,15 @@ body {
 }
 
 .navbar-dark .navbar-nav .active>.nav-link {
-    color: rgba(255,255,255,.5);
+    color: rgba(255,255,255);
+    
 }
+.navbar-nav {
+    
+     background-color: rgba(0,0,0,0.8);
+}
+
+
 .footer {
     /*background: url("../slike/login_pozadina1.jpg") no-repeat center center fixed;*/
     background-color: rgba(0,0,0,0.9);
@@ -291,4 +298,12 @@ a:hover {
 .paginacija {
     font-size: 30px;
     color:whitesmoke;
+}
+
+
+
+.cont-poz {
+text-align: center;
+font-size: 12px;
+
 }
